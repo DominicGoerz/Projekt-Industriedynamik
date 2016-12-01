@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     50848,       1405]
-NotebookOptionsPosition[     48555,       1326]
-NotebookOutlinePosition[     48919,       1342]
-CellTagsIndexPosition[     48876,       1339]
+NotebookDataLength[     39545,       1035]
+NotebookOptionsPosition[     38593,       1002]
+NotebookOutlinePosition[     38927,       1017]
+CellTagsIndexPosition[     38884,       1014]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -545,7 +545,7 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"AppendTo", "[", 
       RowBox[{"priceList", ",", 
-       RowBox[{"pFirm", "[", 
+       RowBox[{"pFirmSelf", "[", 
         RowBox[{
          RowBox[{"cSelf", "[", 
           RowBox[{"cp", ",", "cs"}], "]"}], ",", "eta"}], "]"}]}], "]"}], ",", 
@@ -557,7 +557,8 @@ Cell[BoxData[
    3.689257968923695*^9}, {3.6893091542364473`*^9, 3.689309214720111*^9}, {
    3.689309258563281*^9, 3.689309302999836*^9}, {3.689309430720457*^9, 
    3.6893094382278748`*^9}, 3.689309745786518*^9, {3.6894117620194683`*^9, 
-   3.6894117633687363`*^9}}],
+   3.6894117633687363`*^9}, 3.689599184482657*^9, {3.689609610542869*^9, 
+   3.689609615631613*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -565,13 +566,9 @@ Cell[BoxData[
   "37.5`", ",", "37.5`", ",", "37.5`", ",", "37.5`", ",", "37.5`", ",", 
    "37.5`", ",", "37.5`", ",", "37.5`", ",", "37.5`", ",", "37.5`"}], 
   "}"}]], "Output",
- CellChangeTimes->{{3.689411778044829*^9, 3.689411793666319*^9}, 
-   3.6894118308778963`*^9, 3.689411915861124*^9, 3.689413430960409*^9, 
-   3.6894135664329576`*^9, 3.689413677381781*^9, 3.689416947826003*^9, 
-   3.6894171001492643`*^9, 3.689594630862481*^9, 3.689598021081957*^9}]
+ CellChangeTimes->{3.689609621993857*^9, 3.6896140562974854`*^9, 
+  3.6896141983121977`*^9, 3.6896142494823627`*^9, 3.689615713316106*^9}]
 }, Open  ]],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -591,23 +588,11 @@ Cell[BoxData[
       RowBox[{"qFirm", ",", "0.0"}], "]"}], ",", 
      RowBox[{"{", 
       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], 
-   "\[IndentingNewLine]", "qFirm"}]}]], "Input",
+   "\[IndentingNewLine]", 
+   RowBox[{"qFirm", ";"}]}]}]], "Input",
  CellChangeTimes->{{3.6893096867423973`*^9, 3.68930970665067*^9}, {
-  3.689410675494223*^9, 3.6894106973137007`*^9}, {3.689411788535067*^9, 
-  3.689411789103632*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-  "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
-   "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}]], "Output",
- CellChangeTimes->{3.689411793682535*^9, 3.68941183100552*^9, 
-  3.689411915947006*^9, 3.68941313515376*^9, 3.689413431275559*^9, 
-  3.689413566537346*^9, 3.689413677658724*^9, 3.6894169478419456`*^9, 
-  3.689417100165453*^9, 3.6895946372117033`*^9, 3.689598021096943*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
+   3.689410675494223*^9, 3.6894106973137007`*^9}, {3.689411788535067*^9, 
+   3.689411789103632*^9}, 3.689599187256716*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -637,25 +622,11 @@ Cell[BoxData[
           RowBox[{"cp", ",", "cs"}], "]"}]}], "]"}]}], "]"}], ",", 
      RowBox[{"{", 
       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], 
-   "\[IndentingNewLine]", "profitList"}]}]], "Input",
+   "\[IndentingNewLine]", 
+   RowBox[{"profitList", ";"}]}]}]], "Input",
  CellChangeTimes->{{3.689411284158888*^9, 3.6894114259739847`*^9}, {
-  3.689411483655512*^9, 3.689411520497237*^9}, {3.6894135464598093`*^9, 
-  3.6894135571580133`*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-  "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", "0.`", ",", 
-   "0.`", ",", "0.`", ",", "0.`", ",", "0.`"}], "}"}]], "Output",
- CellChangeTimes->{
-  3.689411529327839*^9, 3.68941174441147*^9, {3.689411778319748*^9, 
-   3.689411793858686*^9}, 3.689411831115342*^9, 3.6894119160572653`*^9, 
-   3.689413431439032*^9, 3.6894135666237507`*^9, 3.689413677898797*^9, 
-   3.6894169479416227`*^9, 3.689417100276739*^9, 3.6895946407730217`*^9, 
-   3.6895980211613092`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
+   3.689411483655512*^9, 3.689411520497237*^9}, {3.6894135464598093`*^9, 
+   3.6894135571580133`*^9}, 3.689599190705269*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -678,22 +649,12 @@ Cell[BoxData[
           RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], "]"}], ",", 
      RowBox[{"{", 
       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], " ", 
-   "\[IndentingNewLine]", "qualityList"}]}]], "Input",
+   "\[IndentingNewLine]", 
+   RowBox[{"qualityList", ";"}]}]}]], "Input",
  CellChangeTimes->{{3.689309493686084*^9, 3.689309543062636*^9}, {
-  3.689310023041129*^9, 3.689310065268654*^9}, {3.6893107765331917`*^9, 
-  3.6893107782377357`*^9}, {3.689410716855459*^9, 3.6894107273695097`*^9}, {
-  3.689411816950954*^9, 3.689411826750557*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-  "1.`", ",", "1.`", ",", "1.`", ",", "1.`", ",", "1.`", ",", "1.`", ",", 
-   "1.`", ",", "1.`", ",", "1.`", ",", "1.`"}], "}"}]], "Output",
- CellChangeTimes->{3.6894118311331577`*^9, 3.689411916146377*^9, 
-  3.689413431760659*^9, 3.689413566639937*^9, 3.6894136781659613`*^9, 
-  3.6894169480502253`*^9, 3.689417100378949*^9, 3.689594647694399*^9, 
-  3.6895980212593317`*^9}]
-}, Open  ]],
+   3.689310023041129*^9, 3.689310065268654*^9}, {3.6893107765331917`*^9, 
+   3.6893107782377357`*^9}, {3.689410716855459*^9, 3.6894107273695097`*^9}, {
+   3.689411816950954*^9, 3.689411826750557*^9}, 3.689599196694693*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -707,37 +668,39 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"probListAll", " ", "=", 
      RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{"Do", "[", "\[IndentingNewLine]", 
-    RowBox[{
+   RowBox[{
+    RowBox[{"Do", "[", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"probList", " ", "=", " ", 
-       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
+      RowBox[{
+       RowBox[{"probList", " ", "=", " ", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
         RowBox[{
-        "Compute", " ", "all", " ", "the", " ", "probabilities", " ", "for", 
-         " ", "the", " ", "j"}], "-", 
+         RowBox[{
+         "Compute", " ", "all", " ", "the", " ", "probabilities", " ", "for", 
+          " ", "the", " ", "j"}], "-", 
+         RowBox[{
+         "th", " ", "consumer", " ", "and", " ", "append", " ", "the", " ", 
+          "resulting", " ", "list", " ", "to", " ", "a", " ", "list", " ", 
+          "that", " ", "incorporates", " ", "all", " ", "these", " ", 
+          RowBox[{"probs", "!"}]}]}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", 
         RowBox[{
-        "th", " ", "consumer", " ", "and", " ", "append", " ", "the", " ", 
-         "resulting", " ", "list", " ", "to", " ", "a", " ", "list", " ", 
-         "that", " ", "incorporates", " ", "all", " ", "these", " ", 
-         RowBox[{"probs", "!"}]}]}], "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"Do", "[", 
-       RowBox[{
-        RowBox[{"AppendTo", "[", 
-         RowBox[{"probList", ",", 
-          RowBox[{"probability", "[", 
-           RowBox[{"i", ",", "priceList", ",", " ", "qualityList"}], "]"}]}], 
-         "]"}], ",", 
-        RowBox[{"{", 
-         RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"probList", ",", 
+           RowBox[{"probability", "[", 
+            RowBox[{"i", ",", "priceList", ",", " ", "qualityList"}], "]"}]}],
+           "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"probListAll", ",", "probList"}], "]"}]}], ",", 
       "\[IndentingNewLine]", 
-      RowBox[{"AppendTo", "[", 
-       RowBox[{"probListAll", ",", "probList"}], "]"}]}], ",", 
-     "\[IndentingNewLine]", 
-     RowBox[{"{", 
-      RowBox[{"j", ",", "1", ",", "m"}], "}"}]}], "\[IndentingNewLine]", 
-    "]"}]}]}]], "Input",
+      RowBox[{"{", 
+       RowBox[{"j", ",", "1", ",", "m"}], "}"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"probListAll", ";"}]}]}]], "Input",
  CellChangeTimes->{{3.689310967332703*^9, 3.689310993148388*^9}, {
    3.6893110367731123`*^9, 3.689311044741984*^9}, {3.689324518162883*^9, 
    3.689324520155684*^9}, 3.689326475000525*^9, 3.6893268083622503`*^9, {
@@ -748,7 +711,9 @@ Cell[BoxData[
    3.689597986197177*^9}, {3.689598099323296*^9, 3.6895981046560926`*^9}, {
    3.689598167697336*^9, 3.689598226701963*^9}, {3.6895983995752163`*^9, 
    3.689598426155487*^9}, {3.689598471231206*^9, 3.6895985349190893`*^9}, {
-   3.689598610780274*^9, 3.689598721946154*^9}}],
+   3.689598610780274*^9, 3.689598721946154*^9}, 3.689599473128601*^9, {
+   3.689599828793551*^9, 3.6895998314407454`*^9}, {3.689609080662198*^9, 
+   3.689609086171938*^9}}],
 
 Cell[CellGroupData[{
 
@@ -756,577 +721,287 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"(*", 
    RowBox[{
-   "The", " ", "list", " ", "of", " ", "probabilities", " ", "of", " ", "the",
-     " ", "first", " ", "consumer"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"probListAll", "[", 
-   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.6894073660030727`*^9, 3.6894073822290688`*^9}, {
-  3.689408661685648*^9, 3.6894086874389143`*^9}, {3.689408720383379*^9, 
-  3.6894087483226213`*^9}, {3.689408850569813*^9, 3.6894088664746237`*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-  "0.09999999999999999`", ",", "0.09999999999999999`", ",", 
-   "0.09999999999999999`", ",", "0.09999999999999999`", ",", 
-   "0.09999999999999999`", ",", "0.09999999999999999`", ",", 
-   "0.09999999999999999`", ",", "0.09999999999999999`", ",", 
-   "0.09999999999999999`", ",", "0.09999999999999999`"}], "}"}]], "Output",
- CellChangeTimes->{
-  3.689408853761343*^9, 3.68940891218976*^9, 3.689408994591242*^9, {
-   3.689409115400522*^9, 3.6894091546051083`*^9}, 3.689410593917074*^9, {
-   3.68941107295247*^9, 3.689411101296289*^9}, 3.689411446219346*^9, 
-   3.689411495275568*^9, 3.689411529854238*^9, 3.689411744950939*^9, {
-   3.689411778854886*^9, 3.689411794399111*^9}, 3.6894118315484533`*^9, 
-   3.6894119164895563`*^9, 3.689413432279619*^9, 3.689413566948394*^9, 
-   3.689413678511532*^9, 3.689416948252944*^9, 3.689417100617461*^9, 
-   3.689595027425639*^9, 3.689595064230398*^9, 3.689598029737135*^9, 
-   3.689598118545352*^9, 3.6895983352177134`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-   "The", " ", "probability", " ", "that", " ", "the", " ", "first", " ", 
-    "consumer", " ", "buys", " ", "from", " ", "firm", " ", "1"}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"probListAll", "[", 
-   RowBox[{"[", 
-    RowBox[{"1", ",", "1"}], "]"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.689408880050643*^9, 3.689408903596755*^9}}],
-
-Cell[BoxData["0.09999999999999999`"], "Output",
- CellChangeTimes->{
-  3.689408912261037*^9, 3.689408994679409*^9, {3.689409115451272*^9, 
-   3.6894091546548243`*^9}, 3.689410593965838*^9, {3.68941107302347*^9, 
-   3.68941110137986*^9}, 3.689411446375801*^9, 3.689411495388413*^9, 
-   3.689411529983762*^9, 3.6894117450644712`*^9, {3.689411778989859*^9, 
-   3.689411794535486*^9}, 3.689411831678913*^9, 3.689411916578347*^9, 
-   3.689413432608186*^9, 3.6894135670398083`*^9, 3.6894136787590303`*^9, 
-   3.689416948350196*^9, 3.689417100730461*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-   "Sum", " ", "of", " ", "probabilitis", " ", "should", " ", "be", " ", 
-    "equal", " ", "to", " ", "one"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"Total", "[", 
-   RowBox[{"probListAll", "[", 
-    RowBox[{"[", "1", "]"}], "]"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.689325034900025*^9, 3.689325036786262*^9}, {
-  3.6893255349673223`*^9, 3.6893255429432697`*^9}, {3.689325833655374*^9, 
-  3.689325837662963*^9}, {3.6893266222258167`*^9, 3.68932662343186*^9}, {
-  3.6894071107583523`*^9, 3.6894071377254353`*^9}, {3.6894089339200697`*^9, 
-  3.689408986643981*^9}}],
-
-Cell[BoxData["1.`"], "Output",
- CellChangeTimes->{
-  3.6893250374191637`*^9, 3.68932554345865*^9, {3.689325818554879*^9, 
-   3.6893258897376003`*^9}, {3.689325924444285*^9, 3.689325952485505*^9}, {
-   3.689326611373357*^9, 3.689326623906049*^9}, 3.689406931200643*^9, {
-   3.68940712209417*^9, 3.689407138509981*^9}, 3.6894071764972754`*^9, 
-   3.68940735741063*^9, 3.689408148791453*^9, 3.689408702629334*^9, 
-   3.689408912345097*^9, 3.689408994764599*^9, {3.689409115497357*^9, 
-   3.689409154733593*^9}, 3.689410594027338*^9, {3.689411073108633*^9, 
-   3.689411101470193*^9}, 3.689411446389415*^9, 3.6894114955011463`*^9, 
-   3.689411530110708*^9, 3.6894117451823597`*^9, {3.6894117791170177`*^9, 
-   3.689411794660385*^9}, 3.689411831797696*^9, 3.689411916670527*^9, 
-   3.6894134329193907`*^9, 3.689413567141028*^9, 3.689413678775777*^9, 
-   3.689416948365876*^9, 3.68941710083805*^9}]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{"--", 
-    RowBox[{"--", 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"-", 
-        RowBox[{"-", 
-         RowBox[{"--", 
-          RowBox[{"--", 
-           RowBox[{"--", 
-            RowBox[{"--", 
-             RowBox[{"--", 
-              RowBox[{"--", 
-               RowBox[{"--", 
-                RowBox[{"--", 
-                 RowBox[{"--", 
-                  RowBox[{"--", 
-                   RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-, "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{"QUESTION", ":", " ", 
-    RowBox[{
-    "Probabilities", " ", "are", " ", "equal", " ", "so", " ", "how", " ", 
-     "to", " ", "decide", " ", "from", " ", "which", " ", "firm", " ", 
-     "consumers", " ", "should", " ", 
-     RowBox[{"buy", " ", "?"}]}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{"--", 
-    RowBox[{"--", 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"-", 
-        RowBox[{"-", 
-         RowBox[{"--", 
-          RowBox[{"--", 
-           RowBox[{"--", 
-            RowBox[{"--", 
-             RowBox[{"--", 
-              RowBox[{"--", 
-               RowBox[{"--", 
-                RowBox[{"--", 
-                 RowBox[{"--", 
-                  RowBox[{"--", 
-                   RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-, "*)"}]}]], "Input",
- CellChangeTimes->{{3.68941378933394*^9, 3.6894137946565657`*^9}, {
-  3.689414055960124*^9, 3.6894140573349743`*^9}}],
-
-Cell[BoxData[
- RowBox[{"probListAll", ";"}]], "Input",
- CellChangeTimes->{{3.689409742213656*^9, 3.689409748676042*^9}, 
-   3.689413673362987*^9}],
-
-Cell[BoxData[
- RowBox[{"(*", " ", 
-  RowBox[{
-   RowBox[{"Idea", ":", " ", 
-    RowBox[{"Consumers", " ", "decide", " ", "randomly", " ", 
-     RowBox[{"(", "iid", ")"}], " ", "and", " ", "their", " ", "choice", " ", 
-     "is", " ", "a", " ", "draw", " ", "from", " ", "a", " ", "uniform", " ", 
-     "distribution", " ", "on", " ", "S"}]}], "=", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"s", "|", 
-      RowBox[{"s", " ", "in", " ", "1"}]}], ",", "..", ",", "n"}], "}"}]}], 
-  " ", "*)"}]], "Input",
- CellChangeTimes->{{3.6894097631489563`*^9, 3.689409791716845*^9}, {
-  3.689409836867023*^9, 3.689409914753257*^9}, {3.6894138211772623`*^9, 
-  3.689413920363885*^9}, {3.689413956903583*^9, 3.6894139629539127`*^9}, {
-  3.689414031317328*^9, 3.689414052449539*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-   "A", " ", "dummy", " ", "vector", " ", "to", " ", "identify", " ", "each", 
-    " ", "firm", " ", "by", " ", "a", " ", "number"}], "*)"}], 
+   "A", " ", "\"\<dummy\>\"", " ", "vector", " ", "to", " ", "identify", " ", 
+    "each", " ", "firm", " ", "by", " ", "a", " ", "number"}], "*)"}], 
   "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
     RowBox[{"Id", " ", "=", " ", 
      RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{"Do", "[", 
-    RowBox[{
-     RowBox[{"AppendTo", "[", 
-      RowBox[{"Id", ",", " ", "i"}], "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], 
+   RowBox[{
+    RowBox[{"Do", "[", 
+     RowBox[{
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"Id", ",", " ", "i"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";"}], 
    "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"choiceList", " ", "=", 
+    RowBox[{"choiceListAll", " ", "=", " ", 
      RowBox[{"RandomChoice", "[", 
-      RowBox[{"Id", ",", "m"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{"Do", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"qFirm", "[", 
-       RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
-      RowBox[{"Count", "[", 
-       RowBox[{"choiceList", ",", "i"}], "]"}]}], ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], 
+      RowBox[{
+       RowBox[{"probList", " ", "->", "Id"}], ",", "m"}], "]"}]}], ";"}], 
    "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"New", " ", "quantities"}], "*)"}], "\[IndentingNewLine]", 
-   "qFirm"}]}]], "Input",
- CellChangeTimes->{{3.689412723278693*^9, 3.689412782802265*^9}, {
-  3.689412834303108*^9, 3.689412835016458*^9}, {3.689413976290265*^9, 
-  3.6894140134847317`*^9}, {3.6894169236375313`*^9, 3.689416941250347*^9}}],
+   RowBox[{
+    RowBox[{"Do", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"qFirm", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
+       RowBox[{"Count", "[", 
+        RowBox[{"choiceListAll", ",", "i"}], "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "qFirm"}]}]], "Input",
+ CellChangeTimes->{{3.689599940667103*^9, 3.6895999634087877`*^9}, {
+   3.689600082358898*^9, 3.689600089555451*^9}, {3.689600177474354*^9, 
+   3.6896002999413137`*^9}, {3.689600346041532*^9, 3.689600405026415*^9}, {
+   3.689600521321917*^9, 3.689600523400901*^9}, {3.689600562708548*^9, 
+   3.689600563215104*^9}, {3.689600600460916*^9, 3.689600622705483*^9}, {
+   3.689600719893395*^9, 3.68960074847628*^9}, {3.68960089029109*^9, 
+   3.6896009202138653`*^9}, 3.689600967375825*^9, {3.689602036730275*^9, 
+   3.689602164134288*^9}, {3.689602195803323*^9, 3.68960227109121*^9}, {
+   3.689602308370268*^9, 3.6896023358185453`*^9}, {3.689602382260017*^9, 
+   3.6896024026594143`*^9}, {3.6896024388963223`*^9, 
+   3.6896025362214403`*^9}, {3.689602710685405*^9, 3.6896027111303453`*^9}, {
+   3.689603081857798*^9, 3.689603099135448*^9}, {3.689607817721705*^9, 
+   3.689607835704174*^9}, {3.689607870059586*^9, 3.689607891020368*^9}, {
+   3.6896091569752483`*^9, 3.689609197873583*^9}, {3.689609245860057*^9, 
+   3.689609265070217*^9}, {3.689609417542328*^9, 3.689609418123453*^9}, {
+   3.6896097268379*^9, 3.6896097433932257`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-  "9", ",", "9", ",", "7", ",", "9", ",", "11", ",", "11", ",", "15", ",", 
-   "11", ",", "8", ",", "10"}], "}"}]], "Output",
- CellChangeTimes->{3.689416948518346*^9, 3.689417100987378*^9}]
+  "11", ",", "6", ",", "13", ",", "9", ",", "11", ",", "8", ",", "13", ",", 
+   "9", ",", "7", ",", "13"}], "}"}]], "Output",
+ CellChangeTimes->{{3.689609324458837*^9, 3.689609337506508*^9}, {
+   3.689609404761897*^9, 3.689609424272235*^9}, 3.689614056674011*^9, 
+   3.689614198590907*^9, 3.689614249763253*^9, 3.689615713601668*^9}]
 }, Open  ]],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"Vector", " ", "of", " ", "profits"}], " ", "-", " ", 
-     RowBox[{"depend", " ", "on", " ", "NEW", " ", "quantities"}]}], ",", " ",
-     "prices", ",", " ", 
-    RowBox[{"and", " ", "marginal", " ", "cost"}]}], "*)"}], 
-  "\[IndentingNewLine]", 
+   RowBox[{"Prototyping", " ", "the", " ", "loop"}], "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"profitList", " ", "=", 
+    RowBox[{"priceListAll", " ", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"qualityListAll", " ", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"quantitiesAll", " ", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"profitListAll", " ", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"qFirmPeriod", "=", 
      RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
    RowBox[{"Do", "[", 
     RowBox[{
      RowBox[{"AppendTo", "[", 
-      RowBox[{"profitList", ",", 
-       RowBox[{"profit", "[", 
-        RowBox[{
-         RowBox[{"qFirm", "[", 
-          RowBox[{"[", "i", "]"}], "]"}], ",", 
-         RowBox[{"priceList", "[", 
-          RowBox[{"[", "i", "]"}], "]"}], ",", 
-         RowBox[{"cSelf", "[", 
-          RowBox[{"cp", ",", "cs"}], "]"}]}], "]"}]}], "]"}], ",", 
+      RowBox[{"qFirmPeriod", ",", "0.0"}], "]"}], ",", 
      RowBox[{"{", 
       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], 
-   "\[IndentingNewLine]", "profitList"}]}]], "Input",
- CellChangeTimes->{{3.68941352960426*^9, 3.6894135329272203`*^9}, {
-  3.68941413750115*^9, 3.689414138710937*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-  "67.5`", ",", "67.5`", ",", "52.5`", ",", "67.5`", ",", "82.5`", ",", 
-   "82.5`", ",", "112.5`", ",", "82.5`", ",", "60.`", ",", "75.`"}], 
-  "}"}]], "Output",
- CellChangeTimes->{3.689413293091559*^9, 3.6894134378184843`*^9, 
-  3.689413567804523*^9, 3.689413679492869*^9, 3.6894169487405033`*^9, 
-  3.689417101004621*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"Vector", " ", "of", " ", "NEW", " ", "qualities"}], " ", "-", 
-    " ", 
-    RowBox[{"depend", " ", "on", " ", "NEW", " ", "quantities"}]}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"qualityList", " ", "=", " ", 
+    RowBox[{"qFirmAggregated", "=", 
      RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
    RowBox[{"Do", "[", 
     RowBox[{
      RowBox[{"AppendTo", "[", 
-      RowBox[{"qualityList", ",", 
-       RowBox[{"qualityFirm", "[", 
-        RowBox[{"uBar", ",", " ", "alpha", ",", " ", "beta", ",", 
-         RowBox[{"qFirm", "[", 
-          RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], "]"}], ",", 
+      RowBox[{"qFirmAggregated", ",", "0.0"}], "]"}], ",", 
      RowBox[{"{", 
-      RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], " ", 
-   "\[IndentingNewLine]", "qualityList"}]}]], "Input",
- CellChangeTimes->{{3.68941453376758*^9, 3.6894145486884403`*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-  "4.`", ",", "4.`", ",", "3.6457513110645907`", ",", "4.`", ",", 
-   "4.3166247903554`", ",", "4.3166247903554`", ",", "4.872983346207417`", 
-   ",", "4.3166247903554`", ",", "3.8284271247461903`", ",", 
-   "4.16227766016838`"}], "}"}]], "Output",
- CellChangeTimes->{3.689414388508065*^9, 3.689416948835909*^9, 
-  3.689417101115707*^9}]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
+      RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"Vector", " ", "of", " ", "probabilities"}], " ", "-", " ", 
-    RowBox[{
-    "depend", " ", "on", " ", "NEW", " ", "qualities", " ", "and", " ", 
-     "prices"}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"probListAll", " ", "=", 
+    RowBox[{"Id", " ", "=", " ", 
      RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{"Do", "[", "\[IndentingNewLine]", 
-    RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Do", "[", 
      RowBox[{
-     "Initialize", " ", "a", " ", "list", " ", "of", " ", "probabilities", 
-      " ", "for", " ", "each", " ", "consumer"}], "*)"}], 
-    "\[IndentingNewLine]", 
-    RowBox[{
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"Id", ",", " ", "i"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Do", "[", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"probList", " ", "=", " ", 
-       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"priceList", " ", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"qualityList", " ", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"profitList", " ", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
        RowBox[{"(*", 
-        RowBox[{"Compute", " ", "numerator"}], "*)"}], "\[IndentingNewLine]", 
-       
-       RowBox[{
+        RowBox[{"compute", " ", "prices"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", 
         RowBox[{
-         RowBox[{"num", "=", " ", 
-          RowBox[{"Exp", "[", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"priceList", ",", 
+           RowBox[{"pFirmSelf", "[", 
+            RowBox[{
+             RowBox[{"cSelf", "[", 
+              RowBox[{"cp", ",", "cs"}], "]"}], ",", "eta"}], "]"}]}], "]"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"priceListAll", ",", "priceList"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+        "compute", " ", "quality", " ", "using", " ", "quantities", " ", "of",
+          " ", "last", " ", "period"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", 
+        RowBox[{
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"qualityList", ",", 
+           RowBox[{"qualityFirm", "[", 
+            RowBox[{"uBar", ",", " ", "alpha", ",", " ", "beta", ",", 
+             RowBox[{"qFirmAggregated", "[", 
+              RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"qualityListAll", ",", "qualityList"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"compute", " ", "probabilities"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"probListAll", " ", "=", 
+        RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"probList", " ", "=", " ", 
+           RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"(*", 
            RowBox[{
             RowBox[{
-             RowBox[{"-", "chi"}], "*", 
-             RowBox[{"priceList", "[", 
-              RowBox[{"[", "i", "]"}], "]"}]}], "+", " ", 
-            RowBox[{"katta", "*", 
-             RowBox[{"qualityList", "[", 
-              RowBox[{"[", "i", "]"}], "]"}]}]}], "]"}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"(*", 
-          RowBox[{"Compute", " ", "denominator"}], "*)"}], 
-         "\[IndentingNewLine]", 
-         RowBox[{"denom", " ", "=", 
-          RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{"Do", "[", 
-          RowBox[{
-           RowBox[{"AppendTo", "[", 
-            RowBox[{"denom", ",", 
-             RowBox[{"Exp", "[", 
-              RowBox[{
-               RowBox[{
-                RowBox[{"-", "chi"}], "*", 
-                RowBox[{"priceList", "[", 
-                 RowBox[{"[", "k", "]"}], "]"}]}], "+", " ", 
-               RowBox[{"katta", "*", 
-                RowBox[{"qualityList", "[", 
-                 RowBox[{"[", "k", "]"}], "]"}]}]}], "]"}]}], "]"}], ",", 
-           "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"k", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"(*", 
-          RowBox[{
-          "Compute", " ", "probablility", " ", "that", " ", "consumer", " ", 
-           "j", " ", "buys", " ", "form", " ", "Firm", " ", "i"}], "*)"}], 
-         "\[IndentingNewLine]", 
-         RowBox[{"prob", "=", " ", 
-          RowBox[{"num", "/", 
-           RowBox[{"(", 
-            RowBox[{"Total", "[", "denom", "]"}], ")"}]}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"(*", 
-          RowBox[{
+            "Compute", " ", "all", " ", "the", " ", "probabilities", " ", 
+             "for", " ", "the", " ", "j"}], "-", 
+            RowBox[{
+            "th", " ", "consumer", " ", "and", " ", "append", " ", "the", " ",
+              "resulting", " ", "list", " ", "to", " ", "a", " ", "list", " ",
+              "that", " ", "incorporates", " ", "all", " ", "these", " ", 
+             RowBox[{"probs", "!"}]}]}], "*)"}], "\[IndentingNewLine]", 
+          RowBox[{"Do", "[", 
            RowBox[{
-           "Append", " ", "this", " ", "probability", " ", "to", " ", "the", 
-            " ", "list", " ", "of", " ", "probabilities", " ", "for", " ", 
-            "the", " ", "j"}], "-", 
-           RowBox[{"th", " ", "consumer"}]}], "*)"}], "\[IndentingNewLine]", 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"probList", ",", 
+              RowBox[{"probability", "[", 
+               RowBox[{"i", ",", "priceList", ",", " ", "qualityList"}], 
+               "]"}]}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"probListAll", ",", "probList"}], "]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "m"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"compute", " ", "demand"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"choiceListAll", " ", "=", " ", 
+        RowBox[{"RandomChoice", "[", 
+         RowBox[{
+          RowBox[{"probList", " ", "->", "Id"}], ",", "m"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Compute", " ", "quantities", " ", "in", " ", "period"}], 
+        "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"qFirmPeriod", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
+          RowBox[{"Count", "[", 
+           RowBox[{"choiceListAll", ",", "i"}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"Compute", " ", "aggregated", " ", "quantities"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"qFirmAggregated", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], " ", "=", " ", 
+          RowBox[{
+           RowBox[{"qFirmAggregated", "[", 
+            RowBox[{"[", "i", "]"}], "]"}], " ", "+", " ", 
+           RowBox[{"qFirmPeriod", "[", 
+            RowBox[{"[", "i", "]"}], "]"}]}]}], " ", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"quantitiesAll", ",", "qFirmAggregated"}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"compute", " ", "profits"}], "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"Do", "[", 
+        RowBox[{
          RowBox[{"AppendTo", "[", 
-          RowBox[{"probList", ",", "prob"}], "]"}]}], "\[IndentingNewLine]", 
-        ",", 
-        RowBox[{"{", 
-         RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+          RowBox[{"profitList", ",", 
+           RowBox[{"profit", "[", 
+            RowBox[{
+             RowBox[{"qFirmPeriod", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], ",", 
+             RowBox[{"priceList", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], ",", 
+             RowBox[{"cSelf", "[", 
+              RowBox[{"cp", ",", "cs"}], "]"}]}], "]"}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"profitListAll", ",", "profitList"}], "]"}]}], ",", 
       "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
-       "Append", " ", "this", " ", "list", " ", "to", " ", "the", " ", "list",
-         " ", "of", " ", "probabilities", " ", "of", " ", "all", " ", 
-        "Consumers"}], "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"AppendTo", "[", 
-       RowBox[{"probListAll", ",", "probList"}], "]"}]}], ",", 
-     "\[IndentingNewLine]", 
-     RowBox[{"{", 
-      RowBox[{"j", ",", "1", ",", "m"}], "}"}]}], "]"}]}]}]], "Input",
- CellChangeTimes->{{3.6894145525712337`*^9, 3.6894145551807756`*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Position", "[", 
-  RowBox[{
-   RowBox[{"probListAll", "[", 
-    RowBox[{"[", "1", "]"}], "]"}], ",", 
-   RowBox[{"Max", "[", 
-    RowBox[{"probListAll", "[", 
-     RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.689414456764278*^9, 3.689414461144374*^9}, {
-  3.689414577325965*^9, 3.689414591796365*^9}, {3.689416563883136*^9, 
-  3.689416599950707*^9}, {3.6894166448568163`*^9, 3.6894166653171453`*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"{", "7", "}"}], "}"}]], "Output",
- CellChangeTimes->{
-  3.6894144624113703`*^9, 3.689414592742845*^9, 3.6894166019404707`*^9, {
-   3.689416647395668*^9, 3.689416666003333*^9}, 3.689416949075499*^9, 
-   3.6894171013826857`*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"probListAll", "[", 
-  RowBox[{"[", 
-   RowBox[{"1", ",", "7"}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.689416677530281*^9, 3.689416684244985*^9}, {
-  3.689417218212878*^9, 3.689417218648211*^9}}],
-
-Cell[BoxData["0.793582589673449`"], "Output",
- CellChangeTimes->{3.689416684952093*^9, 3.6894169491673307`*^9, 
-  3.6894171014007587`*^9, 3.689417220029933*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"ListPlot", "[", 
-  RowBox[{
-   RowBox[{"probListAll", "[", 
-    RowBox[{"[", "1", "]"}], "]"}], ",", 
-   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.6894170779212637`*^9, 3.6894171145678596`*^9}},
- NumberMarks->False],
-
-Cell[BoxData[
- GraphicsBox[{{}, 
-   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.019444444444444445`], 
-    AbsoluteThickness[1.6], 
-    PointBox[{{1., 0.010090969210337556`}, {2., 0.010090969210337556`}, {3., 
-     0.001716689010246437}, {4., 0.010090969210337556`}, {5., 
-     0.04914449508862409}, {6., 0.04914449508862409}, {7., 
-     0.793582589673449}, {8., 0.04914449508862409}, {9., 
-     0.004279244648436328}, {10., 0.02271508377098348}}]}, {}},
-  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  Axes->{True, True},
-  AxesLabel->{None, None},
-  AxesOrigin->{0, 0},
-  DisplayFunction->Identity,
-  Frame->{{False, False}, {False, False}},
-  FrameLabel->{{None, None}, {None, None}},
-  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
-  GridLines->{None, None},
-  GridLinesStyle->Directive[
-    GrayLevel[0.5, 0.4]],
-  Method->{},
-  PlotRange->{{0., 10.}, {0, 0.793582589673449}},
-  PlotRangeClipping->True,
-  PlotRangePadding->{{
-     Scaled[0.02], 
-     Scaled[0.02]}, {
-     Scaled[0.02], 
-     Scaled[0.05]}},
-  Ticks->{Automatic, Automatic}]], "Output",
- CellChangeTimes->{
-  3.6894169956510067`*^9, {3.689417087347266*^9, 3.689417115775589*^9}}]
-}, Open  ]],
-
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.689422316291855*^9, 3.689422322717358*^9}, 
-   3.689424103790471*^9}]
+      RowBox[{"{", 
+       RowBox[{"t", ",", "1", ",", "T"}], "}"}]}], "\[IndentingNewLine]", 
+     "]"}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"TableForm", "[", "qualityListAll", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"TableForm", "[", "quantitiesAll", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"TableForm", "[", "profitListAll", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.689609809129175*^9, 3.6896098937652493`*^9}, {
+   3.689609923770698*^9, 3.689610147553055*^9}, {3.689610192933753*^9, 
+   3.689610223202899*^9}, {3.6896102552625027`*^9, 3.68961030722062*^9}, {
+   3.689610392834506*^9, 3.689610412246087*^9}, {3.6896105578201447`*^9, 
+   3.689610585254121*^9}, {3.6896107050676327`*^9, 3.6896107109656487`*^9}, {
+   3.6896107496677437`*^9, 3.6896107876633263`*^9}, {3.689610887749319*^9, 
+   3.689610982140833*^9}, {3.6896110601433897`*^9, 3.689611069753501*^9}, {
+   3.68961115028907*^9, 3.689611159068191*^9}, 3.689611314243452*^9, {
+   3.689611453446438*^9, 3.68961159042139*^9}, {3.689611703100363*^9, 
+   3.68961171425384*^9}, {3.6896118314253483`*^9, 3.689611863064021*^9}, {
+   3.689611916048974*^9, 3.689611998802286*^9}, {3.689612044553116*^9, 
+   3.689612140637045*^9}, {3.689612202671977*^9, 3.689612290665949*^9}, {
+   3.68961232771636*^9, 3.6896123964024553`*^9}, {3.6896124476636667`*^9, 
+   3.68961244864642*^9}, {3.689612483597763*^9, 3.6896124841195183`*^9}, {
+   3.68961255347095*^9, 3.689612553861467*^9}, {3.689612776497349*^9, 
+   3.689612778425127*^9}, {3.6896129035690804`*^9, 3.6896129232938957`*^9}, {
+   3.689613036972802*^9, 3.689613065807536*^9}, {3.689613109027482*^9, 
+   3.689613148286462*^9}, {3.689613219175477*^9, 3.689613396726433*^9}, {
+   3.689614172919693*^9, 3.6896141787576723`*^9}, {3.689614244651187*^9, 
+   3.689614245794599*^9}, {3.689615405714761*^9, 3.689615437366715*^9}, {
+   3.689615570671219*^9, 3.689615571665226*^9}, {3.689615626051065*^9, 
+   3.689615686197955*^9}}]
 },
 WindowSize->{1920, 1024},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
-Magnification:>1.5 Inherited,
 FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1341,72 +1016,27 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 2437, 53, 655, "Input"],
-Cell[2998, 75, 3621, 93, 603, "Input"],
-Cell[6622, 170, 2147, 52, 425, "Input"],
-Cell[8772, 224, 421, 12, 105, "Input"],
-Cell[9196, 238, 1653, 39, 222, "Input"],
-Cell[10852, 279, 1310, 38, 134, "Input"],
-Cell[12165, 319, 6675, 203, 104, "Input"],
-Cell[18843, 524, 266, 6, 45, "Input"],
+Cell[558, 20, 2437, 53, 495, "Input"],
+Cell[2998, 75, 3621, 93, 451, "Input"],
+Cell[6622, 170, 2147, 52, 319, "Input"],
+Cell[8772, 224, 421, 12, 77, "Input"],
+Cell[9196, 238, 1653, 39, 165, "Input"],
+Cell[10852, 279, 1310, 38, 99, "Input"],
+Cell[12165, 319, 6675, 203, 77, "Input"],
+Cell[18843, 524, 266, 6, 32, "Input"],
 Cell[CellGroupData[{
-Cell[19134, 534, 1026, 25, 133, "Input"],
-Cell[20163, 561, 485, 9, 45, "Output"]
+Cell[19134, 534, 1102, 26, 99, "Input"],
+Cell[20239, 562, 342, 7, 32, "Output"]
 }, Open  ]],
+Cell[20596, 572, 831, 22, 99, "Input"],
+Cell[21430, 596, 1189, 32, 99, "Input"],
+Cell[22622, 630, 1085, 26, 99, "Input"],
+Cell[23710, 658, 2620, 57, 209, "Input"],
 Cell[CellGroupData[{
-Cell[20685, 575, 788, 21, 133, "Input"],
-Cell[21476, 598, 453, 8, 45, "Output"]
+Cell[26355, 719, 2304, 51, 143, "Input"],
+Cell[28662, 772, 373, 7, 32, "Output"]
 }, Open  ]],
-Cell[CellGroupData[{
-Cell[21966, 611, 1146, 31, 133, "Input"],
-Cell[23115, 644, 516, 10, 45, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[23668, 659, 1041, 25, 133, "Input"],
-Cell[24712, 686, 415, 8, 45, "Output"]
-}, Open  ]],
-Cell[25142, 697, 2414, 53, 278, "Input"],
-Cell[CellGroupData[{
-Cell[27581, 754, 499, 10, 75, "Input"],
-Cell[28083, 766, 1001, 17, 45, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[29121, 788, 398, 10, 75, "Input"],
-Cell[29522, 800, 546, 8, 45, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[30105, 813, 627, 13, 75, "Input"],
-Cell[30735, 828, 891, 13, 45, "Output"]
-}, Open  ]],
-Cell[31641, 844, 4958, 144, 104, "Input"],
-Cell[36602, 990, 146, 3, 45, "Input"],
-Cell[36751, 995, 769, 16, 48, "Input"],
-Cell[CellGroupData[{
-Cell[37545, 1015, 1366, 37, 220, "Input"],
-Cell[38914, 1054, 229, 5, 45, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[39180, 1064, 1103, 30, 133, "Input"],
-Cell[40286, 1096, 364, 8, 45, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[40687, 1109, 872, 23, 133, "Input"],
-Cell[41562, 1134, 377, 8, 45, "Output"]
-}, Open  ]],
-Cell[41954, 1145, 3774, 94, 597, "Input"],
-Cell[CellGroupData[{
-Cell[45753, 1243, 459, 10, 45, "Input"],
-Cell[46215, 1255, 266, 6, 45, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[46518, 1266, 226, 5, 45, "Input"],
-Cell[46747, 1273, 160, 2, 45, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[46944, 1280, 279, 7, 45, "Input"],
-Cell[47226, 1289, 1192, 30, 361, "Output"]
-}, Open  ]],
-Cell[48433, 1322, 118, 2, 45, "Input"]
+Cell[29050, 782, 9539, 218, 1133, "Input"]
 }
 ]
 *)
