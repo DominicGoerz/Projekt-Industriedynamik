@@ -1,0 +1,60 @@
+\usepackage{ragged2e}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+%\usepackage{tgadventor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgf}
+\pgfplotsset{compat=1.11}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+
+\usetheme{Warsaw}      % or try Darmstadt, Madrid, Warsaw, ...\textbf{\(\(\(\)\)\)}}
+
+\setbeamertemplate{caption}[numbered]
+
+\definecolor{numixgrey}{HTML}{333333}
+\definecolor{myorange}{HTML}{D64739}
+\definecolor{myblue}{HTML}{003366}
+\definecolor{mygreen}{HTML}{2E8B57}
+\definecolor{mypurple}{HTML}{800080}
+
+\setbeamercolor*{structure}{bg=PineGreen!20,fg=PineGreen}
+
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.fg!75}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg!50!black}
+\setbeamercolor*{palette quaternary}{fg=white,bg=numixgrey}
+
+\setbeamercolor{section in toc}{fg=black,bg=white}
+\setbeamercolor{alerted text}{use=structure,fg=structure.fg!50!black!80!black}
+
+\setbeamercolor{titlelike}{parent=palette primary,fg=structure.fg!50!black}
+\setbeamercolor{frametitle}{bg=gray!10!white,fg=PineGreen}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+  \usebeamerfont{title}\usebeamercolor[PineGreen]{subtitle}\center\textbf\inserttitle\par
+  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+  \bigskip
+  \usebeamerfont{author}\insertauthor\par
+  \usebeamerfont{institute}\insertinstitute\par
+  \usebeamerfont{\today}\insertdate\par
+  \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+}
+%\usefonttheme[onlymath]{serif}
+\usefonttheme{professionalfonts}

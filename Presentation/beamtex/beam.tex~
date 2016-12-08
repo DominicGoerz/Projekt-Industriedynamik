@@ -1,0 +1,403 @@
+\documentclass[xcolor={dvipsnames}]{beamer}
+
+\usepackage{../style.sty/mybeamer}
+
+\title[Job Performance, Efficiency Wages and Dissmisals]{Job Performance, Efficiency Wages\\ and Dismissals}
+\author{Dominic Görz}
+\date{\today}
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+% \begin{frame}{Contents}
+%   \tableofcontents
+% \end{frame}
+
+\section{Motivation}
+
+\begin{frame}{Classical Theory}
+  Classical theory assumes 
+  \begin{itemize}
+  \item perfect competition which embodies perfect information $\rightarrow$ no informational issues
+  \item labor is hired as a factor of production and is put to work like capital
+  \end{itemize}
+  In \emph{equilibrium} labor demand and labor supply are equal $\rightarrow$ \emph{involuntary unemployment is not possible}!!
+\end{frame}
+
+\section{Model}
+
+\begin{frame}
+\frametitle{The Initial Idea}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      Intuition:
+      \begin{itemize}
+      \item labor is different to capital
+      \item firms raise wages to incentivize workers to provide effort
+      \item higher wages imply unemployment since labor demand and labor supply are not equal $\rightarrow$ \emph{penalty}
+      \item unemployment is involuntary 
+      \end{itemize}
+      \end{column}
+      \begin{column}{.5\textwidth}
+      \begin{figure}[t]
+       \centering
+         \begin{tikzpicture}[scale=0.7]
+          \begin{axis}
+           [axis lines =left, 
+            xlabel = $L$,
+            ylabel = $w$,
+            xmin = 0, xmax = 10, 
+            ymin = 0, ymax = 5, 
+            xtick = {2, 5, 8}, 
+            xticklabels = {$L_{D^{\prime}}$, $L_D = L_S$, $L_{S^{\prime}}$},
+            ytick = {2.5, 4}, 
+            yticklabels = {$w^{C}$, $w^{\prime}$},
+            every axis x label/.style={
+            at={(ticklabel* cs:1.0)},
+            anchor=west},
+            every axis y label/.style={
+            at={(ticklabel* cs:1.0)},
+             anchor=south},
+             no markers
+             ]
+      
+        % draw supply
+        \addplot[domain=1:9, line width = 1pt, color=black]{0.5*x} node[right, color=black] {$L_S$};
+      
+        % draw demand
+        \addplot[domain=1:9, line width = 1pt, color=black]{5-0.5*x} node[right, color=black] {$L_D$};
+         
+        % draw vertical dashed line
+        \draw[dashed] (5, 0) -- (5, 2.5);
+
+        % draw vertical dashed line
+        \draw[dashed] (2, 0) -- (2, 4);
+
+        % draw vertical dashed line
+        \draw[dashed] (8, 0) -- (8, 4);
+      
+        % draw horizontal dashed line
+        \draw[dashed, color = red] (2,4) -- (8, 4);
+      
+        % draw horizontal dashed line
+        \draw[dashed] (0,4) -- (2, 4);
+
+        % draw horizontal dashed line
+        \draw[dashed] (0,2.5) -- (5, 2.5);
+      
+        % draw intersection point
+        \draw[fill](5,2.5) circle(1.9pt) node[xshift=0.3cm, right]{$E^C$};
+        \end{axis}
+        \end{tikzpicture}
+        \caption{The Classical Equilibrium.}
+        \label{fig:CEQ}  
+       \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Workers}
+
+\begin{frame}{Workers}
+Workers are assumed to be:
+\begin{itemize}
+\item homogeneous, fixed number $N$
+\item risk neutral; have linear instantaneous utility: $u \left( t \right) = u \left( w, e  \right) = w - e $
+\item live infinite
+\item maximize expected lifetime utility
+\item are in one of two states: unemployed or employed
+  \begin{itemize}
+  \item when unemployed they have expected utility $V_{U}$
+  \item when employed they have to decide whether to provide effort $V_E^N$ or not $ V_E^S$. That is, they face the problem:
+    \begin{align}
+      V_E = \text{max}\, \left( V_E^S, V_E^N \right)
+    \end{align}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Workers}
+  Asset-value equation: 
+  \begin{align}
+    rU\left(t\right) &=
+    u\left(t\right) + \lambda\left(t\right) \left(\bar{U}\left(t\right) - U\left(t\right)\right) + \dot{U}\left(t\right)\\
+    \intertext{In the steady state:}
+    rU\left(t\right) &= u + \lambda \left(\bar{U} - U\right)
+  \end{align}
+  \begin{align*}
+     \lambda =    
+        \left\{ 
+              \begin{array}{l@{\quad}l}
+               a & \text{if worker is unemployed: job acquisition rate}\\
+               b & \text{if worker is employed and exerts effort: separation rate}\\
+               b + q & \text{if worker is employed and shirks: detection rate $q$}
+              \end{array}\right.
+  \end{align*}
+  \begin{align}
+    rV_E^N = w - e + b \left( V_u - V_E^N \right)\\
+    rV_E^S = w  + \left( b + q \right) \left( V_u - V_E^S \right)\\
+    rV_U = \bar{w} + a \left( V_E - V_U \right)
+  \end{align}
+\end{frame}
+
+\subsection{Employers}
+
+\begin{frame}{Employers}
+  \begin{itemize}
+  \item fixed number $M$ of homogeneous firms.
+  \item technology of representative firm $f \left( L_i \right)$
+  \item compete by offering contracts $\left( w, \bar{w} \right)$
+  \item employed shirkers are assumed to be unproductive (i.e. output is zero)
+  \item if workers exert effort they provide one unit of effective labor
+  \item firms will hire workers up to the point where the expected costs $C$ and the expected profits $J$ of one additional worker are equal.
+  \item Optimization $J = C$ then gives the implicit labor demand 
+        \begin{align}
+          f'\left(L^*_i\right) = w + \frac{b\bar{w}}{\left(a+r\right)}
+        \end{align}
+  \end{itemize}
+\end{frame}
+
+\subsection{Effort Decision}
+
+\begin{frame}{The Effort Decision}
+  When will workers decide to provide effort?
+  \begin{itemize}
+  \item Will Provide effort when the no-shirking condition
+    $V_E^N \geq V_E^S$ is satisfied.
+  \end{itemize}
+  The no-shirking condition in terms of wages 
+  \begin{align}
+    w \geq e + \bar{w} + \frac{e}{q} \left(\frac{bN}{\left(N-L\right)} + r\right) \equiv \hat{w}
+  \end{align}
+  Another way to express the NSC is
+  \begin{align}
+    q\left(V^S_E-V_U\right) \geq e
+  \end{align}
+\end{frame}
+
+\subsection{Equilibrium}
+
+\begin{frame}{Equilibrium}
+\begin{columns}[T]
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+      \item firms will offer $\left( w^{*}, \bar{w} = 0 \right)$  
+      \item workers will provide effort $\rightarrow$ wages are efficient  
+      \item equilibrium occurs where
+        labor demand and no-shirking condition intersect
+      \item  unemployment is involuntary
+      \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
+      %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Plot of Equilibrium 
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[scale=0.7]
+    \begin{axis}
+      [axis lines =left, 
+      xlabel = $L$,
+      ylabel = $w$,
+      xmin = 0, xmax = 8, 
+      ymin = 0, ymax = 5, 
+      xtick = {3.17,6.3}, 
+      xticklabels = {$L^*$, $N$},
+      ytick = {0.55, 0.85, 1.5, 2.2}, 
+      yticklabels = {$e$, $\bar{w}+e$, $\left(b + r\right)\frac{e}{q} + e$, $w^*$},
+      every axis x label/.style={
+        at={(ticklabel* cs:1.0)},
+        anchor=west},
+      every axis y label/.style={
+        at={(ticklabel* cs:1.0)},
+        anchor=south},
+      no markers
+      ]
+      
+      % draw NSC
+      \draw [name path global = B, line width = 1.2pt, color=mypurple](0,1.5) to [out=15,in=260] (6,4.5) node[left,yshift=0.15cm]{$NSC$};
+      
+      % NS area
+      \path[name path=axis] (axis cs:0,4.5) -- (axis cs:8,4.5);
+      %\addplot[color=mygray1!20, pattern=dots] fill between[of=B and axis];
+      % 
+      % draw demand
+      \addplot[domain=0:6.6, line width = 1pt, color=black]{7/x} node[right, color=black] {$F'\left(L\right)$};
+      
+      % draw line for N
+      \draw[dashed] (6.3,0) -- (6.3,4.7);
+      
+      % draw vertical dashed line
+      \draw[dashed] (3.17,0) -- (3.17,2.2);
+      
+      % draw horizontal dashed line
+      \draw[dashed] (0,2.2) -- (3.17,2.2);
+      
+      % draw horizontal dashed line
+      % \draw[dashed] (0,1.124) -- (6.3,1.124);
+      
+      % draw horizontal dashed line w
+      \draw[dashed] (0,0.85) -- (6.3,0.85);
+
+      % draw horizontal dashed line e
+      \draw[dashed] (0,0.55) -- (6.3,0.55);
+      
+      % draw intersection point
+      \draw[fill](3.17,2.2) circle(1.9pt) node[xshift=0.3cm, right]{$E$};
+      
+      % draw unemployment
+      \draw[myblue, line width = 4pt] (3.17,0) -- (6.3,0);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The equilibrium in the Shapiro and Stiglitz model.}
+      \label{fig:EQ}  
+     \end{figure}
+    \end{column}
+\end{columns}    
+\end{frame}
+
+\subsection{Comparative Statics}
+
+\begin{frame}{Comparative Statics}
+  \begin{itemize}
+  \item The NSC implies that 
+    \begin{itemize}
+    \item the critical wage is higher the higher the separation rate $b$
+    \item the critical wage is higher the lower the detection rate $q$
+    \item the critical wage is higher the higher the unemployment benefits $\bar{w}$ $\rightarrow$ firms will choose the lowest level of unemployment benefits
+  \end{itemize}
+  \item while changes in $q$ and $b$ (as long as $\bar{w} = 0$) leave labor demand unchanged
+  \item changes in unemployment benefit $\bar{w}$ change costs of one additional worker $\rightarrow$ directly and indirectly
+  \end{itemize}  
+  \begin{align}
+              F^{\prime}\left(L^*_i\right) = w^{*} \quad \bar{w}=0\\
+              F^{\prime}\left(L^*_i\right) = \hat{w} + \frac{b\bar{w}}{\left(a+r\right)} \quad \bar{w} > 0
+  \end{align}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{figure.pdf}
+    \caption{Comparative statics.}
+  \end{figure}
+\end{frame}
+
+\subsection{Welfare}
+\begin{frame}{Welfare}
+  \begin{columns}[T]
+    \begin{column}{.4\textwidth}
+      \begin{itemize}
+      \item equilibrium is not socially optimal (just for CRS)
+      \item wages are too low and
+      \item unemployment is too high
+      \end{itemize}
+    \end{column}
+    \begin{column}{.6\textwidth}
+     %%%%%%%%%%%%%%%%%%%%%%%%%%
+     %%% Plot of equilibrium AND social optimum 
+     %%%%%%%%%%%%%%%%%%%%%%%%%%
+     \begin{figure}[t]
+     \centering
+     \begin{tikzpicture}[scale=0.7]
+      \begin{axis}
+      [axis lines =left, 
+      xlabel = $L$,
+      ylabel = $w$,
+      xmin = 0, xmax = 8, 
+      ymin = 0, ymax = 5, 
+      xtick = {3.17, 4.75, 6.3}, 
+      xticklabels = {$L^*$, $L^{\text{opt}}$ , $N$},
+      ytick = {2.2, 2.85}, 
+      yticklabels = {$w^*$, $w^{\text{opt}}$},
+      every axis x label/.style={
+        at={(ticklabel* cs:1.0)},
+        anchor=west},
+      every axis y label/.style={
+        at={(ticklabel* cs:1.0)},
+        anchor=south},
+      no markers
+      ]
+      
+      % draw NSC
+      \draw [name path global = B, line width = 1.2pt, color=mypurple](0,1.5) to [out=15,in=260] (6,4.5) node[left,yshift=0.15cm]{$NSC$};
+      
+      % NS area
+      \path[name path=axis] (axis cs:0,4.5) -- (axis cs:8,4.5);
+      %\addplot[color=mygray1!20, pattern=dots] fill between[of=B and axis];
+      % 
+      % draw demand
+      \addplot[domain=0:6.7, line width = 1pt, color=black]{7/x} node[right, color=black] {$F'\left(L\right)$};
+
+      % draw average product of labor
+      \addplot[xshift=1cm, yshift=1cm, domain=0:5.6, line width = 1pt, color=black]{7/x} node[right, color=black] {$\frac{F\left(L\right)}{L}$};
+      
+      % draw line for N
+      \draw[dashed] (6.3,0) -- (6.3,4.7);
+      
+      % draw vertical dashed line L
+      \draw[dashed] (3.17,0) -- (3.17,2.2);
+      
+      % draw horizontal dashed line w
+      \draw[dashed] (0,2.2) -- (3.17,2.2);
+      
+      % draw vertical dashed line Lopt
+      \draw[dashed] (4.75,0) -- (4.75,2.85);
+
+      % draw horizontal dashed line wopt
+      \draw[dashed] (0,2.85) -- (4.75,2.85);
+           
+      % draw intersection point
+      \draw[fill](3.17,2.2) circle(1.9pt) node[xshift=0.3cm, right]{$E$};
+      
+      \draw[fill](4.75,2.85) circle(1.9pt) node[xshift=0.3cm, right]{$E^{\text{opt}}$};
+
+      % draw unemployment
+      \draw[myblue, line width = 4pt] (3.17,0) -- (4.75,0);
+      \draw[dashed, myblue, line width = 4pt] (4.75,0) -- (6.3,0);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The equilibrium and the social optimum.}
+  \label{fig:OPT}  
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Empirical Evidence}
+
+\begin{frame}{Cappelli and Chauvin 1991}
+Question: Is there empirical support for the assumptions of the model? 
+  \begin{itemize}
+  \item use plant-level data taken from internal records of a big automobile company for the year 1982
+  \item measure of effort $\rightarrow$ dismissals for disciplinary reasons
+  \item higher wage premiums lead to higher levels of discipline (effort) 
+  \item higher costs of unemployment higher levels of discipline
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Falk 2007}
+  \begin{itemize}
+  \item draws on the concept of \emph{reciprocity} $\rightarrow$ a social rule that says people should somehow repay what another person has provided
+  \item field experiment which was conducted in collaboration with a charitable organization
+  \item sent out roughly 10000 solicitation letters to potential donors $\rightarrow$ manipulated these letters
+    \begin{itemize}
+    \item one third of the potential donors received the letter without a gift 
+    \item one third received the letter together with a small gift 
+    \item one third received the letter with a large gift
+    \end{itemize}
+  \end{itemize}
+Result: small gift increased the number of donors by 17 percent and large gift increased the number of donors by as much as 75 percent.
+\end{frame}
+
+\section*{}
+\begin{frame}
+\centering
+  Thank you!
+\end{frame}
+
+\end{document}
