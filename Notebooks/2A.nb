@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    112727,       2775]
-NotebookOptionsPosition[    112124,       2751]
-NotebookOutlinePosition[    112458,       2766]
-CellTagsIndexPosition[    112415,       2763]
+NotebookDataLength[    114552,       2812]
+NotebookOptionsPosition[    113949,       2788]
+NotebookOutlinePosition[    114283,       2803]
+CellTagsIndexPosition[    114240,       2800]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,8 +24,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"SetDirectory", "[", 
-    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], 
-  "\[IndentingNewLine]", "\n", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"LOAD", " ", "FUNCTIONS"}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
@@ -55,12 +55,14 @@ Cell[BoxData[{
     RowBox[{"STRATEGIES", ":", " ", 
      RowBox[{
       RowBox[{"Firms", " ", "2"}], "-", 
-      RowBox[{"9", " ", "produce", " ", "smart", " ", 
+      RowBox[{"10", " ", "produce", " ", "smart", " ", 
        RowBox[{
         RowBox[{
          RowBox[{
           RowBox[{
-           RowBox[{"part", " ", "--"}], "--"}], "--"}], "--"}], "--"}], 
+           RowBox[{
+            RowBox[{"part", "!"}], " ", "--"}], "--"}], "--"}], "--"}], 
+        "--"}], 
        RowBox[{"--", 
         RowBox[{"--", 
          RowBox[{"--", 
@@ -107,7 +109,8 @@ Cell[BoxData[{
            RowBox[{"--", 
             RowBox[{"--", 
              RowBox[{"--", 
-              RowBox[{"--", "--"}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\n", 
+              RowBox[{"--", "--"}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -173,42 +176,35 @@ Cell[BoxData[{
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
 }]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
-   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  StyleBox[
-   RowBox[{"nSpec", " ", "=", "1"}],
-   Background->RGBColor[0.87, 0.94, 1]], 
-  StyleBox[";",
-   Background->RGBColor[0.87, 0.94, 1]], 
-  StyleBox[" ",
-   Background->RGBColor[0.87, 0.94, 1]], 
-  StyleBox[
-   RowBox[{"(*", 
-    RowBox[{
-    "last", " ", "firm", " ", "that", " ", "buys", " ", "the", " ", "smart", 
-     " ", "component", " ", "from", " ", "specialist"}], "*)"}],
-   Background->RGBColor[0.87, 0.94, 1]], 
-  StyleBox["\[IndentingNewLine]",
-   Background->RGBColor[0.87, 0.94, 1]], 
-  StyleBox[
-   RowBox[{"nSelf", " ", "=", 
-    RowBox[{"nSpec", " ", "+", " ", "1"}]}],
-   Background->RGBColor[0.87, 0.94, 1]], 
-  StyleBox[";",
-   Background->RGBColor[0.87, 0.94, 1]], 
-  StyleBox[" ",
-   Background->RGBColor[0.87, 0.94, 1]], 
-  StyleBox[
-   RowBox[{"(*", 
-    RowBox[{
-    "first", " ", "firm", " ", "that", " ", "produces", " ", "the", " ", 
-     "smart", " ", "component", " ", "by", " ", "itself"}], "*)"}],
-   Background->RGBColor[0.87, 0.94, 1]], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
+   "*)"}], "\n", "\[IndentingNewLine]", 
   RowBox[{"(*", 
-   RowBox[{"INIITIALIZE", " ", "PARAMETERS"}], "*)"}], "\[IndentingNewLine]", 
-  "\t", 
-  RowBox[{"alpha", "=", "0.5"}], ";"}], "\n", 
+   RowBox[{"Choice", " ", "of", " ", "firm", " ", "1"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   StyleBox[
+    RowBox[{"fromSelf", " ", "=", " ", "False"}],
+    Background->RGBColor[1, 0.9, 1]], 
+   StyleBox[";",
+    Background->RGBColor[1, 0.9, 1]], 
+   StyleBox[" ",
+    Background->RGBColor[1, 0.9, 1]], 
+   StyleBox[
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"produce", " ", "smart", " ", "component", " ", "itself"}], 
+       "=", 
+       RowBox[{">", "True"}]}], ",", " ", 
+      RowBox[{
+       RowBox[{"buy", " ", "it"}], "=", 
+       RowBox[{">", "False"}]}]}], "*)"}],
+    Background->RGBColor[1, 0.9, 1]], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"INIITIALIZE", " ", "PARAMETERS"}], "*)"}], "\[IndentingNewLine]",
+    "\t", 
+   RowBox[{"alpha", "=", "0.5"}], ";"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
    RowBox[{"beta", "=", "1.0"}], ";"}]}], "\n", 
@@ -238,7 +234,7 @@ Cell[BoxData[{
    RowBox[{"cp", "=", "20.0"}], ";"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"cs", "=", "10.0"}], ";"}], "\[IndentingNewLine]", "\t", "\n", 
+   RowBox[{"cs", "=", "10.0"}], ";"}], "\n", "\t", "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"Number", " ", "of", " ", "firms"}], 
    "*)"}]}], "\[IndentingNewLine]", 
@@ -316,13 +312,12 @@ Cell[BoxData[{
     RowBox[{"length", " ", "of", " ", "table"}], "*)"}], "\n", "\t", 
    RowBox[{"pend", "=", "10"}], ";", " ", 
    RowBox[{"(*", 
-    RowBox[{"plot", " ", "horizon"}], "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+    RowBox[{"plot", " ", "horizon"}], "*)"}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{
     "firms", " ", "making", " ", "positive", " ", "profits", " ", "at", " ", 
-     "T", " ", "for", " ", "each", " ", "batch", " ", "run"}], "*)"}], "\n", 
-   "\t", 
+     "T", " ", "for", " ", "each", " ", "batch", " ", "run"}], "*)"}], 
+   "\[IndentingNewLine]", "\t", 
    RowBox[{"survivor", "=", 
     RowBox[{"Table", "[", 
      RowBox[{"0.0", ",", 
@@ -371,8 +366,8 @@ Cell[BoxData[{
         RowBox[{"{", 
          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
       RowBox[{"{", 
-       RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\n", 
+       RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ";"}], "\n", 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -439,9 +434,7 @@ Cell[BoxData[{
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
 }]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-, "*)"}], 
-  StyleBox["\[IndentingNewLine]",
-   Background->RGBColor[0.87, 0.94, 1]], 
+, "*)"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{"--", 
@@ -503,9 +496,9 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+                    RowBox[{"--", 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}]}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -803,23 +796,28 @@ Cell[BoxData[{
         "\[IndentingNewLine]", "\t\t\t", 
         RowBox[{"If", "[", 
          RowBox[{
-          RowBox[{"nSpec", ">", "0"}], ",", "\[IndentingNewLine]", "\t\t\t", 
-          RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t\t", 
-           RowBox[{
+          RowBox[{"fromSelf", "\[Equal]", "True"}], ",", 
+          "\[IndentingNewLine]", "\t\t\t", 
+          RowBox[{
+           RowBox[{"priceListFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
+           RowBox[{"pFirmSelf", "[", 
             RowBox[{
-             RowBox[{"priceListFirm", "[", 
-              RowBox[{"[", 
-               RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
-             RowBox[{"pFirmSpec", "[", 
-              RowBox[{
-               RowBox[{"cSpec", "[", 
-                RowBox[{"cp", ",", "cs", ",", 
-                 RowBox[{"markupSpec", "[", 
-                  RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "eta"}], 
-              "]"}]}], ",", "\[IndentingNewLine]", "\t\t\t", 
-            RowBox[{"{", 
-             RowBox[{"i", ",", "1", ",", "nSpec"}], "}"}]}], "]"}]}], "]"}], 
-        ";", "\[IndentingNewLine]", "\t\t\t", 
+             RowBox[{"cSelf", "[", 
+              RowBox[{"cp", ",", "cs"}], "]"}], ",", "eta"}], "]"}]}], ",", 
+          "\[IndentingNewLine]", "\t\t\t", 
+          RowBox[{
+           RowBox[{"priceListFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
+           RowBox[{"pFirmSpec", "[", 
+            RowBox[{
+             RowBox[{"cSpec", "[", 
+              RowBox[{"cp", ",", "cs", ",", 
+               RowBox[{"markupSpec", "[", 
+                RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "eta"}], 
+            "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", "\t\t\t", 
         RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t\t", 
          RowBox[{
           RowBox[{
@@ -832,28 +830,34 @@ Cell[BoxData[{
               RowBox[{"cp", ",", "cs"}], "]"}], ",", "eta"}], "]"}]}], ",", 
           "\[IndentingNewLine]", "\t\t\t", 
           RowBox[{"{", 
-           RowBox[{"i", ",", "nSelf", ",", "n"}], "}"}]}], "]"}], ";", 
+           RowBox[{"i", ",", "2", ",", "n"}], "}"}]}], "]"}], ";", 
         "\[IndentingNewLine]", "\t\t", 
         RowBox[{"(*", 
          RowBox[{"compute", " ", "qualities"}], "*)"}], "\[IndentingNewLine]",
          "\t\t\t", 
         RowBox[{"If", "[", 
          RowBox[{
-          RowBox[{"nSpec", ">", "0"}], ",", "\[IndentingNewLine]", "\t\t\t", 
-          RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t\t", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"qualityList", "[", 
+          RowBox[{"fromSelf", "\[Equal]", "True"}], ",", 
+          "\[IndentingNewLine]", "\t\t\t", 
+          RowBox[{
+           RowBox[{"qualityList", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
+           RowBox[{"qualityFirm", "[", 
+            RowBox[{"uBar", ",", "alpha", ",", "beta", ",", 
+             RowBox[{"quantAggFirm", "[", 
               RowBox[{"[", 
-               RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
-             RowBox[{"qualitySpec", "[", 
-              RowBox[{"uBar", ",", "alpha", ",", "beta", ",", 
-               RowBox[{"quantAggSpec", "[", 
-                RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}], ",", 
-            "\[IndentingNewLine]", "\t\t\t", 
-            RowBox[{"{", 
-             RowBox[{"i", ",", "1", ",", "nSpec"}], "}"}]}], "]"}]}], "]"}], 
-        ";", "\[IndentingNewLine]", "\t\t\t", 
+               RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}]}], ",", 
+          "\[IndentingNewLine]", "\t\t\t", 
+          RowBox[{
+           RowBox[{"qualityList", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
+           RowBox[{"qualitySpec", "[", 
+            RowBox[{"uBar", ",", "alpha", ",", "beta", ",", 
+             RowBox[{"quantAggSpec", "[", 
+              RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}]}], "]"}], ";", 
+        "\[IndentingNewLine]", "\t\t\t", 
         RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t\t", 
          RowBox[{
           RowBox[{
@@ -867,7 +871,7 @@ Cell[BoxData[{
                RowBox[{"t", ",", "i"}], "]"}], "]"}]}], "]"}]}], ",", 
           "\[IndentingNewLine]", "\t\t\t", 
           RowBox[{"{", 
-           RowBox[{"i", ",", "nSelf", ",", "n"}], "}"}]}], "]"}], ";", 
+           RowBox[{"i", ",", "2", ",", "n"}], "}"}]}], "]"}], ";", 
         "\[IndentingNewLine]", "\t\t", 
         RowBox[{"(*", 
          RowBox[{"compute", " ", "probabilities"}], "*)"}], 
@@ -911,17 +915,20 @@ Cell[BoxData[{
            RowBox[{"{", 
             RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";", 
         "\[IndentingNewLine]", "\t\t\t", 
-        RowBox[{
-         RowBox[{"quantPeriodSpec", "[", 
-          RowBox[{"[", "t", "]"}], "]"}], "=", 
-         RowBox[{"Sum", "[", "\[IndentingNewLine]", "\t\t\t\t\t\t\t\t", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"fromSelf", "\[Equal]", "True"}], ",", 
+          "\[IndentingNewLine]", "\t\t\t", 
           RowBox[{
+           RowBox[{"quantPeriodSpec", "[", 
+            RowBox[{"[", "t", "]"}], "]"}], "=", "0"}], ",", 
+          "\[IndentingNewLine]", "\t\t\t", 
+          RowBox[{
+           RowBox[{"quantPeriodSpec", "[", 
+            RowBox[{"[", "t", "]"}], "]"}], "=", 
            RowBox[{"quantPeriodFirm", "[", 
             RowBox[{"[", 
-             RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", 
-           "\[IndentingNewLine]", "\t\t\t\t\t\t\t\t", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "1", ",", "nSpec"}], "}"}]}], "]"}]}], ";", 
+             RowBox[{"t", ",", "1"}], "]"}], "]"}]}]}], "]"}], ";", 
         "\[IndentingNewLine]", "\t\t", 
         RowBox[{"(*", 
          RowBox[{"compute", " ", "market", " ", "share"}], "*)"}], 
@@ -930,35 +937,49 @@ Cell[BoxData[{
          RowBox[{"msSpec", "[", 
           RowBox[{"[", "t", "]"}], "]"}], "=", 
          RowBox[{"ms", "[", 
-          RowBox[{"t", ",", "n", ",", 
+          RowBox[{
            RowBox[{"quantPeriodSpec", "[", 
             RowBox[{"[", "t", "]"}], "]"}], ",", "quantPeriodFirm"}], "]"}]}],
          ";", "\[IndentingNewLine]", "\t\t", 
         RowBox[{"(*", 
          RowBox[{"compute", " ", "profits"}], "*)"}], "\[IndentingNewLine]", 
         "\t\t\t", 
-        RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t\t", 
+        RowBox[{"If", "[", 
          RowBox[{
+          RowBox[{"fromSelf", "\[Equal]", "True"}], ",", 
+          "\[IndentingNewLine]", "\t\t\t", 
           RowBox[{
            RowBox[{"profitListFirm", "[", 
             RowBox[{"[", 
-             RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
+             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
            RowBox[{"profit", "[", 
             RowBox[{
              RowBox[{"quantPeriodFirm", "[", 
               RowBox[{"[", 
-               RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", 
+               RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", 
              RowBox[{"priceListFirm", "[", 
               RowBox[{"[", 
-               RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", 
+               RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", 
+             RowBox[{"cSelf", "[", 
+              RowBox[{"cp", ",", "cs"}], "]"}]}], "]"}]}], ",", 
+          "\[IndentingNewLine]", "\t\t\t", 
+          RowBox[{
+           RowBox[{"profitListFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
+           RowBox[{"profit", "[", 
+            RowBox[{
+             RowBox[{"quantPeriodFirm", "[", 
+              RowBox[{"[", 
+               RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", 
+             RowBox[{"priceListFirm", "[", 
+              RowBox[{"[", 
+               RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", 
              RowBox[{"cSpec", "[", 
               RowBox[{"cp", ",", "cs", ",", 
                RowBox[{"markupSpec", "[", 
-                RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}], "]"}]}], ",", 
-          "\[IndentingNewLine]", "\t\t\t", 
-          RowBox[{"{", 
-           RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}], ";", 
-        "\[IndentingNewLine]", "\t\t\t", 
+                RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}], "]"}]}]}], "]"}], 
+        ";", "\[IndentingNewLine]", "\t\t\t", 
         RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t\t", 
          RowBox[{
           RowBox[{
@@ -977,7 +998,7 @@ Cell[BoxData[{
               RowBox[{"cp", ",", "cs"}], "]"}]}], "]"}]}], ",", 
           "\[IndentingNewLine]", "\t\t\t", 
           RowBox[{"{", 
-           RowBox[{"i", ",", "6", ",", "n"}], "}"}]}], "]"}], ";", 
+           RowBox[{"i", ",", "2", ",", "n"}], "}"}]}], "]"}], ";", 
         "\[IndentingNewLine]", "\t\t", 
         RowBox[{"(*", 
          RowBox[{"compute", " ", "statistic"}], "*)"}], "\[IndentingNewLine]",
@@ -1094,7 +1115,7 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{
                     "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
-]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\n", 
+]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{"--", 
@@ -1174,8 +1195,7 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{"Print", "[", 
   "\"\<-----------------------------------------------------------------------\
 -------------------------------------------------------\>\"", "]"}], "\n", 
@@ -1184,7 +1204,7 @@ Cell[BoxData[{
 part!\\n\>\"", "]"}], "\n", 
  RowBox[{"If", "[", 
   RowBox[{
-   RowBox[{"nSelf", "\[Equal]", "1"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"fromSelf", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
    RowBox[{
    "Print", "[", "\"\<Firm 1 decides to produce the smart part itself!\>\"", 
     "]"}], ",", "\[IndentingNewLine]", 
@@ -1196,9 +1216,9 @@ part!\\n\>\"", "]"}], "\n",
   RowBox[{
   "Print", "[", 
    "\"\<----------------------------------------------------------------------\
---------------------------------------------------------\>\"", "]"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{"(*", "*)"}]}], "\n", 
+--------------------------------------------------------\>\"", "]"}], "\n", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Print", "[", "\[IndentingNewLine]", 
    RowBox[{
@@ -1299,11 +1319,12 @@ part!\\n\>\"", "]"}], "\n",
            "\[IndentingNewLine]", 
            RowBox[{"{", 
             RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-        "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}], "\n", 
+        "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}], 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
    "Compute", " ", "averages", " ", "of", " ", "long", " ", "run", " ", 
-    "profits"}], "*)"}]}], "\[IndentingNewLine]", 
+    "profits"}], "*)"}]}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"avoflong", "=", 
@@ -1363,7 +1384,7 @@ part!\\n\>\"", "]"}], "\n",
            RowBox[{"{", 
             RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
         "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -1419,9 +1440,10 @@ part!\\n\>\"", "]"}], "\n",
          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
          RowBox[{"HoldForm", "[", 
           RowBox[{"Period", " ", "Output"}], "]"}]}], "}"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
   RowBox[{"(*", 
-   RowBox[{"Table", " ", "of", " ", "period", " ", "output"}], "*)"}]}], "\n", 
+   RowBox[{"Table", " ", "of", " ", "period", " ", "output"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -1492,11 +1514,11 @@ part!\\n\>\"", "]"}], "\n",
          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
          RowBox[{"HoldForm", "[", 
           RowBox[{"Agg", ".", "Output"}], "]"}]}], "}"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
+     "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
    "Plot", " ", "aggregated", " ", "output", " ", "of", " ", "Specialist"}], 
-   "*)"}]}], "\[IndentingNewLine]", 
+   "*)"}]}], "\n", 
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -1678,9 +1700,10 @@ part!\\n\>\"", "]"}], "\n",
         RowBox[{
          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
          RowBox[{"HoldForm", "[", "Profit", "]"}]}], "}"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
   RowBox[{"(*", 
-   RowBox[{"Table", " ", "of", " ", "Profits"}], "*)"}]}], "\n", 
+   RowBox[{"Table", " ", "of", " ", "Profits"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -1747,9 +1770,10 @@ part!\\n\>\"", "]"}], "\n",
         RowBox[{
          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
          RowBox[{"HoldForm", "[", "Prices", "]"}]}], "}"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
   RowBox[{"(*", 
-   RowBox[{"Table", " ", "of", " ", "Prices"}], "*)"}]}], "\n", 
+   RowBox[{"Table", " ", "of", " ", "Prices"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -1782,9 +1806,10 @@ part!\\n\>\"", "]"}], "\n",
              "\[IndentingNewLine]", 
              RowBox[{"{", 
               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-          "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], "\n", 
+          "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
-   RowBox[{"Plot", " ", "Probabilities"}], "*)"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Plot", " ", "Probabilities"}], "*)"}]}], "\n", 
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -1817,10 +1842,9 @@ part!\\n\>\"", "]"}], "\n",
         RowBox[{
          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
          RowBox[{"HoldForm", "[", "Probs", "]"}]}], "}"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
+     "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
-   RowBox[{"Table", " ", "of", " ", "Probabilities"}], 
-   "*)"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Table", " ", "of", " ", "Probabilities"}], "*)"}]}], "\n", 
  RowBox[{
   RowBox[{"If", "[", 
    RowBox[{
@@ -2043,7 +2067,15 @@ part!\\n\>\"", "]"}], "\n",
    3.691241223210134*^9}, {3.691241267023117*^9, 3.6912412678801107`*^9}, {
    3.6912413373963833`*^9, 3.691241347436069*^9}, {3.6912413949727707`*^9, 
    3.69124146434291*^9}, {3.691241717327693*^9, 3.69124171774354*^9}, {
-   3.691241791009548*^9, 3.6912417911595716`*^9}}],
+   3.691241791009548*^9, 3.6912417911595716`*^9}, {3.6912445299371443`*^9, 
+   3.691244627184146*^9}, {3.6912446753820257`*^9, 3.69124467651755*^9}, {
+   3.6912447189415627`*^9, 3.691244749130784*^9}, {3.6912447803111057`*^9, 
+   3.691244783817445*^9}, {3.6912448256633*^9, 3.691244845679512*^9}, {
+   3.6912448961385403`*^9, 3.691244934672473*^9}, {3.691245168478842*^9, 
+   3.691245169012438*^9}, {3.691245424281502*^9, 3.691245430819466*^9}, {
+   3.691245474081279*^9, 3.6912454746814623`*^9}, {3.6912455177081957`*^9, 
+   3.691245518053314*^9}, {3.6912456065004396`*^9, 3.6912456465237617`*^9}, {
+   3.6912456783899603`*^9, 3.691245680914504*^9}}],
 
 Cell[CellGroupData[{
 
@@ -2078,7 +2110,9 @@ Cell[BoxData["\<\"------------------------------------------------------------\
    3.691231308617174*^9, 3.6912313487536163`*^9, 3.69123139188536*^9, 
    3.691231544745812*^9, 3.691232432783856*^9, 3.6912412855390177`*^9, 
    3.691241476812114*^9, {3.691241721412862*^9, 3.691241761456635*^9}, {
-   3.6912417948145943`*^9, 3.6912418195841837`*^9}}],
+   3.6912417948145943`*^9, 3.6912418195841837`*^9}, 3.6912452087212963`*^9, 
+   3.691245437230402*^9, {3.691245497326728*^9, 3.6912455224496326`*^9}, {
+   3.6912456553078117`*^9, 3.691245684138013*^9}}],
 
 Cell[BoxData["\<\"Results batch runs:\\n Fixed Strategies - Firms 2-9 produce \
 the smart part!\\n\"\>"], "Print",
@@ -2110,7 +2144,9 @@ the smart part!\\n\"\>"], "Print",
    3.691231308617174*^9, 3.6912313487536163`*^9, 3.69123139188536*^9, 
    3.691231544745812*^9, 3.691232432783856*^9, 3.6912412855390177`*^9, 
    3.691241476812114*^9, {3.691241721412862*^9, 3.691241761456635*^9}, {
-   3.6912417948145943`*^9, 3.691241819609618*^9}}],
+   3.6912417948145943`*^9, 3.6912418195841837`*^9}, 3.6912452087212963`*^9, 
+   3.691245437230402*^9, {3.691245497326728*^9, 3.6912455224496326`*^9}, {
+   3.6912456553078117`*^9, 3.6912456841551113`*^9}}],
 
 Cell[BoxData["\<\"Firm 1 decides to buy the smart part from the specialist!\"\
 \>"], "Print",
@@ -2142,7 +2178,9 @@ Cell[BoxData["\<\"Firm 1 decides to buy the smart part from the specialist!\"\
    3.691231308617174*^9, 3.6912313487536163`*^9, 3.69123139188536*^9, 
    3.691231544745812*^9, 3.691232432783856*^9, 3.6912412855390177`*^9, 
    3.691241476812114*^9, {3.691241721412862*^9, 3.691241761456635*^9}, {
-   3.6912417948145943`*^9, 3.691241819610643*^9}}],
+   3.6912417948145943`*^9, 3.6912418195841837`*^9}, 3.6912452087212963`*^9, 
+   3.691245437230402*^9, {3.691245497326728*^9, 3.6912455224496326`*^9}, {
+   3.6912456553078117`*^9, 3.69124568415587*^9}}],
 
 Cell[BoxData["\<\"------------------------------------------------------------\
 ------------------------------------------------------------------\"\>"], \
@@ -2175,7 +2213,9 @@ Cell[BoxData["\<\"------------------------------------------------------------\
    3.691231308617174*^9, 3.6912313487536163`*^9, 3.69123139188536*^9, 
    3.691231544745812*^9, 3.691232432783856*^9, 3.6912412855390177`*^9, 
    3.691241476812114*^9, {3.691241721412862*^9, 3.691241761456635*^9}, {
-   3.6912417948145943`*^9, 3.69124181961122*^9}}],
+   3.6912417948145943`*^9, 3.6912418195841837`*^9}, 3.6912452087212963`*^9, 
+   3.691245437230402*^9, {3.691245497326728*^9, 3.6912455224496326`*^9}, {
+   3.6912456553078117`*^9, 3.6912456841563473`*^9}}],
 
 Cell[BoxData[
  InterpretationBox[
@@ -2189,64 +2229,64 @@ Cell[BoxData[
          HoldForm]},
        {
         TagBox["\<\"r=1\"\>",
-         HoldForm], "3"},
-       {
-        TagBox["\<\"r=2\"\>",
-         HoldForm], "10"},
-       {
-        TagBox["\<\"r=3\"\>",
-         HoldForm], "10"},
-       {
-        TagBox["\<\"r=4\"\>",
          HoldForm], "5"},
        {
-        TagBox["\<\"r=5\"\>",
+        TagBox["\<\"r=2\"\>",
          HoldForm], "3"},
        {
-        TagBox["\<\"r=6\"\>",
-         HoldForm], "8"},
+        TagBox["\<\"r=3\"\>",
+         HoldForm], "5"},
        {
-        TagBox["\<\"r=7\"\>",
-         HoldForm], "9"},
-       {
-        TagBox["\<\"r=8\"\>",
-         HoldForm], "1"},
-       {
-        TagBox["\<\"r=9\"\>",
-         HoldForm], "7"},
-       {
-        TagBox["\<\"r=10\"\>",
-         HoldForm], "8"},
-       {
-        TagBox["\<\"r=11\"\>",
-         HoldForm], "4"},
-       {
-        TagBox["\<\"r=12\"\>",
-         HoldForm], "8"},
-       {
-        TagBox["\<\"r=13\"\>",
-         HoldForm], "8"},
-       {
-        TagBox["\<\"r=14\"\>",
-         HoldForm], "9"},
-       {
-        TagBox["\<\"r=15\"\>",
-         HoldForm], "6"},
-       {
-        TagBox["\<\"r=16\"\>",
-         HoldForm], "9"},
-       {
-        TagBox["\<\"r=17\"\>",
-         HoldForm], "8"},
-       {
-        TagBox["\<\"r=18\"\>",
+        TagBox["\<\"r=4\"\>",
          HoldForm], "10"},
        {
-        TagBox["\<\"r=19\"\>",
+        TagBox["\<\"r=5\"\>",
+         HoldForm], "10"},
+       {
+        TagBox["\<\"r=6\"\>",
+         HoldForm], "4"},
+       {
+        TagBox["\<\"r=7\"\>",
+         HoldForm], "3"},
+       {
+        TagBox["\<\"r=8\"\>",
+         HoldForm], "10"},
+       {
+        TagBox["\<\"r=9\"\>",
+         HoldForm], "4"},
+       {
+        TagBox["\<\"r=10\"\>",
+         HoldForm], "5"},
+       {
+        TagBox["\<\"r=11\"\>",
+         HoldForm], "9"},
+       {
+        TagBox["\<\"r=12\"\>",
+         HoldForm], "1"},
+       {
+        TagBox["\<\"r=13\"\>",
+         HoldForm], "7"},
+       {
+        TagBox["\<\"r=14\"\>",
+         HoldForm], "3"},
+       {
+        TagBox["\<\"r=15\"\>",
+         HoldForm], "8"},
+       {
+        TagBox["\<\"r=16\"\>",
          HoldForm], "6"},
        {
+        TagBox["\<\"r=17\"\>",
+         HoldForm], "4"},
+       {
+        TagBox["\<\"r=18\"\>",
+         HoldForm], "8"},
+       {
+        TagBox["\<\"r=19\"\>",
+         HoldForm], "10"},
+       {
         TagBox["\<\"r=20\"\>",
-         HoldForm], "9"}
+         HoldForm], "1"}
       },
       GridBoxAlignment->{
        "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
@@ -2270,8 +2310,8 @@ Cell[BoxData[
           "r=11", "r=12", "r=13", "r=14", "r=15", "r=16", "r=17", "r=18", 
          "r=19", "r=20"}, {"Firm"}}]]]}],
   SequenceForm["\nThe firms which survive:\n ", 
-   TableForm[{{3}, {10}, {10}, {5}, {3}, {8}, {9}, {1}, {7}, {8}, {4}, {8}, {
-    8}, {9}, {6}, {9}, {8}, {10}, {6}, {9}}, 
+   TableForm[{{5}, {3}, {5}, {10}, {10}, {4}, {3}, {10}, {4}, {5}, {9}, {1}, {
+    7}, {3}, {8}, {6}, {4}, {8}, {10}, {1}}, 
     TableHeadings -> {{
       "r=1", "r=2", "r=3", "r=4", "r=5", "r=6", "r=7", "r=8", "r=9", "r=10", 
        "r=11", "r=12", "r=13", "r=14", "r=15", "r=16", "r=17", "r=18", "r=19",
@@ -2305,7 +2345,9 @@ Cell[BoxData[
    3.691231308617174*^9, 3.6912313487536163`*^9, 3.69123139188536*^9, 
    3.691231544745812*^9, 3.691232432783856*^9, 3.6912412855390177`*^9, 
    3.691241476812114*^9, {3.691241721412862*^9, 3.691241761456635*^9}, {
-   3.6912417948145943`*^9, 3.6912418196122303`*^9}}],
+   3.6912417948145943`*^9, 3.6912418195841837`*^9}, 3.6912452087212963`*^9, 
+   3.691245437230402*^9, {3.691245497326728*^9, 3.6912455224496326`*^9}, {
+   3.6912456553078117`*^9, 3.6912456841581583`*^9}}],
 
 Cell[BoxData[
  RowBox[{"\<\"\\nAverage overall profit (T):\\n \"\>", " ", 
@@ -2336,129 +2378,120 @@ Cell[BoxData[
         HoldForm]},
       {
        TagBox["\<\"r=1\"\>",
-        HoldForm], "0.45`", "0.8235`", "740.9010000000001`", "2.0055`", 
-       "0.8235`", "1.2750000000000001`", "0.225`", "0.6`", "2.1`", "0.525`"},
+        HoldForm], "0.525`", "0.975`", "0.6`", "2.1750000000000003`", 
+       "739.875`", "1.125`", "0.75`", "1.95`", "0.6`", "1.425`"},
       {
        TagBox["\<\"r=2\"\>",
-        HoldForm], "0.825625`", "0.675`", "6.0825000000000005`", "0.375`", 
-       "1.19`", "0.675`", "0.45`", "0.375`", "1.5`", "737.7`"},
+        HoldForm], "1.43025`", "1.35`", "741.075`", "2.4`", "0.6`", "0.6`", 
+       "0.525`", "0.525`", "0.45`", "1.05`"},
       {
        TagBox["\<\"r=3\"\>",
-        HoldForm], "0.9016874999999999`", "1.041`", "1.5525`", 
-       "1.4797499999999997`", "2.2094999999999994`", "0.6`", "0.75`", "0.6`", 
-       "1.5`", "739.275`"},
+        HoldForm], "2.5675`", "0.675`", "0.6`", "0.525`", "741.225`", "0.9`", 
+       "0.675`", "0.375`", "0.975`", "1.5`"},
       {
        TagBox["\<\"r=4\"\>",
-        HoldForm], "0.825625`", "0.675`", "0.9675`", "0.8925000000000001`", 
-       "740.1`", "0.975`", "0.75`", "2.85`", "0.8250000000000001`", 
-       "0.675`"},
+        HoldForm], "1.7332500000000004`", "0.6`", "0.675`", "3.225`", "3.`", 
+       "0.75`", "0.75`", "0.9`", "0.975`", "737.4`"},
       {
        TagBox["\<\"r=5\"\>",
-        HoldForm], "0.826125`", "0.3`", "738.4888750000001`", "1.6275`", 
-       "0.8955`", "3.075`", "2.25`", "0.525`", "0.8250000000000001`", "0.75`"},
+        HoldForm], "0.675`", "0.45`", "1.125`", "1.2`", "0.75`", "0.525`", 
+       "0.525`", "0.8250000000000001`", "0.675`", "743.25`"},
       {
        TagBox["\<\"r=6\"\>",
-        HoldForm], "2.4154375000000003`", "3.46125`", "1.2555`", "1.399`", 
-       "0.74675`", "1.2`", "0.525`", "738.`", "0.375`", "0.45`"},
+        HoldForm], "0.525`", "1.35`", "0.675`", "741.`", "0.525`", "0.9`", 
+       "0.6`", "0.75`", "3.3000000000000003`", "0.375`"},
       {
        TagBox["\<\"r=7\"\>",
-        HoldForm], "1.3548125000000002`", "0.525`", "1.114`", 
-       "1.7670000000000006`", "0.74725`", "0.3`", "0.975`", "0.675`", 
-       "741.225`", "1.2750000000000001`"},
+        HoldForm], "0.826125`", "0.675`", "740.475`", "0.675`", "0.9`", 
+       "0.8250000000000001`", "0.525`", "0.8250000000000001`", 
+       "3.6750000000000003`", "0.6`"},
       {
        TagBox["\<\"r=8\"\>",
-        HoldForm], "861.7870000000001`", "0.821`", "1.042`", "0.45`", 
-       "3.255`", "1.2750000000000001`", "0.525`", "0.375`", "0.525`", "0.75`"},
+        HoldForm], "1.429375`", "0.8250000000000001`", "1.35`", "0.6`", 
+       "1.425`", "0.45`", "1.125`", "0.45`", "0.15`", "742.2`"},
       {
        TagBox["\<\"r=9\"\>",
-        HoldForm], "0.825625`", "1.9175`", "1.115`", "1.1125`", "0.6`", 
-       "0.45`", "739.35`", "1.05`", "0.375`", "3.15`"},
+        HoldForm], "0.976875`", "0.975`", "3.825`", "738.15`", "2.475`", 
+       "0.975`", "0.675`", "0.525`", "0.9`", "0.525`"},
       {
        TagBox["\<\"r=10\"\>",
-        HoldForm], "2.1125625`", "3.2489999999999997`", "0.672`", "1.182`", 
-       "0.672`", "1.125`", "1.05`", "735.6750000000001`", "0.525`", "3.6`"},
+        HoldForm], "0.825625`", "0.8250000000000001`", "0.75`", "0.225`", 
+       "741.`", "0.525`", "3.6750000000000003`", "0.525`", "0.675`", "0.975`"},
       {
        TagBox["\<\"r=11\"\>",
-        HoldForm], "2.18775`", "0.672`", "0.525`", "739.292`", "0.6`", 
-       "0.8250000000000001`", "0.8250000000000001`", "0.9`", "0.9`", 
-       "1.95`"},
+        HoldForm], "1.506`", "0.9`", "0.6`", "0.6`", "0.675`", "1.2`", 
+       "0.8250000000000001`", "1.2`", "740.625`", "1.875`"},
       {
        TagBox["\<\"r=12\"\>",
-        HoldForm], "1.128125`", "3.3675`", "0.745`", "1.9875`", 
-       "0.8925000000000001`", "0.8250000000000001`", "0.6`", "738.6`", 
-       "1.05`", "0.675`"},
+        HoldForm], "862.1440625`", "0.45`", "0.75`", "0.6`", 
+       "1.6500000000000001`", "0.8250000000000001`", "0.75`", "2.325`", 
+       "0.9`", "0.6`"},
       {
        TagBox["\<\"r=13\"\>",
-        HoldForm], "0.75`", "0.75`", "0.675`", "0.675`", 
-       "0.8250000000000001`", "0.525`", "1.2`", "743.625`", "0.15`", 
-       "0.8250000000000001`"},
+        HoldForm], "0.525`", "1.95`", "0.975`", "0.675`", "0.75`", "0.525`", 
+       "742.95`", "0.45`", "0.6`", "0.6`"},
       {
        TagBox["\<\"r=14\"\>",
-        HoldForm], "0.751`", "2.4340000000000006`", "1.7010000000000003`", 
-       "1.1880000000000002`", "0.8940000000000001`", "1.575`", "2.25`", 
-       "0.8250000000000001`", "737.775`", "0.525`"},
+        HoldForm], "0.6`", "0.3`", "741.975`", "0.6`", "0.975`", "0.6`", 
+       "0.75`", "0.675`", "0.525`", "3.`"},
       {
        TagBox["\<\"r=15\"\>",
-        HoldForm], "0.826125`", "0.8227500000000001`", "1.7729999999999997`", 
-       "0.8227500000000001`", "0.74775`", "740.1750000000001`", "3.15`", 
-       "0.75`", "0.375`", "0.525`"},
+        HoldForm], "0.6`", "0.3`", "0.75`", "0.8250000000000001`", "1.2`", 
+       "0.375`", "0.525`", "743.325`", "0.75`", "1.35`"},
       {
        TagBox["\<\"r=16\"\>",
-        HoldForm], "0.6004375000000001`", "0.89825`", "1.0465`", "1.04475`", 
-       "1.6325`", "0.45`", "0.6`", "0.975`", "742.2`", "0.525`"},
+        HoldForm], "1.128125`", "1.425`", "1.2750000000000001`", "0.525`", 
+       "0.3`", "739.125`", "0.8250000000000001`", "1.425`", "2.85`", "1.125`"},
       {
        TagBox["\<\"r=17\"\>",
-        HoldForm], "0.9763750000000001`", "0.8222499999999999`", "0.6`", 
-       "0.3`", "0.675`", "3.3000000000000003`", "0.525`", "740.325`", 
-       "1.575`", "0.9`"},
+        HoldForm], "0.6`", "0.75`", "0.75`", "743.7`", "0.525`", "0.675`", 
+       "0.9`", "0.6`", "0.525`", "0.975`"},
       {
        TagBox["\<\"r=18\"\>",
-        HoldForm], "0.9016874999999999`", "3.0119999999999996`", 
-       "1.7002499999999998`", "1.041`", "0.59775`", "0.75`", "0.675`", 
-       "0.45`", "1.2750000000000001`", "739.5`"},
+        HoldForm], "1.7332500000000004`", "0.75`", "1.125`", "1.575`", 
+       "3.375`", "1.575`", "5.175`", "733.725`", "0.45`", "0.525`"},
       {
        TagBox["\<\"r=19\"\>",
-        HoldForm], "0.90125`", "0.45`", "0.8200000000000001`", "0.45`", 
-       "3.29825`", "739.0500000000001`", "0.45`", "1.05`", "1.5`", "1.95`"},
+        HoldForm], "0.3`", "1.2`", "3.15`", "0.525`", "1.125`", "1.125`", 
+       "0.975`", "1.875`", "1.05`", "738.6750000000001`"},
       {
        TagBox["\<\"r=20\"\>",
-        HoldForm], "1.0525`", "1.4075`", "0.45`", "0.525`", 
-       "0.8200000000000001`", "1.575`", "0.675`", "1.2750000000000001`", 
-       "741.075`", "1.125`"},
+        HoldForm], "865.1464375`", "0.975`", "0.75`", "0.525`", "0.375`", 
+       "0.675`", "0.75`", "0.6`", "0.675`", "0.975`"},
       {
        TagBox[
         StyleBox["\<\"Avg.\"\>",
          StripOnInput->False,
          FontWeight->Bold],
         HoldForm], 
-       StyleBox["44.11998750000001`",
+       StyleBox["87.28984375`",
         StripOnInput->False,
         FontWeight->Bold], 
-       StyleBox["1.406225`",
+       StyleBox["0.8850000000000002`",
         StripOnInput->False,
         FontWeight->Bold], 
-       StyleBox["75.16133125`",
+       StyleBox["112.16250000000001`",
         StripOnInput->False,
         FontWeight->Bold], 
-       StyleBox["37.9808375`",
+       StyleBox["112.01625`",
         StripOnInput->False,
         FontWeight->Bold], 
-       StyleBox["38.11111250000001`",
+       StyleBox["112.13625000000002`",
         StripOnInput->False,
         FontWeight->Bold], 
-       StyleBox["75.00000000000001`",
+       StyleBox["37.71375`",
         StripOnInput->False,
         FontWeight->Bold], 
-       StyleBox["37.89000000000001`",
+       StyleBox["38.2125`",
         StripOnInput->False,
         FontWeight->Bold], 
-       StyleBox["185.475`",
+       StyleBox["74.6925`",
         StripOnInput->False,
         FontWeight->Bold], 
-       StyleBox["148.8825`",
+       StyleBox["38.06625`",
         StripOnInput->False,
         FontWeight->Bold], 
-       StyleBox["111.83250000000004`",
+       StyleBox["148.95000000000002`",
         StripOnInput->False,
         FontWeight->Bold]}
      },
@@ -2514,7 +2547,9 @@ Cell[BoxData[
    3.691231308617174*^9, 3.6912313487536163`*^9, 3.69123139188536*^9, 
    3.691231544745812*^9, 3.691232432783856*^9, 3.6912412855390177`*^9, 
    3.691241476812114*^9, {3.691241721412862*^9, 3.691241761456635*^9}, {
-   3.6912417948145943`*^9, 3.6912418196139717`*^9}}],
+   3.6912417948145943`*^9, 3.6912418195841837`*^9}, 3.6912452087212963`*^9, 
+   3.691245437230402*^9, {3.691245497326728*^9, 3.6912455224496326`*^9}, {
+   3.6912456553078117`*^9, 3.691245684160709*^9}}],
 
 Cell[BoxData[
  InterpretationBox[
@@ -2546,118 +2581,118 @@ Cell[BoxData[
          HoldForm]},
        {
         TagBox["\<\"r=1\"\>",
-         HoldForm], "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
-        "0.`", "0.`"},
-       {
-        TagBox["\<\"r=2\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
-        "0.`", "750.`"},
-       {
-        TagBox["\<\"r=3\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
-        "0.`", "750.`"},
-       {
-        TagBox["\<\"r=4\"\>",
          HoldForm], "0.`", "0.`", "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", 
         "0.`", "0.`"},
        {
-        TagBox["\<\"r=5\"\>",
+        TagBox["\<\"r=2\"\>",
          HoldForm], "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
         "0.`", "0.`"},
        {
-        TagBox["\<\"r=6\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", 
+        TagBox["\<\"r=3\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", 
         "0.`", "0.`"},
        {
-        TagBox["\<\"r=7\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
-        "750.`", "0.`"},
-       {
-        TagBox["\<\"r=8\"\>",
-         HoldForm], "875.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
-        "0.`", "0.`"},
-       {
-        TagBox["\<\"r=9\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", "0.`", 
-        "0.`", "0.`"},
-       {
-        TagBox["\<\"r=10\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", 
-        "0.`", "0.`"},
-       {
-        TagBox["\<\"r=11\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", "0.`", 
-        "0.`", "0.`"},
-       {
-        TagBox["\<\"r=12\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", 
-        "0.`", "0.`"},
-       {
-        TagBox["\<\"r=13\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", 
-        "0.`", "0.`"},
-       {
-        TagBox["\<\"r=14\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
-        "750.`", "0.`"},
-       {
-        TagBox["\<\"r=15\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", "0.`", "0.`", 
-        "0.`", "0.`"},
-       {
-        TagBox["\<\"r=16\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
-        "750.`", "0.`"},
-       {
-        TagBox["\<\"r=17\"\>",
-         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", 
-        "0.`", "0.`"},
-       {
-        TagBox["\<\"r=18\"\>",
+        TagBox["\<\"r=4\"\>",
          HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
         "0.`", "750.`"},
        {
-        TagBox["\<\"r=19\"\>",
+        TagBox["\<\"r=5\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "750.`"},
+       {
+        TagBox["\<\"r=6\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=7\"\>",
+         HoldForm], "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=8\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "750.`"},
+       {
+        TagBox["\<\"r=9\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=10\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=11\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+        "750.`", "0.`"},
+       {
+        TagBox["\<\"r=12\"\>",
+         HoldForm], "875.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=13\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=14\"\>",
+         HoldForm], "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=15\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=16\"\>",
          HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", "0.`", "0.`", 
         "0.`", "0.`"},
        {
-        TagBox["\<\"r=20\"\>",
+        TagBox["\<\"r=17\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "750.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=18\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "750.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"r=19\"\>",
          HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
-        "750.`", "0.`"},
+        "0.`", "750.`"},
+       {
+        TagBox["\<\"r=20\"\>",
+         HoldForm], "875.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
        {
         TagBox[
          StyleBox["\<\"Avg.\"\>",
           StripOnInput->False,
           FontWeight->Bold],
          HoldForm], 
-        StyleBox["43.75`",
+        StyleBox["87.5`",
          StripOnInput->False,
          FontWeight->Bold], 
         StyleBox["0.`",
          StripOnInput->False,
          FontWeight->Bold], 
-        StyleBox["75.`",
-         StripOnInput->False,
-         FontWeight->Bold], 
-        StyleBox["37.5`",
-         StripOnInput->False,
-         FontWeight->Bold], 
-        StyleBox["37.5`",
-         StripOnInput->False,
-         FontWeight->Bold], 
-        StyleBox["75.`",
-         StripOnInput->False,
-         FontWeight->Bold], 
-        StyleBox["37.5`",
-         StripOnInput->False,
-         FontWeight->Bold], 
-        StyleBox["187.5`",
-         StripOnInput->False,
-         FontWeight->Bold], 
-        StyleBox["150.`",
+        StyleBox["112.5`",
          StripOnInput->False,
          FontWeight->Bold], 
         StyleBox["112.5`",
+         StripOnInput->False,
+         FontWeight->Bold], 
+        StyleBox["112.5`",
+         StripOnInput->False,
+         FontWeight->Bold], 
+        StyleBox["37.5`",
+         StripOnInput->False,
+         FontWeight->Bold], 
+        StyleBox["37.5`",
+         StripOnInput->False,
+         FontWeight->Bold], 
+        StyleBox["75.`",
+         StripOnInput->False,
+         FontWeight->Bold], 
+        StyleBox["37.5`",
+         StripOnInput->False,
+         FontWeight->Bold], 
+        StyleBox["150.`",
          StripOnInput->False,
          FontWeight->Bold]}
       },
@@ -2686,29 +2721,29 @@ Cell[BoxData[
         "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
          "Firm 8", "Firm 9", "Firm 10"}}]]]}],
   SequenceForm["\nLong-run profits (T-9):\n ", 
-   TableForm[{{0., 0., 750., 0., 0., 0., 0., 0., 0., 0.}, {0., 0., 0., 0., 0.,
-      0., 0., 0., 0., 750.}, {0., 0., 0., 0., 0., 0., 0., 0., 0., 750.}, {0., 
-     0., 0., 0., 750., 0., 0., 0., 0., 0.}, {0., 0., 750., 0., 0., 0., 0., 0.,
-      0., 0.}, {0., 0., 0., 0., 0., 0., 0., 750., 0., 0.}, {0., 0., 0., 0., 
-     0., 0., 0., 0., 750., 0.}, {875., 0., 0., 0., 0., 0., 0., 0., 0., 0.}, {
-     0., 0., 0., 0., 0., 0., 750., 0., 0., 0.}, {0., 0., 0., 0., 0., 0., 0., 
-     750., 0., 0.}, {0., 0., 0., 750., 0., 0., 0., 0., 0., 0.}, {0., 0., 0., 
-     0., 0., 0., 0., 750., 0., 0.}, {0., 0., 0., 0., 0., 0., 0., 750., 0., 
-     0.}, {0., 0., 0., 0., 0., 0., 0., 0., 750., 0.}, {0., 0., 0., 0., 0., 
-     750., 0., 0., 0., 0.}, {0., 0., 0., 0., 0., 0., 0., 0., 750., 0.}, {0., 
-     0., 0., 0., 0., 0., 0., 750., 0., 0.}, {0., 0., 0., 0., 0., 0., 0., 0., 
-     0., 750.}, {0., 0., 0., 0., 0., 750., 0., 0., 0., 0.}, {0., 0., 0., 0., 
-     0., 0., 0., 0., 750., 0.}, {
-      Style[43.75, Bold], 
+   TableForm[{{0., 0., 0., 0., 750., 0., 0., 0., 0., 0.}, {0., 0., 750., 0., 
+     0., 0., 0., 0., 0., 0.}, {0., 0., 0., 0., 750., 0., 0., 0., 0., 0.}, {0.,
+      0., 0., 0., 0., 0., 0., 0., 0., 750.}, {0., 0., 0., 0., 0., 0., 0., 0., 
+     0., 750.}, {0., 0., 0., 750., 0., 0., 0., 0., 0., 0.}, {0., 0., 750., 0.,
+      0., 0., 0., 0., 0., 0.}, {0., 0., 0., 0., 0., 0., 0., 0., 0., 750.}, {
+     0., 0., 0., 750., 0., 0., 0., 0., 0., 0.}, {0., 0., 0., 0., 750., 0., 0.,
+      0., 0., 0.}, {0., 0., 0., 0., 0., 0., 0., 0., 750., 0.}, {875., 0., 0., 
+     0., 0., 0., 0., 0., 0., 0.}, {0., 0., 0., 0., 0., 0., 750., 0., 0., 
+     0.}, {0., 0., 750., 0., 0., 0., 0., 0., 0., 0.}, {0., 0., 0., 0., 0., 0.,
+      0., 750., 0., 0.}, {0., 0., 0., 0., 0., 750., 0., 0., 0., 0.}, {0., 0., 
+     0., 750., 0., 0., 0., 0., 0., 0.}, {0., 0., 0., 0., 0., 0., 0., 750., 0.,
+      0.}, {0., 0., 0., 0., 0., 0., 0., 0., 0., 750.}, {875., 0., 0., 0., 0., 
+     0., 0., 0., 0., 0.}, {
+      Style[87.5, Bold], 
       Style[0., Bold], 
-      Style[75., Bold], 
+      Style[112.5, Bold], 
+      Style[112.5, Bold], 
+      Style[112.5, Bold], 
       Style[37.5, Bold], 
       Style[37.5, Bold], 
       Style[75., Bold], 
       Style[37.5, Bold], 
-      Style[187.5, Bold], 
-      Style[150., Bold], 
-      Style[112.5, Bold]}}, 
+      Style[150., Bold]}}, 
     TableHeadings -> {{
       "r=1", "r=2", "r=3", "r=4", "r=5", "r=6", "r=7", "r=8", "r=9", "r=10", 
        "r=11", "r=12", "r=13", "r=14", "r=15", "r=16", "r=17", "r=18", "r=19",
@@ -2745,7 +2780,9 @@ Cell[BoxData[
    3.691231308617174*^9, 3.6912313487536163`*^9, 3.69123139188536*^9, 
    3.691231544745812*^9, 3.691232432783856*^9, 3.6912412855390177`*^9, 
    3.691241476812114*^9, {3.691241721412862*^9, 3.691241761456635*^9}, {
-   3.6912417948145943`*^9, 3.691241819616737*^9}}]
+   3.6912417948145943`*^9, 3.6912418195841837`*^9}, 3.6912452087212963`*^9, 
+   3.691245437230402*^9, {3.691245497326728*^9, 3.6912455224496326`*^9}, {
+   3.6912456553078117`*^9, 3.691245684163*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -2766,15 +2803,15 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 79898, 2023, 9814, "Input"],
+Cell[580, 22, 81156, 2055, 9713, "Input"],
 Cell[CellGroupData[{
-Cell[80503, 2049, 2156, 31, 23, "Print"],
-Cell[82662, 2082, 2104, 30, 62, "Print"],
-Cell[84769, 2114, 2083, 30, 23, "Print"],
-Cell[86855, 2146, 2153, 31, 23, "Print"],
-Cell[89011, 2179, 4951, 128, 372, "Print"],
-Cell[93965, 2309, 8801, 207, 388, "Print"],
-Cell[102769, 2518, 9327, 229, 388, "Print"]
+Cell[81761, 2081, 2306, 33, 23, "Print"],
+Cell[84070, 2116, 2258, 32, 62, "Print"],
+Cell[86331, 2150, 2234, 32, 23, "Print"],
+Cell[88568, 2184, 2308, 33, 23, "Print"],
+Cell[90879, 2219, 5105, 130, 372, "Print"],
+Cell[95987, 2351, 8453, 200, 388, "Print"],
+Cell[104443, 2553, 9478, 231, 388, "Print"]
 }, Open  ]]
 }, Open  ]]
 }
