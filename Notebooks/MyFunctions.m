@@ -48,7 +48,7 @@ ms[q0_, qi_] := q0 / Sum[qi[[t, i]], {i, 1, n}];
 
 etaSpec[delta_, etaSpecLag_, msSpec_, etaBar_] := (1 - delta)*etaSpecLag + delta*msSpec*etaBar;
 
-probability[i_, priceList_, qualityList_] := 
+probability[priceList_, qualityList_] := 
   Module[
   {p = priceList, u = qualityList},
    Exp[-chi*Indexed[p,i] + katta*Indexed[u,i]]/
