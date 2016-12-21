@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     32684,        886]
-NotebookOptionsPosition[     32449,        873]
-NotebookOutlinePosition[     32783,        888]
-CellTagsIndexPosition[     32740,        885]
+NotebookDataLength[     35324,        925]
+NotebookOptionsPosition[     35089,        912]
+NotebookOutlinePosition[     35423,        927]
+CellTagsIndexPosition[     35380,        924]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -28,7 +28,7 @@ Cell[BoxData[{
    RowBox[{"LOAD", " ", "FUNCTIONS"}], "*)"}], "\[IndentingNewLine]"}], "\n", 
 
  RowBox[{
-  RowBox[{"<<", "MyFunctions`"}], "\n", 
+  RowBox[{"<<", "MyFunctions`"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -87,6 +87,16 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"-", 
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
@@ -95,23 +105,32 @@ Cell[BoxData[{
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
 }]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-, "*)"}], "\[IndentingNewLine]", 
+}]}]}]}]}]}]}]}]}]}], "*)"}], "\n", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{"--", 
      RowBox[{"--", "FIXED"}]}], " ", 
     RowBox[{"STRATEGIES", ":", " ", 
      RowBox[{
-      RowBox[{"Firms", " ", "1"}], "-", 
       RowBox[{
-      "5", " ", "produce", " ", "the", " ", "smart", " ", "part", " ", 
-       "while", " ", "firms", " ", "6"}], "-", 
-      RowBox[{
-      "10", " ", "buy", " ", "the", " ", "smart", " ", "part", " ", "from", 
-       " ", "the", " ", 
+      "First", " ", "half", " ", "of", " ", "firms", " ", "buys", " ", "the", 
+       " ", "smart", " ", "part", " ", "while", " ", "the", " ", "other", " ",
+        "half", " ", "produces", " ", "the", " ", "smart", " ", 
        RowBox[{
-        RowBox[{"specialist", "!"}], "--"}]}], "-"}]}]}], "*)"}], 
-  "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"part", " ", "!"}], "--"}], "--"}], "--"}], "--"}],
+                "--"}], "--"}], "--"}], "--"}], "--"}], "--"}], "--"}], 
+        "--"}]}], "-"}]}]}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -134,6 +153,15 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"-", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
@@ -179,47 +207,39 @@ Cell[BoxData[{
                     RowBox[{
                     "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
 ]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
-], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"INIITIALIZE", " ", "PARAMETERS"}], 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"alpha", "=", "0.5"}], ";"}]}], "\n", 
+   RowBox[{"alpha", "=", "0.5"}], ";", 
+   RowBox[{"(*", "0.5", "*)"}], "\n", "\t", 
+   RowBox[{"beta", "=", "1.0"}], ";"}], 
+  RowBox[{"(*", "1.0", "*)"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"beta", "=", "1.0"}], ";"}]}], "\n", 
+   RowBox[{"delta", "=", "0.5"}], ";"}], " ", 
+  RowBox[{"(*", "0.5", "*)"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"delta", "=", "0.5"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"katta", "=", "5"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"qAvg", "=", "1.0"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"eta", "=", "0.25"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"etaBar", "=", "0.5"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"chi", "=", "0.1"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"uBar", "=", "1.0"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"cp", "=", "20.0"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"cs", "=", "10.0"}], ";"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{"Number", " ", "of", " ", "firms"}], "*)"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
+   RowBox[{"katta", "=", "0.09"}], ";", " ", 
+   RowBox[{"(*", "5", "*)"}], "\n", "\t", 
+   RowBox[{"eta", "=", "0.25"}], ";", 
+   RowBox[{"(*", "0.25", "*)"}], "\n", "\t", 
+   RowBox[{"etaBar", "=", "0.5"}], ";", 
+   RowBox[{"(*", "0.5", "*)"}], "\n", "\t", 
+   RowBox[{"chi", "=", "0.1"}], ";", " ", 
+   RowBox[{"(*", "0.5", "*)"}], "\n", "\t", 
+   RowBox[{"uBar", "=", "1.0"}], ";", 
+   RowBox[{"(*", "1.0", "*)"}], "\n", "\t", 
+   RowBox[{"cp", "=", "20.0"}], ";", 
+   RowBox[{"(*", "20.0", "*)"}], "\n", "\t", 
+   RowBox[{"cs", "=", "10.0"}], ";", " ", 
+   RowBox[{"(*", "10", "*)"}], "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Number", " ", "of", " ", "firms"}], "*)"}], 
+   "\[IndentingNewLine]", "\t", 
    RowBox[{"n", "=", "10"}], ";"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
@@ -247,22 +267,21 @@ Cell[BoxData[{
    RowBox[{"Number", " ", "of", " ", "consumers"}], "*)"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"m", "=", "100"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"m", "=", "100"}], ";"}], "\n", 
   RowBox[{"(*", 
-   RowBox[{"Number", " ", "of", " ", "bartch", " ", "runs"}], "*)"}]}], "\n", 
-
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"R", "=", "20"}], ";"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{"Number", " ", "of", " ", "time", " ", "periods"}], 
+   RowBox[{"Number", " ", "of", " ", "bartch", " ", "runs"}], 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"T", "=", "10"}], ";"}], "\n", 
+   RowBox[{"R", "=", "30"}], ";", " ", 
+   RowBox[{"(*", "20", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Number", " ", "of", " ", "time", " ", "periods"}], "*)"}], 
+   "\[IndentingNewLine]", "\t", 
+   RowBox[{"T", "=", "100"}], ";"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"Wanna", " ", "have", " ", 
-    RowBox[{"plots", "?"}]}], "*)"}]}], "\[IndentingNewLine]", 
+    RowBox[{"plots", "?"}]}], "*)"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
    RowBox[{"plots", "=", "True"}], ";"}], "\[IndentingNewLine]", 
@@ -271,51 +290,46 @@ Cell[BoxData[{
     RowBox[{"tables", "?"}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"tables", " ", "=", "True"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"tables", " ", "=", "True"}], ";"}], "\n", 
   RowBox[{"(*", 
    RowBox[{
    "define", " ", "start", " ", "and", " ", "end", " ", "of", " ", "time", 
     " ", "period", " ", "you", " ", "want", " ", "to", " ", "consider"}], 
-   "*)"}]}], "\n", 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
    RowBox[{"start", "=", "1"}], ";"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"lend", "=", "10"}], ";"}], " ", 
-  RowBox[{"(*", 
-   RowBox[{"length", " ", "of", " ", "table"}], "*)"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"pend", "=", "10"}], ";"}], " ", 
-  RowBox[{"(*", 
-   RowBox[{"plot", " ", "horizon"}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-   "firms", " ", "making", " ", "positive", " ", "profits", " ", "at", " ", 
-    "T", " ", "for", " ", "each", " ", "batch", " ", "run"}], 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{"\t", 
-  RowBox[{
+   RowBox[{"lend", "=", "20"}], ";", " ", 
+   RowBox[{"(*", 
+    RowBox[{"length", " ", "of", " ", "table"}], "*)"}], "\n", "\t", 
+   RowBox[{"pend", "=", "20"}], ";", " ", 
+   RowBox[{"(*", 
+    RowBox[{"plot", " ", "horizon"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "firms", " ", "making", " ", "positive", " ", "profits", " ", "at", " ", 
+     "T", " ", "for", " ", "each", " ", "batch", " ", "run"}], "*)"}], 
+   "\[IndentingNewLine]", "\t", 
    RowBox[{"survivor", "=", 
     RowBox[{"Table", "[", 
      RowBox[{"0.0", ",", 
       RowBox[{"{", 
-       RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]", 
+       RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ";"}], "\n", 
   RowBox[{"(*", 
    RowBox[{
    "how", " ", "many", " ", "firms", " ", "make", " ", "positive", " ", 
     "profits", " ", "at", " ", 
-    RowBox[{"T", "?"}]}], "*)"}]}], "\n", 
+    RowBox[{"T", "?"}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
    RowBox[{"numFirmsSurvive", "=", 
     RowBox[{"Table", "[", 
      RowBox[{"0.0", ",", 
       RowBox[{"{", 
-       RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ";"}], "\n", 
-  "\[IndentingNewLine]", 
+       RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -388,8 +402,7 @@ Cell[BoxData[{
             RowBox[{"--", 
              RowBox[{"--", 
               RowBox[{"--", 
-               RowBox[{"--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
-  "\[IndentingNewLine]", 
+               RowBox[{"--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\n", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -648,7 +661,8 @@ Cell[BoxData[{
                  RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "eta"}], 
              "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
            RowBox[{"{", 
-            RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}], ";", 
+            RowBox[{"i", ",", "1", ",", 
+             RowBox[{"n", "/", "2"}]}], "}"}]}], "]"}], ";", 
          "\[IndentingNewLine]", "\t\t", 
          RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
           RowBox[{
@@ -662,8 +676,10 @@ Cell[BoxData[{
                RowBox[{"cp", ",", "cs"}], "]"}], ",", "eta"}], "]"}]}], ",", 
            "\[IndentingNewLine]", "\t\t", 
            RowBox[{"{", 
-            RowBox[{"i", ",", "6", ",", "n"}], "}"}]}], "]"}], ";", 
-         "\[IndentingNewLine]", "\t", 
+            RowBox[{"i", ",", 
+             RowBox[{
+              RowBox[{"n", "/", "2"}], "+", "1"}], ",", "n"}], "}"}]}], "]"}],
+          ";", "\[IndentingNewLine]", "\t", 
          RowBox[{"(*", 
           RowBox[{"compute", " ", "qualities"}], "*)"}], 
          "\[IndentingNewLine]", "\t\t", 
@@ -679,7 +695,8 @@ Cell[BoxData[{
                RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}], ",", 
            "\[IndentingNewLine]", "\t\t", 
            RowBox[{"{", 
-            RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}], ";", 
+            RowBox[{"i", ",", "1", ",", 
+             RowBox[{"n", "/", "2"}]}], "}"}]}], "]"}], ";", 
          "\[IndentingNewLine]", "\t\t", 
          RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
           RowBox[{
@@ -694,8 +711,10 @@ Cell[BoxData[{
                 RowBox[{"t", ",", "i"}], "]"}], "]"}]}], "]"}]}], ",", 
            "\[IndentingNewLine]", "\t\t", 
            RowBox[{"{", 
-            RowBox[{"i", ",", "6", ",", "n"}], "}"}]}], "]"}], ";", 
-         "\[IndentingNewLine]", "\t", 
+            RowBox[{"i", ",", 
+             RowBox[{
+              RowBox[{"n", "/", "2"}], "+", "1"}], ",", "n"}], "}"}]}], "]"}],
+          ";", "\[IndentingNewLine]", "\t", 
          RowBox[{"(*", 
           RowBox[{"compute", " ", "probabilities"}], "*)"}], 
          "\[IndentingNewLine]", "\t\t", 
@@ -747,7 +766,8 @@ Cell[BoxData[{
              RowBox[{"[", 
               RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", 
             RowBox[{"{", 
-             RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}]}], ";", 
+             RowBox[{"i", ",", "1", ",", 
+              RowBox[{"n", "/", "2"}]}], "}"}]}], "]"}]}], ";", 
          "\[IndentingNewLine]", "\t", 
          RowBox[{"(*", 
           RowBox[{"compute", " ", "market", " ", "share"}], "*)"}], 
@@ -783,7 +803,8 @@ Cell[BoxData[{
                  RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}], "]"}]}], ",", 
            "\[IndentingNewLine]", "\t\t", 
            RowBox[{"{", 
-            RowBox[{"i", ",", "1", ",", "5"}], "}"}]}], "]"}], ";", 
+            RowBox[{"i", ",", "1", ",", 
+             RowBox[{"n", "/", "2"}]}], "}"}]}], "]"}], ";", 
          "\[IndentingNewLine]", "\t\t", 
          RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
           RowBox[{
@@ -803,8 +824,10 @@ Cell[BoxData[{
                RowBox[{"cp", ",", "cs"}], "]"}]}], "]"}]}], ",", 
            "\[IndentingNewLine]", "\t\t", 
            RowBox[{"{", 
-            RowBox[{"i", ",", "6", ",", "n"}], "}"}]}], "]"}], ";", 
-         "\[IndentingNewLine]", "\t", 
+            RowBox[{"i", ",", 
+             RowBox[{
+              RowBox[{"n", "/", "2"}], "+", "1"}], ",", "n"}], "}"}]}], "]"}],
+          ";", "\[IndentingNewLine]", "\t", 
          RowBox[{"(*", 
           RowBox[{"compute", " ", "statistic"}], "*)"}], 
          "\[IndentingNewLine]", "\t\t", 
@@ -869,7 +892,23 @@ Cell[BoxData[{
    3.691316206387377*^9, 3.6913162482892027`*^9}, {3.691316408575931*^9, 
    3.691316418296173*^9}, {3.691334139693364*^9, 3.6913341528794403`*^9}, {
    3.6913341915740643`*^9, 3.691334231475933*^9}, {3.691334261747781*^9, 
-   3.6913342801565723`*^9}}]
+   3.6913342801565723`*^9}, {3.691335799200159*^9, 3.6913359275498667`*^9}, {
+   3.691335965385607*^9, 3.691335967636325*^9}, {3.691336007990614*^9, 
+   3.6913360086354856`*^9}, {3.691336058723813*^9, 3.691336058913426*^9}, {
+   3.6913361075518713`*^9, 3.691336109372498*^9}, {3.6913361711746893`*^9, 
+   3.6913361934755697`*^9}, {3.691336252895183*^9, 3.691336359295199*^9}, {
+   3.691336465278316*^9, 3.6913365056800737`*^9}, {3.691336558597044*^9, 
+   3.691336574726509*^9}, {3.6913366171405697`*^9, 3.691336619363077*^9}, {
+   3.691336674561841*^9, 3.6913366752717857`*^9}, {3.691336775173295*^9, 
+   3.691336776138653*^9}, {3.691337357981628*^9, 3.691337395627516*^9}, {
+   3.691337509977026*^9, 3.6913375538157597`*^9}, {3.691337613138473*^9, 
+   3.691337613360076*^9}, {3.691337647078801*^9, 3.691337659459524*^9}, {
+   3.6913377369577217`*^9, 3.691337761411985*^9}, {3.6913378017077*^9, 
+   3.691337807443638*^9}, {3.6913378483419113`*^9, 3.6913378692068253`*^9}, {
+   3.691337970846335*^9, 3.691337981830944*^9}, {3.691338099264483*^9, 
+   3.69133815173046*^9}, {3.691338216927093*^9, 3.691338230388547*^9}, {
+   3.691338288006468*^9, 3.691338370259178*^9}, {3.691338448495356*^9, 
+   3.691338501190292*^9}, {3.6913385317620564`*^9, 3.691338544622998*^9}}]
 },
 WindowSize->{1920, 1052},
 WindowMargins->{{Automatic, 0}, {0, Automatic}},
@@ -887,7 +926,7 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 31887, 851, 2915, "Input"]
+Cell[558, 20, 34527, 890, 2893, "Input"]
 }
 ]
 *)
