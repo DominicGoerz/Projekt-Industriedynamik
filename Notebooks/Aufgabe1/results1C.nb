@@ -1,0 +1,2214 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     92503,       2205]
+NotebookOptionsPosition[     91356,       2168]
+NotebookOutlinePosition[     91690,       2183]
+CellTagsIndexPosition[     91647,       2180]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"--", 
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{
+                    "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
+]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"-", " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"RESULTS", " ", "--"}], "--"}], 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"-", 
+         RowBox[{"-", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"--", 
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{
+                    "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
+]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+   "Print", "[", 
+    "\"\<---------------------------------------------------------------------\
+---------------------------------------------------------\>\"", "]"}], "\n", 
+   RowBox[{
+   "Print", "[", 
+    "\"\<Results batch runs:\\n Fixed Strategies - All firms buy the smart \
+part!\>\"", "]"}], "\n", 
+   RowBox[{
+   "Print", "[", 
+    "\"\<---------------------------------------------------------------------\
+---------------------------------------------------------\>\"", "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "\[IndentingNewLine]", 
+    RowBox[{
+    "\"\<\\n The firms which survive:\\n \>\"", ",", "\[IndentingNewLine]", 
+     RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"survivor", "[", 
+            RowBox[{"[", 
+             RowBox[{"r", ",", "i", ",", "1"}], "]"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "1", ",", 
+             RowBox[{"Length", "[", 
+              RowBox[{"survivor", "[", 
+               RowBox[{"[", "r", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"TableHeadings", "\[Rule]", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Table", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"StringJoin", "[", 
+             RowBox[{"\"\<r=\>\"", ",", 
+              RowBox[{"ToString", "[", "r", "]"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"r", ",", "start", ",", "R"}], "}"}]}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", "\"\<Firm\>\"", "}"}]}], "\[IndentingNewLine]", 
+         "}"}]}]}], "]"}]}], "]"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"tables", " ", "\[Equal]", "True"}], "||", 
+      RowBox[{"plots", "==", "True"}]}], ",", "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{
+      "Print", "[", 
+       "\"\<------------------------------------------------------------------\
+------------------------------------------------------------\>\"", "]"}], ";",
+       "\[IndentingNewLine]", "\t", 
+      RowBox[{"Print", "[", "\"\<Results of last batch run:\>\"", "]"}], ";", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{
+      "Print", "[", 
+       "\"\<------------------------------------------------------------------\
+------------------------------------------------------------\>\"", "]"}]}]}], 
+    "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Period", " ", "Output"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\n", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"quantPeriodFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Period", " ", "Output", " ", "of", " ", "Firms"}], "]"}]}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", 
+           RowBox[{"Period", " ", "Output"}], "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Table", " ", "of", " ", "Period", " ", "Output", " ", "of", " ", 
+     "Firms"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<Period Output of Firms:\\n \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"quantPeriodFirm", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "aggregated", " ", "output", " ", "Firms"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\n", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"quantAggFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "start", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Firms"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", 
+           RowBox[{"Agg", ".", "Output"}], "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Plot", " ", "aggregated", " ", "output", " ", "of", " ", "Specialist"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"quantAggSpec", "[", 
+        RowBox[{"[", 
+         RowBox[{"start", ";;", "pend"}], "]"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Specialist"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", 
+           RowBox[{"Agg", ".", "Output"}], "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Table", " ", "of", " ", "Aggregated", " ", "Output", " ", "of", " ", 
+     "Firms", " ", "and", " ", "Specialist"}], "*)"}], "\[IndentingNewLine]", 
+   
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<\\nAggregated Output of Firms:\\n \>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Append", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"quantAggFirm", "[", 
+              RowBox[{"[", "t", "]"}], "]"}], ",", 
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"quantAggSpec", "[", 
+                RowBox[{"[", "t", "]"}], "]"}], ",", "Bold"}], "]"}]}], "]"}],
+            ",", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Append", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Table", "[", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"StringJoin", "[", 
+                 RowBox[{"\"\<Firm \>\"", ",", 
+                  RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<Specialist\>\"", ",", "Bold"}], "]"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Quality"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"qualityList", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Quality", " ", "of", " ", "Products"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", "Quality", "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Table", " ", "of", " ", "Qualities"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<Quality of products:\\n \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"qualityList", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Profits"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"profitListFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Profits", " ", "of", " ", "Firms"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", "Profit", "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Table", " ", "of", " ", "Profits"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Profits of firms:\\n \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"profitListFirm", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Prices"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"priceListFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Prices", " ", "of", " ", "Firms"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", "Prices", "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Table", " ", "of", " ", "Prices"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\n", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Prices of firms:\\n \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"priceListFirm", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Probabilities"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"probList", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{
+         "Evolution", " ", "of", " ", "Probabilities", " ", "for", " ", 
+          "each", " ", "Firm"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", "Probs", "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Table", " ", "of", " ", "Probabilities"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\n", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<Evolution of probabilities for each firm:\\n \>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"probList", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.690534083515486*^9, 3.690534083522037*^9}, {
+   3.69069638473475*^9, 3.690696508065105*^9}, {3.6906965490402393`*^9, 
+   3.690696577299485*^9}, {3.6907013324419518`*^9, 3.6907013875510263`*^9}, 
+   3.690701497588133*^9, {3.691246528322667*^9, 3.6912465290295267`*^9}, {
+   3.691246947517084*^9, 3.6912469526893063`*^9}, {3.691314375970696*^9, 
+   3.691314430988325*^9}, {3.691314517009716*^9, 3.691314681767911*^9}, {
+   3.691315426135294*^9, 3.6913155670634537`*^9}, {3.691315620041163*^9, 
+   3.69131563215184*^9}, {3.6913157054557877`*^9, 3.691315707019587*^9}, {
+   3.691315741913039*^9, 3.6913157430607567`*^9}, {3.691315813969467*^9, 
+   3.691315815702236*^9}, 3.6913159233381567`*^9, {3.6913159595643177`*^9, 
+   3.691315977952766*^9}, {3.691316027727604*^9, 3.6913160296464787`*^9}, {
+   3.691316162875642*^9, 3.6913161819105988`*^9}, {3.691316314878605*^9, 
+   3.691316323816264*^9}, {3.6913164952554483`*^9, 3.691316501663671*^9}, 
+   3.691334375307335*^9, {3.69133463316895*^9, 3.691334682208151*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------------------------------------------------------------------\"\>"], \
+"Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702047966*^9}],
+
+Cell[BoxData["\<\"Results batch runs:\\n Fixed Strategies - All firms buy the \
+smart part!\"\>"], "Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702048538*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------------------------------------------------------------------\"\>"], \
+"Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702049034*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\n The firms which survive:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm\"\>",
+         HoldForm], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ]},
+       {
+        TagBox["\<\"r=1\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=2\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=3\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=4\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=5\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=6\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=7\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=8\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=9\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=10\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=11\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=12\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=13\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=14\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=15\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=16\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=17\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=18\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=19\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+       {
+        TagBox["\<\"r=20\"\>",
+         HoldForm], "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "r=1", "r=2", "r=3", "r=4", "r=5", "r=6", "r=7", "r=8", "r=9", "r=10",
+          "r=11", "r=12", "r=13", "r=14", "r=15", "r=16", "r=17", "r=18", 
+         "r=19", "r=20"}, {"Firm"}}]]]}],
+  SequenceForm["\n The firms which survive:\n ", 
+   TableForm[{{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 
+    10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1,
+     2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 
+    4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6,
+     7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 
+    9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 
+    10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1,
+     2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 
+    4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6,
+     7, 8, 9, 10}}, 
+    TableHeadings -> {{
+      "r=1", "r=2", "r=3", "r=4", "r=5", "r=6", "r=7", "r=8", "r=9", "r=10", 
+       "r=11", "r=12", "r=13", "r=14", "r=15", "r=16", "r=17", "r=18", "r=19",
+        "r=20"}, {"Firm"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702052102*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------------------------------------------------------------------\"\>"], \
+"Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702053173*^9}],
+
+Cell[BoxData["\<\"Results of last batch run:\"\>"], "Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702053808*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------------------------------------------------------------------\"\>"], \
+"Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702054347*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 7.}, {2., 9.}, {3., 6.}, {4., 13.}, {5., 12.}, {6., 8.}, {
+      7., 10.}, {8., 13.}, {9., 9.}, {10., 11.}}]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 7.}, {2., 10.}, {3., 10.}, {4., 11.}, {5., 14.}, {6., 
+      6.}, {7., 11.}, {8., 6.}, {9., 15.}, {10., 7.}}]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 10.}, {2., 10.}, {3., 10.}, {4., 11.}, {5., 7.}, {6., 
+      13.}, {7., 9.}, {8., 9.}, {9., 9.}, {10., 15.}}]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 11.}, {2., 8.}, {3., 8.}, {4., 9.}, {5., 6.}, {6., 14.}, {
+      7., 14.}, {8., 14.}, {9., 12.}, {10., 6.}}]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 10.}, {2., 11.}, {3., 12.}, {4., 10.}, {5., 12.}, {6., 
+      10.}, {7., 7.}, {8., 9.}, {9., 10.}, {10., 15.}}]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 15.}, {2., 9.}, {3., 10.}, {4., 9.}, {5., 13.}, {6., 8.}, {
+      7., 11.}, {8., 15.}, {9., 10.}, {10., 12.}}]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 8.}, {2., 8.}, {3., 14.}, {4., 10.}, {5., 11.}, {6., 
+      10.}, {7., 10.}, {8., 10.}, {9., 11.}, {10., 9.}}]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[{{1., 13.}, {2., 11.}, {3., 9.}, {4., 11.}, {5., 15.}, {6.,
+       9.}, {7., 17.}, {8., 8.}, {9., 7.}, {10., 7.}}]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 7.}, {2., 12.}, {3., 11.}, {4., 7.}, {5., 5.}, {6., 11.}, {
+      7., 6.}, {8., 8.}, {9., 7.}, {10., 11.}}]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 12.}, {2., 12.}, {3., 10.}, {4., 9.}, {5., 5.}, {6., 
+      11.}, {7., 5.}, {8., 8.}, {9., 10.}, {10., 7.}}]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox[
+      RowBox[{"Period", " ", "Output"}], HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Period", " ", "Output", " ", "of", " ", "Firms"}], HoldForm], 
+    TraditionalForm],
+  PlotRange->{{0., 10.}, {0, 17.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.691316330480337*^9, 3.69131651858045*^9, 
+  3.691334531187587*^9, 3.69133470211211*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Period Output of Firms:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "7", "7", "10", "11", "10", "15", "8", "13", "7", "12"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "9", "10", "10", "8", "11", "9", "8", "11", "12", "12"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "6", "10", "10", "8", "12", "10", "14", "9", "11", "10"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "13", "11", "11", "9", "10", "9", "10", "11", "7", "9"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "12", "14", "7", "6", "12", "13", "11", "15", "5", "5"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "8", "6", "13", "14", "10", "8", "10", "9", "11", "11"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "10", "11", "9", "14", "7", "11", "10", "17", "6", "5"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "13", "6", "9", "14", "9", "15", "10", "8", "8", "8"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "9", "15", "9", "12", "10", "10", "11", "7", "7", "10"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "11", "7", "15", "6", "15", "12", "9", "7", "11", "7"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+         "t=10"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Period Output of Firms:\n ", 
+   TableForm[{{7, 7, 10, 11, 10, 15, 8, 13, 7, 12}, {9, 10, 10, 8, 11, 9, 8, 
+    11, 12, 12}, {6, 10, 10, 8, 12, 10, 14, 9, 11, 10}, {13, 11, 11, 9, 10, 9,
+     10, 11, 7, 9}, {12, 14, 7, 6, 12, 13, 11, 15, 5, 5}, {8, 6, 13, 14, 10, 
+    8, 10, 9, 11, 11}, {10, 11, 9, 14, 7, 11, 10, 17, 6, 5}, {13, 6, 9, 14, 9,
+     15, 10, 8, 8, 8}, {9, 15, 9, 12, 10, 10, 11, 7, 7, 10}, {11, 7, 15, 6, 
+    15, 12, 9, 7, 11, 7}}, 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+       "t=10"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702118291*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.}, {2., 7.}, {3., 16.}, {4., 22.}, {5., 35.}, {6., 
+      47.}, {7., 55.}, {8., 65.}, {9., 78.}, {10., 87.}}]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.}, {2., 7.}, {3., 17.}, {4., 27.}, {5., 38.}, {6., 
+      52.}, {7., 58.}, {8., 69.}, {9., 75.}, {10., 90.}}]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.}, {2., 10.}, {3., 20.}, {4., 30.}, {5., 41.}, {6., 
+      48.}, {7., 61.}, {8., 70.}, {9., 79.}, {10., 88.}}]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.}, {2., 11.}, {3., 19.}, {4., 27.}, {5., 36.}, {6., 
+      42.}, {7., 56.}, {8., 70.}, {9., 84.}, {10., 96.}}]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.}, {2., 10.}, {3., 21.}, {4., 33.}, {5., 43.}, {6., 
+      55.}, {7., 65.}, {8., 72.}, {9., 81.}, {10., 91.}}]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.}, {2., 15.}, {3., 24.}, {4., 34.}, {5., 43.}, {6., 
+      56.}, {7., 64.}, {8., 75.}, {9., 90.}, {10., 100.}}]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.}, {2., 8.}, {3., 16.}, {4., 30.}, {5., 40.}, {6., 
+      51.}, {7., 61.}, {8., 71.}, {9., 81.}, {10., 92.}}]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[{{1., 0.}, {2., 13.}, {3., 24.}, {4., 33.}, {5., 44.}, {6.,
+       59.}, {7., 68.}, {8., 85.}, {9., 93.}, {10., 100.}}]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.}, {2., 7.}, {3., 19.}, {4., 30.}, {5., 37.}, {6., 
+      42.}, {7., 53.}, {8., 59.}, {9., 67.}, {10., 74.}}]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.}, {2., 12.}, {3., 24.}, {4., 34.}, {5., 43.}, {6., 
+      48.}, {7., 59.}, {8., 64.}, {9., 72.}, {10., 82.}}]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox[
+      RowBox[{"Agg", ".", "Output"}], HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Firms"}], 
+     HoldForm], TraditionalForm],
+  PlotRange->{{0., 10.}, {0, 100.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.691316330480337*^9, 3.69131651858045*^9, 
+  3.691334531187587*^9, 3.6913347021806993`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.019444444444444445`], 
+    AbsoluteThickness[1.6], 
+    LineBox[{{1., 0.}, {2., 100.}, {3., 200.}, {4., 300.}, {5., 400.}, {6., 
+     500.}, {7., 600.}, {8., 700.}, {9., 800.}, {10., 900.}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox[
+      RowBox[{"Agg", ".", "Output"}], HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Specialist"}], 
+     HoldForm], TraditionalForm],
+  PlotRange->{{0., 10.}, {0, 900.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.691316330480337*^9, 3.69131651858045*^9, 
+  3.691334531187587*^9, 3.691334702205278*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\nAggregated Output of Firms:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm], 
+        TagBox[
+         StyleBox["\<\"Specialist\"\>",
+          StripOnInput->False,
+          FontWeight->Bold],
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`", 
+        StyleBox["0.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "7.`", "7.`", "10.`", "11.`", "10.`", "15.`", "8.`", 
+        "13.`", "7.`", "12.`", 
+        StyleBox["100.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "16.`", "17.`", "20.`", "19.`", "21.`", "24.`", "16.`", 
+        "24.`", "19.`", "24.`", 
+        StyleBox["200.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "22.`", "27.`", "30.`", "27.`", "33.`", "34.`", "30.`", 
+        "33.`", "30.`", "34.`", 
+        StyleBox["300.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "35.`", "38.`", "41.`", "36.`", "43.`", "43.`", "40.`", 
+        "44.`", "37.`", "43.`", 
+        StyleBox["400.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "47.`", "52.`", "48.`", "42.`", "55.`", "56.`", "51.`", 
+        "59.`", "42.`", "48.`", 
+        StyleBox["500.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "55.`", "58.`", "61.`", "56.`", "65.`", "64.`", "61.`", 
+        "68.`", "53.`", "59.`", 
+        StyleBox["600.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "65.`", "69.`", "70.`", "70.`", "72.`", "75.`", "71.`", 
+        "85.`", "59.`", "64.`", 
+        StyleBox["700.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "78.`", "75.`", "79.`", "84.`", "81.`", "90.`", "81.`", 
+        "93.`", "67.`", "72.`", 
+        StyleBox["800.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "87.`", "90.`", "88.`", "96.`", "91.`", "100.`", "92.`", 
+        "100.`", "74.`", "82.`", 
+        StyleBox["900.`",
+         StripOnInput->False,
+         FontWeight->Bold]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+         "t=10"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10", 
+         Style["Specialist", Bold]}}]]]}],
+  SequenceForm["\nAggregated Output of Firms:\n ", 
+   TableForm[{{0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 
+      Style[0., Bold]}, {7., 7., 10., 11., 10., 15., 8., 13., 7., 12., 
+      Style[100., Bold]}, {16., 17., 20., 19., 21., 24., 16., 24., 19., 24., 
+      Style[200., Bold]}, {22., 27., 30., 27., 33., 34., 30., 33., 30., 34., 
+      Style[300., Bold]}, {35., 38., 41., 36., 43., 43., 40., 44., 37., 43., 
+      Style[400., Bold]}, {47., 52., 48., 42., 55., 56., 51., 59., 42., 48., 
+      Style[500., Bold]}, {55., 58., 61., 56., 65., 64., 61., 68., 53., 59., 
+      Style[600., Bold]}, {65., 69., 70., 70., 72., 75., 71., 85., 59., 64., 
+      Style[700., Bold]}, {78., 75., 79., 84., 81., 90., 81., 93., 67., 72., 
+      Style[800., Bold]}, {87., 90., 88., 96., 91., 100., 92., 100., 74., 82., 
+      Style[900., Bold]}}, 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+       "t=10"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10", 
+       Style["Specialist", Bold]}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.6913347022097282`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 1.}, {2., 11.}, {3., 15.142135623730951`}, {4., 
+      18.320508075688775`}, {5., 21.}, {6., 23.360679774997898`}, {7., 
+      25.49489742783178}, {8., 27.457513110645905`}, {9., 
+      29.284271247461902`}, {10., 31.}}]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["Quality", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Quality", " ", "of", " ", "Products"}], HoldForm], 
+    TraditionalForm],
+  PlotRange->{{0., 10.}, {0, 31.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.691316330480337*^9, 3.69131651858045*^9, 
+  3.691334531187587*^9, 3.691334702238819*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quality of products:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "1.`", "1.`", "1.`", "1.`", "1.`", "1.`", "1.`", "1.`", 
+        "1.`", "1.`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "11.`", "11.`", "11.`", "11.`", "11.`", "11.`", "11.`", 
+        "11.`", "11.`", "11.`"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "15.142135623730951`", "15.142135623730951`", 
+        "15.142135623730951`", "15.142135623730951`", "15.142135623730951`", 
+        "15.142135623730951`", "15.142135623730951`", "15.142135623730951`", 
+        "15.142135623730951`", "15.142135623730951`"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "18.320508075688775`", "18.320508075688775`", 
+        "18.320508075688775`", "18.320508075688775`", "18.320508075688775`", 
+        "18.320508075688775`", "18.320508075688775`", "18.320508075688775`", 
+        "18.320508075688775`", "18.320508075688775`"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "21.`", "21.`", "21.`", "21.`", "21.`", "21.`", "21.`", 
+        "21.`", "21.`", "21.`"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "23.360679774997898`", "23.360679774997898`", 
+        "23.360679774997898`", "23.360679774997898`", "23.360679774997898`", 
+        "23.360679774997898`", "23.360679774997898`", "23.360679774997898`", 
+        "23.360679774997898`", "23.360679774997898`"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "25.49489742783178`", "25.49489742783178`", 
+        "25.49489742783178`", "25.49489742783178`", "25.49489742783178`", 
+        "25.49489742783178`", "25.49489742783178`", "25.49489742783178`", 
+        "25.49489742783178`", "25.49489742783178`"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "27.457513110645905`", "27.457513110645905`", 
+        "27.457513110645905`", "27.457513110645905`", "27.457513110645905`", 
+        "27.457513110645905`", "27.457513110645905`", "27.457513110645905`", 
+        "27.457513110645905`", "27.457513110645905`"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "29.284271247461902`", "29.284271247461902`", 
+        "29.284271247461902`", "29.284271247461902`", "29.284271247461902`", 
+        "29.284271247461902`", "29.284271247461902`", "29.284271247461902`", 
+        "29.284271247461902`", "29.284271247461902`"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "31.`", "31.`", "31.`", "31.`", "31.`", "31.`", "31.`", 
+        "31.`", "31.`", "31.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+         "t=10"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Quality of products:\n ", 
+   TableForm[CompressedData["
+1:eJxTTMoPSmViYGDggmII+GBPXVrNgVr0AS55hmMeelSjX+ubX+QJMqIaDXGn
+KdXoSx9rm0JjzKlGV2Vyz9xYZ0k1WmW7+xT5Umuq0ZB4saUaDQlHe6rRAGgh
+y7Q=
+    "], 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+       "t=10"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702243482*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 52.5}, {2., 73.125}, {3., 50.625}, {4., 111.71875}, {5., 
+      104.0625}, {6., 69.6875}, {7., 87.3046875}, {8., 113.623046875}, {9., 
+      78.7060546875}, {10., 96.22314453125}}]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 52.5}, {2., 81.25}, {3., 84.375}, {4., 94.53125}, {5., 
+      121.40625}, {6., 52.265625}, {7., 96.03515625}, {8., 52.44140625}, {9., 
+      131.1767578125}, {10., 61.23291015625}}]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 75.}, {2., 81.25}, {3., 84.375}, {4., 94.53125}, {5., 
+      60.703125}, {6., 113.2421875}, {7., 78.57421875}, {8., 78.662109375}, {
+      9., 78.7060546875}, {10., 131.21337890625}}]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 82.5}, {2., 65.}, {3., 67.5}, {4., 77.34375}, {5., 
+      52.03125}, {6., 121.953125}, {7., 122.2265625}, {8., 122.36328125}, {9.,
+       104.94140625}, {10., 52.4853515625}}]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 75.}, {2., 89.375}, {3., 101.25}, {4., 85.9375}, {5., 
+      104.0625}, {6., 87.109375}, {7., 61.11328125}, {8., 78.662109375}, {9., 
+      87.451171875}, {10., 131.21337890625}}]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 112.5}, {2., 73.125}, {3., 84.375}, {4., 77.34375}, {5., 
+      112.734375}, {6., 69.6875}, {7., 96.03515625}, {8., 131.103515625}, {9.,
+       87.451171875}, {10., 104.970703125}}]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 60.}, {2., 65.}, {3., 118.125}, {4., 85.9375}, {5., 
+      95.390625}, {6., 87.109375}, {7., 87.3046875}, {8., 87.40234375}, {9., 
+      96.1962890625}, {10., 78.72802734375}}]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[{{1., 97.5}, {2., 89.375}, {3., 75.9375}, {4., 94.53125}, {
+      5., 130.078125}, {6., 78.3984375}, {7., 148.41796875}, {8., 
+      69.921875}, {9., 61.2158203125}, {10., 61.23291015625}}]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 52.5}, {2., 97.5}, {3., 92.8125}, {4., 60.15625}, {5., 
+      43.359375}, {6., 95.8203125}, {7., 52.3828125}, {8., 69.921875}, {9., 
+      61.2158203125}, {10., 96.22314453125}}]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 90.}, {2., 97.5}, {3., 84.375}, {4., 77.34375}, {5., 
+      43.359375}, {6., 95.8203125}, {7., 43.65234375}, {8., 69.921875}, {9., 
+      87.451171875}, {10., 61.23291015625}}]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["Profit", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Profits", " ", "of", " ", "Firms"}], HoldForm], TraditionalForm],
+  PlotRange->{{0., 10.}, {0, 148.41796875}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.691316330480337*^9, 3.69131651858045*^9, 
+  3.691334531187587*^9, 3.691334702272184*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Profits of firms:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "52.5`", "52.5`", "75.`", "82.5`", "75.`", "112.5`", 
+        "60.`", "97.5`", "52.5`", "90.`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "73.125`", "81.25`", "81.25`", "65.`", "89.375`", 
+        "73.125`", "65.`", "89.375`", "97.5`", "97.5`"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "50.625`", "84.375`", "84.375`", "67.5`", "101.25`", 
+        "84.375`", "118.125`", "75.9375`", "92.8125`", "84.375`"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "111.71875`", "94.53125`", "94.53125`", "77.34375`", 
+        "85.9375`", "77.34375`", "85.9375`", "94.53125`", "60.15625`", 
+        "77.34375`"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "104.0625`", "121.40625`", "60.703125`", "52.03125`", 
+        "104.0625`", "112.734375`", "95.390625`", "130.078125`", "43.359375`",
+         "43.359375`"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "69.6875`", "52.265625`", "113.2421875`", "121.953125`", 
+        "87.109375`", "69.6875`", "87.109375`", "78.3984375`", "95.8203125`", 
+        "95.8203125`"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "87.3046875`", "96.03515625`", "78.57421875`", 
+        "122.2265625`", "61.11328125`", "96.03515625`", "87.3046875`", 
+        "148.41796875`", "52.3828125`", "43.65234375`"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "113.623046875`", "52.44140625`", "78.662109375`", 
+        "122.36328125`", "78.662109375`", "131.103515625`", "87.40234375`", 
+        "69.921875`", "69.921875`", "69.921875`"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "78.7060546875`", "131.1767578125`", "78.7060546875`", 
+        "104.94140625`", "87.451171875`", "87.451171875`", "96.1962890625`", 
+        "61.2158203125`", "61.2158203125`", "87.451171875`"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "96.22314453125`", "61.23291015625`", "131.21337890625`", 
+        "52.4853515625`", "131.21337890625`", "104.970703125`", 
+        "78.72802734375`", "61.23291015625`", "96.22314453125`", 
+        "61.23291015625`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+         "t=10"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Profits of firms:\n ", 
+   TableForm[CompressedData["
+1:eJxTTMoPSmViYGDggmIwcPByQKEPBEHoBSGofIUYCM3gB6ETIlD1NYRBaA+o
++oAQVNohAEJHoKlDF4eZC6MDPCG0RCgq/QCqLyASVbwjFkL/gZpvEo4q/y4a
+Qi8KR6XDgiF0TSh2PkydiB+qPEsUhI6Kg9JQeRYvVHl9aPjdhJjT4JQA4a9z
+RaVzAiG0EkR/gz9UXy3U/OOhqOqg/IaZEPc0fAlHpS9D5B2YIOF5YAlUXV8c
+lPZDkYepT+hNgphvCHXHZYj7HqRD3NNgARFPWAUxz2F6HAo/IBnivwM3oe6t
+DsRKG6yFqF+RmoDCd7CBhNuDO6Eo9AQeiDsXzPZDoWHyHnwQ+QtzIeJX0iDm
+Kth5ofEh5s9YF4yiHlk/ACWTfZQ=
+    "], 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+       "t=10"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.6913347022772293`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {5., 
+      43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 43.701171875}, {
+      9., 43.7255859375}, {10., 43.73779296875}}]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {5., 
+      43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 43.701171875}, {
+      9., 43.7255859375}, {10., 43.73779296875}}]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {5., 
+      43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 43.701171875}, {
+      9., 43.7255859375}, {10., 43.73779296875}}]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {5., 
+      43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 43.701171875}, {
+      9., 43.7255859375}, {10., 43.73779296875}}]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {5., 
+      43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 43.701171875}, {
+      9., 43.7255859375}, {10., 43.73779296875}}]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {5., 
+      43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 43.701171875}, {
+      9., 43.7255859375}, {10., 43.73779296875}}]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {5., 
+      43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 43.701171875}, {
+      9., 43.7255859375}, {10., 43.73779296875}}]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {
+      5., 43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 
+      43.701171875}, {9., 43.7255859375}, {10., 43.73779296875}}]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {5., 
+      43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 43.701171875}, {
+      9., 43.7255859375}, {10., 43.73779296875}}]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 37.5}, {2., 40.625}, {3., 42.1875}, {4., 42.96875}, {5., 
+      43.359375}, {6., 43.5546875}, {7., 43.65234375}, {8., 43.701171875}, {
+      9., 43.7255859375}, {10., 43.73779296875}}]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["Prices", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 37.1881103515625},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Prices", " ", "of", " ", "Firms"}], HoldForm], TraditionalForm],
+  
+  PlotRange->{{0., 10.}, {37.5, 43.73779296875}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.691316330480337*^9, 3.69131651858045*^9, 
+  3.691334531187587*^9, 3.691334702306028*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Prices of firms:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "37.5`", "37.5`", "37.5`", "37.5`", "37.5`", "37.5`", 
+        "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "40.625`", "40.625`", "40.625`", "40.625`", "40.625`", 
+        "40.625`", "40.625`", "40.625`", "40.625`", "40.625`"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "42.1875`", "42.1875`", "42.1875`", "42.1875`", 
+        "42.1875`", "42.1875`", "42.1875`", "42.1875`", "42.1875`", 
+        "42.1875`"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "42.96875`", "42.96875`", "42.96875`", "42.96875`", 
+        "42.96875`", "42.96875`", "42.96875`", "42.96875`", "42.96875`", 
+        "42.96875`"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "43.359375`", "43.359375`", "43.359375`", "43.359375`", 
+        "43.359375`", "43.359375`", "43.359375`", "43.359375`", "43.359375`", 
+        "43.359375`"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "43.5546875`", "43.5546875`", "43.5546875`", 
+        "43.5546875`", "43.5546875`", "43.5546875`", "43.5546875`", 
+        "43.5546875`", "43.5546875`", "43.5546875`"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "43.65234375`", "43.65234375`", "43.65234375`", 
+        "43.65234375`", "43.65234375`", "43.65234375`", "43.65234375`", 
+        "43.65234375`", "43.65234375`", "43.65234375`"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "43.701171875`", "43.701171875`", "43.701171875`", 
+        "43.701171875`", "43.701171875`", "43.701171875`", "43.701171875`", 
+        "43.701171875`", "43.701171875`", "43.701171875`"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "43.7255859375`", "43.7255859375`", "43.7255859375`", 
+        "43.7255859375`", "43.7255859375`", "43.7255859375`", 
+        "43.7255859375`", "43.7255859375`", "43.7255859375`", 
+        "43.7255859375`"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "43.73779296875`", "43.73779296875`", "43.73779296875`", 
+        "43.73779296875`", "43.73779296875`", "43.73779296875`", 
+        "43.73779296875`", "43.73779296875`", "43.73779296875`", 
+        "43.73779296875`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+         "t=10"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Prices of firms:\n ", 
+   TableForm[CompressedData["
+1:eJxTTMoPSmViYGDggmIwOODkQFU6wIW6tIQrdekaKtPrqEwfpy7dcJm69IGb
+1KUf3KEuXXCPejQA7aeQIg==
+    "], 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+       "t=10"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.691334702310719*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {3., 
+      0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {3., 
+      0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {3., 
+      0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {3., 
+      0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {3., 
+      0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {3., 
+      0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {3., 
+      0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {
+      3., 0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {3., 
+      0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], 
+     LineBox[{{1., 0.09999999999999999}, {2., 0.10000000000000002`}, {3., 
+      0.10000000000000002`}, {4., 0.1}, {5., 0.10000000000000002`}, {6., 
+      0.1}, {7., 0.09999999999999999}, {8., 0.1}, {9., 0.09999999999999996}, {
+      10., 0.1}}]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["Probs", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{
+      "Evolution", " ", "of", " ", "Probabilities", " ", "for", " ", "each", 
+       " ", "Firm"}], HoldForm], TraditionalForm],
+  PlotRange->{{0., 10.}, {0, 0.19999999999999993`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.691316330480337*^9, 3.69131651858045*^9, 
+  3.691334531187587*^9, 3.6913347023396263`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Evolution of probabilities for each firm:\\n \"\>", 
+   "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", 
+        "0.1`", "0.1`", "0.1`"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`", 
+        "0.10000000000000002`", "0.10000000000000002`"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", 
+        "0.1`", "0.1`", "0.1`"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", 
+        "0.1`", "0.1`", "0.1`"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "0.09999999999999996`", "0.09999999999999996`", 
+        "0.09999999999999996`", "0.09999999999999996`", 
+        "0.09999999999999996`", "0.09999999999999996`", 
+        "0.09999999999999996`", "0.09999999999999996`", 
+        "0.09999999999999996`", "0.09999999999999996`"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", "0.1`", 
+        "0.1`", "0.1`", "0.1`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+         "t=10"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Evolution of probabilities for each firm:\n ", 
+   TableForm[CompressedData["
+1:eJxTTMoPSmViYGDgguKZYLDTnlr07EFOz6IyPdjdN5PKNLXdN53KNLXdBwBQ
+OcmX
+    "], 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", 
+       "t=10"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.691315776940185*^9, 3.691315825862812*^9, 
+  3.691315935539329*^9, 3.6913159861561737`*^9, 3.6913162939741793`*^9, 
+  3.691316330151372*^9, 3.691316518359867*^9, 3.691334531090045*^9, 
+  3.6913347023435163`*^9}]
+}, Open  ]]
+},
+WindowSize->{1920, 1052},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 27852, 674, 4565, "Input"],
+Cell[CellGroupData[{
+Cell[28457, 700, 395, 6, 23, "Print"],
+Cell[28855, 708, 338, 5, 43, "Print"],
+Cell[29196, 715, 395, 6, 23, "Print"],
+Cell[29594, 723, 6065, 147, 372, "Print"],
+Cell[35662, 872, 395, 6, 23, "Print"],
+Cell[36060, 880, 291, 4, 23, "Print"],
+Cell[36354, 886, 395, 6, 23, "Print"]
+}, Open  ]],
+Cell[36764, 895, 3437, 72, 383, "Output"],
+Cell[40204, 969, 3854, 97, 203, "Print"],
+Cell[44061, 1068, 3473, 72, 386, "Output"],
+Cell[47537, 1142, 1327, 37, 386, "Output"],
+Cell[48867, 1181, 5609, 149, 222, "Print"],
+Cell[54479, 1332, 4508, 91, 393, "Output"],
+Cell[58990, 1425, 4917, 118, 203, "Print"],
+Cell[63910, 1545, 4100, 80, 386, "Output"],
+Cell[68013, 1627, 4857, 118, 203, "Print"],
+Cell[72873, 1747, 4170, 81, 395, "Output"],
+Cell[77046, 1830, 4610, 115, 203, "Print"],
+Cell[81659, 1947, 4640, 92, 384, "Output"],
+Cell[86302, 2041, 5038, 124, 203, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
