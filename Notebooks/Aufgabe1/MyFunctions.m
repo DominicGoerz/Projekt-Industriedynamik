@@ -2,60 +2,112 @@
 
 BeginPackage[ "MyFunctions`"]
 
-  ms::usage = "ms[t_, n_, q0_, qi_] computes the market share of the specialist in period t."
+  MarketShare::usage = "ms[t_, n_, q0_, qi_] computes the market share of the specialist in period t."
 
-  etaSpec::usage = "etaSpec[delta_, etaSpecLag_, msSpec_, etaBar_] computes the markup of the specialist."
+  MarkupSpec::usage = "etaSpec[delta_, etaSpecLag_, msSpec_, etaBar_] computes the markup of the specialist."
 
-  pSpec::usage = "pSpec[cs_, etaSpec_] computes the price of the specialist." 
+  PriceSpec::usage = "pSpec[cs_, etaSpec_] computes the price of the specialist." 
 
-  pFirmSelf::usage = "pFirmSelf[cSelf_, eta_] computes price of firm if it produces the smart component itself."
+  PriceFirmSelf::usage = "pFirmSelf[cSelf_, eta_] computes price of firm if it produces the smart component itself."
 
-  pFirmSpec::usage = "pFirmSpec[cSpec_, eta_] computes the price of the firm if it buys the smart component."
+  PriceFirmSpec::usage = "pFirmSpec[cSpec_, eta_] computes the price of the firm if it buys the smart component."
   
-  cSelf::usage = "cSelf[cp_, cs_] computes the marginal costs if firm produces the smart component itself."
+  MarginalCostSelf::usage = "cSelf[cp_, cs_]:=cp + cs, computes the marginal costs if firm produces the smart component itself."
 
-  cSpec::usage = "cSpec[cp_,cs_, etaSpec_] computes the marginal costs if firm buys the smart component from specialist."
+  MarginalCostSpec::usage = "cSpec[cp_,cs_, etaSpec_] computes the marginal costs if firm buys the smart component from specialist."
 
-  profit::usage = "profit[q_, p_, c_] computes the profit."
+  CostFirmSelf::usage = "CostsFirmSelf[q_,cp_,cs_]:=q*cSelf[cp, cs], computes the total costs when the firm is producing the smart part itself."
 
-  qualitySpec::usage = "qualitySpec[uBar_, alpha_, beta_, qSpec_] computes the quality of the smart component produced by the specialist."
+  CostFirmSpec::usage = "CostFirmSpec[q_,cp_,cs_,etaSpec_]:=q*cSpec[cp, cs, etaSpec], computes the total costs when the firm buys the smart part from the specialist."
 
-  qualityFirm::usage = "qualityFirm[uBar_, alpha_, beta_, qFirm_] computes the quality of the smart component produced by the firm."
+  CostFirmSelfQuad::usage = "CostFirmSelfQuad[percent_,q_,cp_,cs_]:=q*cSelf[cp, cs]+q^2*cSelf[cp, cs]*percent"
 
-  probability::usage= "probability[i_, priceList_, qualityList_] computes the probability that consumer j buys from firm i."
+  CostFirmSpecQuad::usage = "CostFirmSpecQuad[percent_,q_,cp_,cs_,etaSpec_]:=q*cSpec[cp, cs, etaSpec] + q^2*cSpec[cp, cs, etaSpec]*percent"
+
+  ProfitFirmSelf::usage = "ProfitFirmSelf[q_,p_,cp_cs_]:= q*p-CostFirmSelf[q,cp,cs]"
+
+  ProfitFirmSpec::usage = "ProfitFirmSpec[q_,p_,cp_,cs_,etaSpec_]:=q*p - CostFirmSpec[q,cp,cs,etaSpec]"
+
+  ProfitFirmSelfQuad::usage = "ProfitFirmSelfQuad[percent_, q_, p_, cp_, cs_]:= q*p - CostFirmSelfQuad[q, cp, cs]"
+
+  ProfitFirmSpecQuad::usage = "ProfitFirmSpecQuad[percent_,q_,p_,cp_,cs_,etaSpec_]:=q*p - CostFirmSpecQuad[q,cp,cs,etaSpec]"
+
+  RevenueFirmSelf::usage = "RevenueFirmSelf[q_, cp_, cs_, eta_]:= q * PriceFirmSelf[cp, cs, eta]"
+
+  RevenueFirmSpec::usage = "RevenueFirmSelf[q_, cp_, cs_, eta_, etaSpec_]:= q * PriceFirmSpec[cp, cs, eta, etaSpec]"
+  
+  QualityFirmSpec::usage = "qualitySpec[uBar_, alpha_, beta_, qSpec_] computes the quality of the smart component produced by the specialist."
+
+  QualityFirmSelf::usage = "qualityFirm[uBar_, alpha_, beta_, qFirm_] computes the quality of the smart component produced by the firm."
+
+  Prob::usage= "probability[i_, priceList_, qualityList_] computes the probability that consumer j buys from firm i."
 
 Begin["Private`"]
 
-  pSpec[cs_, etaSpec_] := (1 + etaSpec)*cs;
+  MarginalCostSelf[cp_, cs_]:= cp + cs;
 
-  pFirmSelf[cSelf_, eta_] := (1 + eta)*cSelf;
+  MarginalCostSpec[cp_, cs_, etaSpec_]:= cp + PriceSpec[cs, etaSpec];
 
-  pFirmSpec[cSpec_, etaSpec_] := (1 + etaSpec)*cSpec;
+  CostFirmSelf[q_, cp_, cs_]:= q * MarginalCostSelf[cp, cs];
 
-  cSelf[cp_, cs_]:=cp + cs;
+  CostFirmSpec[q_, cp_, cs_, etaSpec_]:= q * MarginalCostSpec[cp, cs, etaSpec];
 
-  cSpec[cp_,cs_, etaSpec_]:=cp + pSpec[cs, etaSpec];
+  CostFirmSelfQuad[percent_ ,q_, cp_, cs_]:= q * MarginalCostSelf[cp, cs] + q^2 * MarginalCostSelf[cp, cs] * percent;
 
-  profit[q_, p_, c_] := q*p - c*q;
-   
-  qualitySpec[uBar_, alpha_, beta_, qSpec_] := uBar*(1 + beta*qSpec^alpha);
+  CostFirmSpecQuad[percent_, q_, cp_, cs_, etaSpec_]:= q * MarginalCostSpec[cp, cs, etaSpec] + q^2 * MarginalCostSpec[cp, cs, etaSpec] * percent; 
 
-  qualityFirm[uBar_, alpha_, beta_, qFirm_ ] := uBar*(1 + beta*qFirm^alpha);
+  PriceSpec[cs_, etaSpec_] := (1 + etaSpec) * cs;
+
+  PriceFirmSelf[cp_, cs_, \[Eta]_] := (1 + \[Eta]) * MarginalCostSelf[cp, cs];
+
+  PriceFirmSpec[cp_, cs_, \[Eta]_, etaSpec_] := (1 + \[Eta]) * MarginalCostSpec[cp, cs, etaSpec];
+  
+  ProfitFirmSelf[q_, cp_, cs_, \[Eta]_]:= RevenueFirmSelf[q, cp, cs, \[Eta]] - CostFirmSelf[q, cp, cs];
+
+  ProfitFirmSpec[q_, cp_, cs_, \[Eta]_, etaSpec_]:= RevenueFirmSpec[q, cp, cs, \[Eta], etaSpec] - CostFirmSpec[q, cp, cs, etaSpec];
+
+  ProfitFirmSelfQuad[percent_, q_, cp_, cs_, \[Eta]_]:= RevenueFirmSelf[q, cp, cs, \[Eta]] - CostFirmSelfQuad[percent, q, cp, cs];
+ 
+  ProfitFirmSpecQuad[percent_, q_, cp_, cs_, \[Eta]_, etaSpec_]:= RevenueFirmSpec[q, cp, cs, \[Eta], etaSpec] - CostFirmSpecQuad[percent, q, cp, cs, etaSpec];
+ 
+  RevenueFirmSelf[q_, cp_, cs_, \[Eta]_]:= q * PriceFirmSelf[cp, cs, \[Eta]];
+
+  RevenueFirmSpec[q_, cp_, cs_, \[Eta]_, etaSpec_]:= q * PriceFirmSpec[cp, cs, \[Eta], etaSpec];
+
+  QualityFirmSelf[uBar_, \[Alpha]_, \[Beta]_, qFirmAgg_ ] := uBar * (1 + \[Beta]*qFirmAgg^\[Alpha]);
+
+  QualityFirmSpec[uBar_, \[Alpha]_, \[Beta]_, qSpecAgg_] := uBar * (1 + \[Beta]*qSpecAgg^\[Alpha]);
+
+  Prob[firm_, n_, priceList_, qualityList_, \[Kappa]_, \[Chi]_] := 
+  Module[
+  {i=firm, p = priceList, u = qualityList},
+   Exp[-\[Chi] * Indexed[p,i] + \[Kappa] * Indexed[u,i]]/
+   Sum[Exp[-\[Chi] * Indexed[p,k] + \[Kappa] * Indexed[u,k]], {k, 1, n}]
+  ];
 
 End[]
 
-ms[q0_, qi_] := q0 / Sum[qi[[t, i]], {i, 1, n}];
+MarketShare[q0_, qi_] := q0 / Sum[qi[[t, i]], {i, 1, n}];
 
-etaSpec[delta_, etaSpecLag_, msSpec_, etaBar_] := (1 - delta)*etaSpecLag + delta*msSpec*etaBar;
-
-probability[priceList_, qualityList_] := 
-  Module[
-  {p = priceList, u = qualityList},
-   Exp[-chi*Indexed[p,i] + katta*Indexed[u,i]]/
-   Sum[Exp[-chi*Indexed[p,k] + katta*Indexed[u,k]], {k, 1, n}]
-  ];
+MarkupSpec[\[Delta]_, etaSpecLag_, msSpec_, etaBar_] := (1 - \[Delta]) * etaSpecLag + \[Delta] * msSpec * etaBar;
 
 EndPackage[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
