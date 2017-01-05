@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     48396,       1286]
-NotebookOptionsPosition[     48086,       1270]
-NotebookOutlinePosition[     48420,       1285]
-CellTagsIndexPosition[     48377,       1282]
+NotebookDataLength[     48584,       1289]
+NotebookOptionsPosition[     48274,       1273]
+NotebookOutlinePosition[     48608,       1288]
+CellTagsIndexPosition[     48565,       1285]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,13 +25,14 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"SetDirectory", "[", 
-    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{"LOAD", " ", "FUNCTIONS"}], "*)"}]}], "\n", 
- RowBox[{
-  RowBox[{"<<", "MyFunctions`"}], "\[IndentingNewLine]", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
   "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"LOAD", " ", "FUNCTIONS"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Get", "[", 
+   RowBox[{"FindFile", "[", "\"\<../MyFunctions.m\>\"", "]"}], "]"}], 
+  "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -133,9 +134,9 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{"--", 
                     RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}], "*)"}], "\n", 
+                    RowBox[{"--", 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
+}]}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -315,12 +316,12 @@ Cell[BoxData[{
     RowBox[{"length", " ", "of", " ", "table"}], "*)"}], "\n", "\t", 
    RowBox[{"pend", "=", "10"}], ";", " ", 
    RowBox[{"(*", 
-    RowBox[{"plot", " ", "horizon"}], "*)"}], "\[IndentingNewLine]", "\n", 
+    RowBox[{"plot", " ", "horizon"}], "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
     "firms", " ", "making", " ", "positive", " ", "profits", " ", "at", " ", 
-     "T", " ", "for", " ", "each", " ", "batch", " ", "run"}], "*)"}], 
-   "\[IndentingNewLine]", 
+     "T", " ", "for", " ", "each", " ", "batch", " ", "run"}], "*)"}], "\n", 
    RowBox[{"survivor", "=", 
     RowBox[{"Table", "[", 
      RowBox[{"0.0", ",", 
@@ -445,7 +446,7 @@ Cell[BoxData[{
                RowBox[{"--", 
                 RowBox[{"--", 
                  RowBox[{"--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
-  "\n", 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"--", 
     RowBox[{"--", 
@@ -484,7 +485,7 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{
                     "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
-]}]}]}]}]}]}]}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+]}]}]}]}]}]}]}]}]}]}]}], "*)"}]}], "\n", 
  RowBox[{
   RowBox[{"Timing", "[", "\[IndentingNewLine]", 
    RowBox[{"(*", 
@@ -773,7 +774,7 @@ Cell[BoxData[{
         RowBox[{"Table", "[", "\[IndentingNewLine]", "\t\t\t\t\t", 
          RowBox[{
           RowBox[{"Prob", "[", 
-           RowBox[{"firm", ",", "n", ",", 
+           RowBox[{"firm", ",", 
             RowBox[{"priceList", "[", 
              RowBox[{"[", "t", "]"}], "]"}], ",", 
             RowBox[{"qualityList", "[", 
@@ -977,7 +978,7 @@ Cell[BoxData[{
            RowBox[{"Table", "[", "\[IndentingNewLine]", "\t\t\t\t\t", 
             RowBox[{
              RowBox[{"Prob", "[", 
-              RowBox[{"firm", ",", "n", ",", 
+              RowBox[{"firm", ",", 
                RowBox[{"priceList", "[", 
                 RowBox[{"[", "t", "]"}], "]"}], ",", 
                RowBox[{"qualityList", "[", 
@@ -1258,14 +1259,16 @@ Cell[BoxData[{
    3.6925405782684937`*^9, 3.692540616309678*^9}, {3.6925412268651657`*^9, 
    3.692541230719697*^9}, {3.692541314524572*^9, 3.6925414284439793`*^9}, {
    3.692543665565248*^9, 3.692543665821865*^9}, {3.692543762521392*^9, 
-   3.692543765266388*^9}}],
+   3.692543765266388*^9}, {3.69259857634839*^9, 3.692598584981283*^9}, {
+   3.6926031555694838`*^9, 3.692603183036672*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-  "4.13600000000000012079226507921703159809`6.63718044336551", ",", "Null"}], 
-  "}"}]], "Output",
- CellChangeTimes->{3.6925406478597317`*^9}]
+  "1.04000000000000003552713678800500929356`6.037633252578405", ",", "Null"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.6925406478597317`*^9, 3.6925985935544147`*^9, 
+  3.6926031864017277`*^9}]
 }, Open  ]]
 },
 WindowSize->{1920, 1052},
@@ -1285,8 +1288,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 47305, 1238, 3663, "Input"],
-Cell[47888, 1262, 182, 5, 32, "Output"]
+Cell[580, 22, 47441, 1240, 3663, "Input"],
+Cell[48024, 1264, 234, 6, 32, "Output"]
 }, Open  ]]
 }
 ]
