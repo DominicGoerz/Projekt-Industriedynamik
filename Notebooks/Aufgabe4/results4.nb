@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    194367,       4720]
-NotebookOptionsPosition[    193002,       4679]
-NotebookOutlinePosition[    193336,       4694]
-CellTagsIndexPosition[    193293,       4691]
+NotebookDataLength[    194028,       4706]
+NotebookOptionsPosition[    192652,       4665]
+NotebookOutlinePosition[    192997,       4680]
+CellTagsIndexPosition[    192954,       4677]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -139,19 +139,14 @@ Cell[BoxData[
    "Print", "[", 
     "\"\<---------------------------------------------------------------------\
 ---------------------------------------------------------\>\"", "]"}], "\n", 
-   RowBox[{"Print", "[", 
-    RowBox[{"\"\<Results batch runs:\\n Fixed Strategies - Firms 1 to \>\"", "<>", 
-     RowBox[{"ToString", "[", "d", "]"}], "<>", 
-     "\"\< buy the smart part \nwhile firms \>\"", "<>", 
-     RowBox[{"ToString", "[", 
-      RowBox[{"d", "+", "1"}], "]"}], " ", "<>", "\"\< to \>\"", "<>", 
-     RowBox[{"ToString", "[", "n", "]"}], "<>", 
-     "\"\< produce the smart part!\>\""}], "]"}], "\n", 
+   RowBox[{
+   "Print", "[", "\"\<Results batch runs:\\n Evolving Strategies\>\"", "]"}], 
+   "\n", 
    RowBox[{
    "Print", "[", 
     "\"\<---------------------------------------------------------------------\
----------------------------------------------------------\>\"", "]"}], "\n", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+---------------------------------------------------------\>\"", "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\n", 
    RowBox[{"Print", "[", "\[IndentingNewLine]", 
     RowBox[{
     "\"\<\\n The firms which survive:\\n \>\"", ",", "\[IndentingNewLine]", 
@@ -221,7 +216,6 @@ Cell[BoxData[
        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-       
        RowBox[{"PlotLabel", "\[Rule]", 
         RowBox[{"HoldForm", "[", 
          RowBox[{"Period", " ", "Output", " ", "of", " ", "Firms"}], "]"}]}], 
@@ -232,12 +226,11 @@ Cell[BoxData[
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", 
            RowBox[{"Period", " ", "Output"}], "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
     RowBox[{
     "Table", " ", "of", " ", "Period", " ", "Output", " ", "of", " ", 
-     "Firms"}], "*)"}], "\n", 
+     "Firms"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
@@ -297,7 +290,6 @@ Cell[BoxData[
        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-       
        RowBox[{"PlotLabel", "\[Rule]", 
         RowBox[{"HoldForm", "[", 
          RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Firms"}], 
@@ -308,11 +300,12 @@ Cell[BoxData[
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", 
            RowBox[{"Agg", ".", "Output"}], "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
     "Plot", " ", "aggregated", " ", "output", " ", "of", " ", "Specialist"}], 
-    "*)"}], "\[IndentingNewLine]", 
+    "*)"}], "\n", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
@@ -325,7 +318,6 @@ Cell[BoxData[
        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-       
        RowBox[{"PlotLabel", "\[Rule]", 
         RowBox[{"HoldForm", "[", 
          RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Specialist"}], 
@@ -342,7 +334,6 @@ Cell[BoxData[
     RowBox[{
     "Table", " ", "of", " ", "Aggregated", " ", "Output", " ", "of", " ", 
      "Firms", " ", "and", " ", "Specialist"}], "*)"}], "\[IndentingNewLine]", 
-   
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
@@ -389,8 +380,8 @@ Cell[BoxData[
                  RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
               RowBox[{"Style", "[", 
                RowBox[{"\"\<Specialist\>\"", ",", "Bold"}], "]"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", "\n", 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Plot", " ", "Quality"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
@@ -414,7 +405,6 @@ Cell[BoxData[
        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-       
        RowBox[{"PlotLabel", "\[Rule]", 
         RowBox[{"HoldForm", "[", 
          RowBox[{"Quality", " ", "of", " ", "Products"}], "]"}]}], ",", 
@@ -424,16 +414,15 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", "Quality", "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Qualities"}], "*)"}], "\n", 
+    RowBox[{"Table", " ", "of", " ", "Qualities"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
      RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{
-      "\"\<Quality of products:\\n \>\"", ",", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Quality of products:\\n \>\"", ",", "\[IndentingNewLine]", 
        RowBox[{"TableForm", "[", 
         RowBox[{
          RowBox[{"qualityList", "[", 
@@ -460,8 +449,8 @@ Cell[BoxData[
               "\[IndentingNewLine]", 
               RowBox[{"{", 
                RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", "\n", 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Plot", " ", "Profits"}], "*)"}], "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
@@ -485,7 +474,6 @@ Cell[BoxData[
        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-       
        RowBox[{"PlotLabel", "\[Rule]", 
         RowBox[{"HoldForm", "[", 
          RowBox[{"Profits", " ", "of", " ", "Firms"}], "]"}]}], ",", 
@@ -495,10 +483,10 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", "Profit", "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Profits"}], "*)"}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Table", " ", "of", " ", "Profits"}], "*)"}], "\n", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
@@ -554,7 +542,6 @@ Cell[BoxData[
        "\[IndentingNewLine]", 
        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-       
        RowBox[{"PlotLabel", "\[Rule]", 
         RowBox[{"HoldForm", "[", 
          RowBox[{"Prices", " ", "of", " ", "Firms"}], "]"}]}], ",", 
@@ -599,10 +586,10 @@ Cell[BoxData[
               "\[IndentingNewLine]", 
               RowBox[{"{", 
                RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], "\n", 
-   "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{"Plot", " ", "Probabilities"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Plot", " ", "Probabilities"}], "*)"}], "\n", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
@@ -624,7 +611,6 @@ Cell[BoxData[
        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-       
        RowBox[{"PlotLabel", "\[Rule]", 
         RowBox[{"HoldForm", "[", 
          RowBox[{
@@ -688,7 +674,6 @@ Cell[BoxData[
        "\[IndentingNewLine]", 
        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-       
        RowBox[{"PlotLabel", "\[Rule]", 
         RowBox[{"HoldForm", "[", 
          RowBox[{"Markup", " ", "of", " ", "Specialist"}], "]"}]}], ",", 
@@ -698,7 +683,7 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", "Markup", "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", "\n", 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
     "Table", " ", "of", " ", "Markups", " ", "of", " ", "Specialist"}], 
@@ -725,9 +710,10 @@ Cell[BoxData[
              RowBox[{"{", 
               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], 
            "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\n", 
    RowBox[{"(*", 
-    RowBox[{"Plot", " ", "Market", " ", "Share"}], "*)"}], "\n", 
+    RowBox[{"Plot", " ", "Market", " ", "Share"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
@@ -739,7 +725,6 @@ Cell[BoxData[
        "\[IndentingNewLine]", 
        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-       
        RowBox[{"PlotLabel", "\[Rule]", 
         RowBox[{"HoldForm", "[", 
          RowBox[{"Market", " ", "Share"}], "]"}]}], ",", 
@@ -807,7 +792,8 @@ Cell[BoxData[
    3.6914117213814583`*^9, 3.691411726553763*^9}, {3.6914117993255997`*^9, 
    3.6914119186773987`*^9}, {3.6914119498015347`*^9, 3.691412011729422*^9}, {
    3.691412044887124*^9, 3.6914121045105762`*^9}, {3.6925989201044807`*^9, 
-   3.6925989287268667`*^9}, {3.6925989771785507`*^9, 3.692598981572908*^9}}],
+   3.6925989287268667`*^9}, {3.6925989771785507`*^9, 3.692598981572908*^9}, {
+   3.6942802403357596`*^9, 3.6942802736279244`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -4677,9 +4663,9 @@ Cell[BoxData[
    3.692598693979127*^9, 3.692598933111779*^9, 3.692599045147873*^9}]
 }, Open  ]]
 },
-WindowSize->{1920, 1052},
-WindowMargins->{{Automatic, 0}, {0, Automatic}},
-FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (October 9, 2015)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -4694,33 +4680,33 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 33277, 787, 5511, "Input"],
+Cell[580, 22, 32927, 773, 4992, "Input"],
 Cell[CellGroupData[{
-Cell[33882, 813, 1113, 16, 23, "Print"],
-Cell[34998, 831, 1103, 15, 62, "Print"],
-Cell[36104, 848, 1111, 16, 23, "Print"],
-Cell[37218, 866, 55742, 1527, 372, "Print"],
-Cell[92963, 2395, 1111, 16, 23, "Print"],
-Cell[94077, 2413, 1007, 14, 23, "Print"],
-Cell[95087, 2429, 1111, 16, 23, "Print"]
+Cell[33532, 799, 1113, 16, 23, "Print"],
+Cell[34648, 817, 1103, 15, 62, "Print"],
+Cell[35754, 834, 1111, 16, 23, "Print"],
+Cell[36868, 852, 55742, 1527, 391, "Print"],
+Cell[92613, 2381, 1111, 16, 23, "Print"],
+Cell[93727, 2399, 1007, 14, 23, "Print"],
+Cell[94737, 2415, 1111, 16, 23, "Print"]
 }, Open  ]],
-Cell[96213, 2448, 4513, 98, 383, "Output"],
-Cell[100729, 2548, 6287, 144, 353, "Print"],
-Cell[107019, 2694, 4703, 103, 386, "Output"],
-Cell[111725, 2799, 2100, 50, 386, "Output"],
-Cell[113828, 2851, 9721, 249, 372, "Print"],
-Cell[123552, 3102, 5356, 116, 393, "Output"],
-Cell[128911, 3220, 9354, 200, 353, "Print"],
-Cell[138268, 3422, 5054, 106, 386, "Output"],
-Cell[143325, 3530, 8386, 187, 353, "Print"],
-Cell[151714, 3719, 4844, 102, 395, "Output"],
-Cell[156561, 3823, 7768, 175, 353, "Print"],
-Cell[164332, 4000, 5618, 118, 384, "Output"],
-Cell[169953, 4120, 11066, 231, 411, "Print"],
-Cell[181022, 4353, 2116, 50, 392, "Output"],
-Cell[183141, 4405, 4160, 111, 356, "Print"],
-Cell[187304, 4518, 1983, 48, 413, "Output"],
-Cell[189290, 4568, 3696, 108, 356, "Print"]
+Cell[95863, 2434, 4513, 98, 383, "Output"],
+Cell[100379, 2534, 6287, 144, 352, "Print"],
+Cell[106669, 2680, 4703, 103, 387, "Output"],
+Cell[111375, 2785, 2100, 50, 387, "Output"],
+Cell[113478, 2837, 9721, 249, 371, "Print"],
+Cell[123202, 3088, 5356, 116, 393, "Output"],
+Cell[128561, 3206, 9354, 200, 352, "Print"],
+Cell[137918, 3408, 5054, 106, 386, "Output"],
+Cell[142975, 3516, 8386, 187, 353, "Print"],
+Cell[151364, 3705, 4844, 102, 395, "Output"],
+Cell[156211, 3809, 7768, 175, 353, "Print"],
+Cell[163982, 3986, 5618, 118, 384, "Output"],
+Cell[169603, 4106, 11066, 231, 411, "Print"],
+Cell[180672, 4339, 2116, 50, 392, "Output"],
+Cell[182791, 4391, 4160, 111, 356, "Print"],
+Cell[186954, 4504, 1983, 48, 413, "Output"],
+Cell[188940, 4554, 3696, 108, 356, "Print"]
 }, Open  ]]
 }
 ]
