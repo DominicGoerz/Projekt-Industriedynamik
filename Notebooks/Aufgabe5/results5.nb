@@ -1,0 +1,4715 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    194028,       4706]
+NotebookOptionsPosition[    192652,       4665]
+NotebookOutlinePosition[    192997,       4680]
+CellTagsIndexPosition[    192954,       4677]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"--", 
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{
+                    "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
+]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"-", " ", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"RESULTS", " ", "--"}], "--"}], 
+                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], 
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"-", 
+         RowBox[{"-", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"--", 
+    RowBox[{"--", 
+     RowBox[{"--", 
+      RowBox[{"--", 
+       RowBox[{"--", 
+        RowBox[{"--", 
+         RowBox[{"--", 
+          RowBox[{"--", 
+           RowBox[{"--", 
+            RowBox[{"--", 
+             RowBox[{"--", 
+              RowBox[{"--", 
+               RowBox[{"--", 
+                RowBox[{"--", 
+                 RowBox[{"--", 
+                  RowBox[{"--", 
+                   RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"-", 
+                    RowBox[{"-", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{"--", 
+                    RowBox[{
+                    "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
+]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+   "Print", "[", 
+    "\"\<---------------------------------------------------------------------\
+---------------------------------------------------------\>\"", "]"}], "\n", 
+   RowBox[{
+   "Print", "[", "\"\<Results batch runs:\\n Evolving Strategies\>\"", "]"}], 
+   "\n", 
+   RowBox[{
+   "Print", "[", 
+    "\"\<---------------------------------------------------------------------\
+---------------------------------------------------------\>\"", "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\n", 
+   RowBox[{"Print", "[", "\[IndentingNewLine]", 
+    RowBox[{
+    "\"\<\\n The firms which survive:\\n \>\"", ",", "\[IndentingNewLine]", 
+     RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"survivor", "[", 
+          RowBox[{"[", "r", "]"}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"TableHeadings", "\[Rule]", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Table", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"StringJoin", "[", 
+             RowBox[{"\"\<r=\>\"", ",", 
+              RowBox[{"ToString", "[", "r", "]"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"r", ",", "start", ",", "R"}], "}"}]}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"{", "\"\<Firm\>\"", "}"}]}], "\[IndentingNewLine]", 
+         "}"}]}]}], "]"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"tables", " ", "\[Equal]", "True"}], "||", 
+      RowBox[{"plots", "==", "True"}]}], ",", "\[IndentingNewLine]", "\t", 
+     RowBox[{
+      RowBox[{
+      "Print", "[", 
+       "\"\<------------------------------------------------------------------\
+------------------------------------------------------------\>\"", "]"}], ";",
+       "\[IndentingNewLine]", "\t", 
+      RowBox[{"Print", "[", "\"\<Results of last batch run:\>\"", "]"}], ";", 
+      "\[IndentingNewLine]", "\t", 
+      RowBox[{
+      "Print", "[", 
+       "\"\<------------------------------------------------------------------\
+------------------------------------------------------------\>\"", "]"}]}]}], 
+    "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Period", " ", "Output"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\n", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"quantPeriodFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Period", " ", "Output", " ", "of", " ", "Firms"}], "]"}]}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", 
+           RowBox[{"Period", " ", "Output"}], "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Table", " ", "of", " ", "Period", " ", "Output", " ", "of", " ", 
+     "Firms"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<Period Output of Firms:\\n \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"quantPeriodFirm", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "aggregated", " ", "output", " ", "Firms"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\n", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"quantAggFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "start", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Firms"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", 
+           RowBox[{"Agg", ".", "Output"}], "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Plot", " ", "aggregated", " ", "output", " ", "of", " ", "Specialist"}], 
+    "*)"}], "\n", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"quantAggSpec", "[", 
+        RowBox[{"[", 
+         RowBox[{"start", ";;", "pend"}], "]"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Specialist"}], 
+         "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", 
+           RowBox[{"Agg", ".", "Output"}], "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Table", " ", "of", " ", "Aggregated", " ", "Output", " ", "of", " ", 
+     "Firms", " ", "and", " ", "Specialist"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<\\nAggregated Output of Firms:\\n \>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Append", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"quantAggFirm", "[", 
+              RowBox[{"[", "t", "]"}], "]"}], ",", 
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"quantAggSpec", "[", 
+                RowBox[{"[", "t", "]"}], "]"}], ",", "Bold"}], "]"}]}], "]"}],
+            ",", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Append", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"Table", "[", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"StringJoin", "[", 
+                 RowBox[{"\"\<Firm \>\"", ",", 
+                  RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<Specialist\>\"", ",", "Bold"}], "]"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Quality"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"qualityList", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Quality", " ", "of", " ", "Products"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", "Quality", "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Table", " ", "of", " ", "Qualities"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Quality of products:\\n \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"qualityList", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Profits"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"profitListFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Profits", " ", "of", " ", "Firms"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", "Profit", "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Table", " ", "of", " ", "Profits"}], "*)"}], "\n", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Profits of firms:\\n \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"profitListFirm", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Prices"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"priceListFirm", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Prices", " ", "of", " ", "Firms"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", "Prices", "]"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Table", " ", "of", " ", "Prices"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\n", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{"\"\<Prices of firms:\\n \>\"", ",", "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"priceListFirm", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Probabilities"}], "*)"}], "\n", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"probList", "[", 
+            RowBox[{"[", 
+             RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "1", ",", "pend"}], "}"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{
+         "Evolution", " ", "of", " ", "Probabilities", " ", "for", " ", 
+          "each", " ", "Firm"}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", "Probs", "]"}]}], "}"}]}]}], "]"}]}], 
+    "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Table", " ", "of", " ", "Probabilities"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\n", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<Evolution of probabilities for each firm:\\n \>\"", ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", 
+        RowBox[{
+         RowBox[{"probList", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<t=\>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Table", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Firm \>\"", ",", 
+                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
+              "\[IndentingNewLine]", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Markup", " ", "of", " ", "Specialist"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"\[Eta]Spec", "[", 
+        RowBox[{"[", 
+         RowBox[{"start", ";;", "pend"}], "]"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Markup", " ", "of", " ", "Specialist"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", "Markup", "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Table", " ", "of", " ", "Markups", " ", "of", " ", "Specialist"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{"\"\<\\n Markup: \\n\>\"", " ", ",", "\[IndentingNewLine]", 
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"\[Eta]Spec", "[", 
+          RowBox[{"[", 
+           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{"Table", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"StringJoin", "[", 
+              RowBox[{"\"\<t=\>\"", ",", 
+               RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Plot", " ", "Market", " ", "Share"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"msSpec", "[", 
+        RowBox[{"[", 
+         RowBox[{"start", ";;", "pend"}], "]"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"PlotLabel", "\[Rule]", 
+        RowBox[{"HoldForm", "[", 
+         RowBox[{"Market", " ", "Share"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"HoldForm", "[", "time", "]"}], ",", 
+          RowBox[{"HoldForm", "[", 
+           RowBox[{"Market", " ", "Share"}], "]"}]}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Table", " ", "of", " ", "Market", " ", "Shares", " ", "of", " ", 
+     "Specialist"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"tables", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "\[IndentingNewLine]", 
+      RowBox[{
+      "\"\<\\n Market Share: \\n\>\"", ",", "\[IndentingNewLine]", " ", 
+       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"N", "[", 
+          RowBox[{"msSpec", "[", 
+           RowBox[{"[", 
+            RowBox[{"start", ";;", "lend"}], "]"}], "]"}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"TableHeadings", "\[Rule]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{"Table", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"StringJoin", "[", 
+              RowBox[{"\"\<t=\>\"", ",", 
+               RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.690534047656938*^9, 3.690534047661303*^9}, 
+   3.690699983118863*^9, {3.690700017760223*^9, 3.690700069943945*^9}, {
+   3.690700338860899*^9, 3.6907003614554157`*^9}, {3.690700476560109*^9, 
+   3.690700523494061*^9}, 3.690700716772827*^9, 3.690700791039661*^9, {
+   3.690700851583761*^9, 3.690700868294778*^9}, {3.690700956526722*^9, 
+   3.690700984328312*^9}, {3.690701015425622*^9, 3.6907010703560057`*^9}, {
+   3.691246187460534*^9, 3.691246188172669*^9}, {3.691246809713402*^9, 
+   3.691246809859095*^9}, {3.691246890517591*^9, 3.691246891701644*^9}, {
+   3.691296762931116*^9, 3.69129699249184*^9}, {3.6912970257407913`*^9, 
+   3.6912971239385767`*^9}, {3.69129729332128*^9, 3.691297366414281*^9}, {
+   3.691297601683998*^9, 3.691297620832473*^9}, 3.6912979049910297`*^9, {
+   3.691297936193959*^9, 3.691297960257174*^9}, {3.691298027841878*^9, 
+   3.691298113921686*^9}, {3.691298166018724*^9, 3.6912982566516237`*^9}, {
+   3.691298313481855*^9, 3.691298342690858*^9}, {3.691298456796319*^9, 
+   3.691298602954219*^9}, {3.691315762056528*^9, 3.691315762583529*^9}, 
+   3.691315855043695*^9, {3.691315891907493*^9, 3.691315911729705*^9}, 
+   3.69131602025391*^9, {3.691316053606909*^9, 3.691316151109002*^9}, {
+   3.691316206387377*^9, 3.6913162482892027`*^9}, {3.691316408575931*^9, 
+   3.691316418296173*^9}, {3.6913340267683897`*^9, 3.691334027539892*^9}, {
+   3.691336904959062*^9, 3.691336905564385*^9}, {3.691336948694378*^9, 
+   3.691336949015603*^9}, {3.6913370590078297`*^9, 3.691337087849454*^9}, {
+   3.6913371558096867`*^9, 3.691337161601117*^9}, {3.691337197263624*^9, 
+   3.691337213679585*^9}, {3.6914113443666277`*^9, 3.691411509287858*^9}, {
+   3.6914117213814583`*^9, 3.691411726553763*^9}, {3.6914117993255997`*^9, 
+   3.6914119186773987`*^9}, {3.6914119498015347`*^9, 3.691412011729422*^9}, {
+   3.691412044887124*^9, 3.6914121045105762`*^9}, {3.6925989201044807`*^9, 
+   3.6925989287268667`*^9}, {3.6925989771785507`*^9, 3.692598981572908*^9}, {
+   3.6942802403357596`*^9, 3.6942802736279244`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------------------------------------------------------------------\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.6925990448056517`*^9}],
+
+Cell[BoxData["\<\"Results batch runs:\\n Fixed Strategies - Firms 1 to 5 buy \
+the smart part \\nwhile firms 6 to 10 produce the smart part!\"\>"], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599044822906*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------------------------------------------------------------------\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599044825721*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\n The firms which survive:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm\"\>",
+         HoldForm], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ], 
+        TagBox[
+         StyleBox["\<\"\[Null]\"\>",
+          ShowStringCharacters->False],
+         StyleForm[#, ShowStringCharacters -> False]& ]},
+       {
+        TagBox["\<\"r=1\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=2\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=3\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=4\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=5\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=6\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=7\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=8\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=9\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=10\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=11\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=12\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=13\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=14\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=15\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=16\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=17\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=18\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=19\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]},
+       {
+        TagBox["\<\"r=20\"\>",
+         HoldForm], 
+        TagBox[GridBox[{
+           {"1"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"2"}
+          },
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"3"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"4"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column], 
+        TagBox[GridBox[{
+           {"5"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.5599999999999999]}, 
+              Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{
+               Offset[0.2]}}, "RowsIndexed" -> {}}],
+         Column]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "r=1", "r=2", "r=3", "r=4", "r=5", "r=6", "r=7", "r=8", "r=9", "r=10",
+          "r=11", "r=12", "r=13", "r=14", "r=15", "r=16", "r=17", "r=18", 
+         "r=19", "r=20"}, {"Firm"}}]]]}],
+  SequenceForm["\n The firms which survive:\n ", 
+   TableForm[CompressedData["
+1:eJxTTMoPymNmYGAQAWJWIGaEYiYgBomzIImPig2MGADf0gL8
+    "], 
+    TableHeadings -> {{
+      "r=1", "r=2", "r=3", "r=4", "r=5", "r=6", "r=7", "r=8", "r=9", "r=10", 
+       "r=11", "r=12", "r=13", "r=14", "r=15", "r=16", "r=17", "r=18", "r=19",
+        "r=20"}, {"Firm"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599044838931*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------------------------------------------------------------------\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599044840547*^9}],
+
+Cell[BoxData["\<\"Results of last batch run:\"\>"], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599044841107*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+------------------------------------------------------------------\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599044841508*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0igNUAEqbQWkOKK0FpQWgtAGUFkGTl4DS
+elBaBkprQGkFKG0LpZXQ+DB3wPSrQWlDNHNg7oPZawKldaC0KZo5xmjuNkSj
+YfqN0MRh+szR1Fk7AAAErBMq
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0mgNUAEqbQWkOKK0HpQWgtBGUFoHSFlBa
+Ak2/DJQ2gdIKUNoASitBaRU02tQB1V2WUFoDzT1aUNoYSutAaUM0dTA+zF4j
+NHFDNHGY/cZo4jB/mDkAABJkEyY=
+      "]]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0hANUAEprQGkOKG0CpQXQ+CJofJg5RlBa
+BkrbQmkFKG0ApZWgtDGUVkHjq0FpCzR3WUJpLShtCqV10Gg9ND7MXjMobYjG
+h7kb5h9jNHmYuJ4DAAf0EyY=
+      "]]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0hgNUAEqbQmkOKG0BpQXQ+CJofAk0vgyU
+NobSCmh8JTT7VKC0FZRWg9KGDqjuNIPSWmj26UBpByith2aeAZQ2RzMXxjdC
+c48xmjoTOB8AQ04Tcw==
+      "]]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0jANUAEqbQ2kOKG0DpQWgtBmUFoHSxlBa
+AkqbOqCaawKlFdD4SmjqVdDMU4PShlBaA0obQGktNL4OGl8PSlugicPsh5lr
+hEbD3GOMpt4ELg4AIF4TOw==
+      "]]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0jANUwIEBBXCg8QXQ+CJofAk0vgwaXwGN
+r4TGV0Hjq6HxNdD4Wmh8HTS+HhrfAI1viMY3QuMbo/FN4HwAM+sKnw==
+      "]]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0oQNUwIEBBXCg8QXQ+CJofAk0vgwaXwGN
+r4TGV0Hjq6HxNdD4Wmh8HTS+HhrfAI1viMY3QuMbo/FN4HwATQUKtA==
+      "]]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0ggNUwIEBBXCg8QXQ+CJofAk0vgwaXwGN
+r4TGV0Hjq6HxNdD4Wmh8HTS+HhrfAI1viMY3QuMbo/FN4HwAOLMKow==
+      "]]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0kgNUwIEBBXCg8QXQ+CJofAk0vgwaXwGN
+r4TGV0Hjq6HxNdD4Wmh8HTS+HhrfAI1viMY3QuMbo/FN4HwAOxcKpQ==
+      "]]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0lgNUwIEBBXCg8QXQ+CJofAk0vgwaXwGN
+r4TGV0Hjq6HxNdD4Wmh8HTS+HhrfAI1viMY3QuMbo/FN4HwARKcKrQ==
+      "]]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox[
+      RowBox[{"Period", " ", "Output"}], HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Period", " ", "Output", " ", "of", " ", "Firms"}], HoldForm], 
+    TraditionalForm],
+  PlotRange->{{0., 20.}, {0, 32.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.691316420302875*^9, 3.691316568709208*^9, 3.691335889117112*^9, 
+   3.691335931908716*^9, 3.69133597235788*^9, 3.6913360127849083`*^9, 
+   3.6913360629672947`*^9, 3.691336115699573*^9, 3.6913361966342688`*^9, {
+   3.691336256514699*^9, 3.691336305816592*^9}, 3.6913363654553747`*^9, 
+   3.691336468619203*^9, 3.691336509152542*^9, 3.6913365776540003`*^9, 
+   3.691336622842523*^9, 3.69133667854114*^9, 3.691336779504109*^9, {
+   3.69133690764117*^9, 3.691336930992875*^9}, 3.691337092561729*^9, 
+   3.691337214824847*^9, 3.691411159894691*^9, 3.6914113118027477`*^9, 
+   3.6914115133547363`*^9, 3.6914117284791*^9, 3.691411923933628*^9, 
+   3.691412022158614*^9, 3.691412105985343*^9, 3.692598694074216*^9, 
+   3.6925989331872663`*^9, 3.692599044886894*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Period Output of Firms:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "10", "11", "6", "12", "7", "7", "17", "8", "9", "13"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "22", "22", "12", "21", "23", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "13", "15", "20", "24", "28", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "16", "18", "20", "24", "22", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "13", "24", "20", "24", "19", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "15", "22", "18", "24", "21", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "12", "20", "29", "19", "20", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "29", "16", "16", "19", "20", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "29", "10", "19", "21", "21", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "15", "21", "19", "26", "19", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=11\"\>",
+         HoldForm], "17", "25", "24", "17", "17", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=12\"\>",
+         HoldForm], "22", "15", "25", "22", "16", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=13\"\>",
+         HoldForm], "20", "19", "21", "24", "16", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=14\"\>",
+         HoldForm], "21", "17", "14", "32", "16", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=15\"\>",
+         HoldForm], "19", "17", "14", "26", "24", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=16\"\>",
+         HoldForm], "17", "18", "22", "23", "20", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=17\"\>",
+         HoldForm], "20", "17", "22", "23", "18", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=18\"\>",
+         HoldForm], "17", "21", "20", "21", "21", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=19\"\>",
+         HoldForm], "23", "18", "22", "17", "20", "0", "0", "0", "0", "0"},
+       {
+        TagBox["\<\"t=20\"\>",
+         HoldForm], "27", "22", "15", "17", "19", "0", "0", "0", "0", "0"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10",
+          "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", 
+         "t=19", "t=20"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Period Output of Firms:\n ", 
+   TableForm[{{10, 11, 6, 12, 7, 7, 17, 8, 9, 13}, {22, 22, 12, 21, 23, 0, 0, 
+    0, 0, 0}, {13, 15, 20, 24, 28, 0, 0, 0, 0, 0}, {16, 18, 20, 24, 22, 0, 0, 
+    0, 0, 0}, {13, 24, 20, 24, 19, 0, 0, 0, 0, 0}, {15, 22, 18, 24, 21, 0, 0, 
+    0, 0, 0}, {12, 20, 29, 19, 20, 0, 0, 0, 0, 0}, {29, 16, 16, 19, 20, 0, 0, 
+    0, 0, 0}, {29, 10, 19, 21, 21, 0, 0, 0, 0, 0}, {15, 21, 19, 26, 19, 0, 0, 
+    0, 0, 0}, {17, 25, 24, 17, 17, 0, 0, 0, 0, 0}, {22, 15, 25, 22, 16, 0, 0, 
+    0, 0, 0}, {20, 19, 21, 24, 16, 0, 0, 0, 0, 0}, {21, 17, 14, 32, 16, 0, 0, 
+    0, 0, 0}, {19, 17, 14, 26, 24, 0, 0, 0, 0, 0}, {17, 18, 22, 23, 20, 0, 0, 
+    0, 0, 0}, {20, 17, 22, 23, 18, 0, 0, 0, 0, 0}, {17, 21, 20, 21, 21, 0, 0, 
+    0, 0, 0}, {23, 18, 22, 17, 20, 0, 0, 0, 0, 0}, {27, 22, 15, 17, 19, 0, 0, 
+    0, 0, 0}}, 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10", 
+       "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", "t=19",
+        "t=20"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599044891893*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOEUoHSHFDaAUoLQOgGNyhfBMr3g/Il
+oPwgKF8GQjuEQfkKUH4klK8E5Seg2vsgGcpXg9AHUqF8Dah8OpSvBaEXZEH5
+OhBaIRfK14Pqz4fyDSC0QCGUbwhVXwTlG0HohGIo3xhCF5RA+SZQ+0sdACJj
+HjA=
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOEUoPSHBC6wQHKF4DSHlBaBCofAOVL
+QPlhUL4MlI6B0gpQ+QQoXwnKT4LyVSD0gWRUdySkQfkaUPWZUL4WVD4byteB
+6s+F8vUg9IN8KN8AShdCaUMIrVAE5RtBaINiKN8Yal8JlG8CoReUOgAADw0d
+vQ==
+      "]]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOEkoDSHFDaCEoLQGlnKC0CpX1R9TUE
+Q/kyUDoCSitAaId4KF8JQi9IhPJVoHQKlFaD0AlpUL4GlJ8J5WtB7cuB8nUg
+tEI+lK8HoQsKoHwDCB1QCOUbQugNRVA+1J8CJVC+MVR9KZRvAlVf5gAAEUUb
+SA==
+      "]]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOE0oDSHBC6wQHKF4DyfaB8EQjtEALl
+S0D5UVC+DIRWSIDyFaD6k6B8JQj9IAXKV4HKp0P5ahD6QBaqux7kQPlaEHpB
+PpSvA6EDCqF8PSi/GMo3gNAfSqB8QwidUAblG0HoC+VQvjHU/ZVQvgmENqhy
+AAD1AR8/
+      "]]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOEkoHSHFDaDkoLQGlfKC0CpUOgtASE
+PhCBZk4clFaA0A2JUL4SlE6B0ioQekEalK8GpTOhtAaEVsiG8rWg/FwoXwfK
+z4fy9SD0hAIo3wBCCxRB+YYQOqAYyjeC0AUlUL4x1D+lUL4JlC53AAAbjRqk
+
+      "]]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOEkoHSHGh8ATS+CBpfAo2PTiug8ZXQ
++CpofDU0vgYaXwuNr4PG10PjG6DxDdH4Rmh8YzS+CZwPAKaIERc=
+      "]]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOEMoTSHGh8ATS+CBpfAo0vg8ZXQOMr
+ofFV0PhqaHwNNL4WGl8Hja+HxjdA46PTRmh8YzS+CZwPAIolEqY=
+      "]]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOEUoDSHGh8ATS+CBpfAo0vg8ZHp5XQ
++CpofDU0vgYaXwuNr4PG10PjG6DxDdH4Rmh8YzS+CZwPANHgEWM=
+      "]]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOEUoLSHGh8ATS+CBpfAo0vg8ZXQOOj
+0ypofDU0vgYaXwuNr4PG10PjG6DxDdH4Rmh8YzS+CZwPAOeMEYk=
+      "]]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOE0oLSHGh8ATS+CBpfAo0vg8ZXQOMr
+ofFV0PhqaHwNND46rYPG10PjG6DxDdH4Rmh8YzS+CZwPAD5LEiE=
+      "]]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox[
+      RowBox[{"Agg", ".", "Output"}], HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Firms"}], 
+     HoldForm], TraditionalForm],
+  PlotRange->{{0., 20.}, {0, 419.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.691316420302875*^9, 3.691316568709208*^9, 3.691335889117112*^9, 
+   3.691335931908716*^9, 3.69133597235788*^9, 3.6913360127849083`*^9, 
+   3.6913360629672947`*^9, 3.691336115699573*^9, 3.6913361966342688`*^9, {
+   3.691336256514699*^9, 3.691336305816592*^9}, 3.6913363654553747`*^9, 
+   3.691336468619203*^9, 3.691336509152542*^9, 3.6913365776540003`*^9, 
+   3.691336622842523*^9, 3.69133667854114*^9, 3.691336779504109*^9, {
+   3.69133690764117*^9, 3.691336930992875*^9}, 3.691337092561729*^9, 
+   3.691337214824847*^9, 3.691411159894691*^9, 3.6914113118027477`*^9, 
+   3.6914115133547363`*^9, 3.6914117284791*^9, 3.691411923933628*^9, 
+   3.691412022158614*^9, 3.691412105985343*^9, 3.692598694074216*^9, 
+   3.6925989331872663`*^9, 3.6925990449414167`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.019444444444444445`], 
+    AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgQOEcofSHBDaIQnKF4DQB/KgfBEIvaAU
+ypeA0A+qoXwZCC3QCOUrQGiDFihfCUIHtEP5KhC6oAvKV4PQE3qhfA0IHTEB
+yteC0C8mQvk6ELpiMpSvB6E5pkL5BhB6xjQo3xBCa8yA8o0g9I6ZUL4xhPaY
+DeWbQOgbcxwAJTEhXA==
+     "]]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox[
+      RowBox[{"Agg", ".", "Output"}], HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Specialist"}], 
+     HoldForm], TraditionalForm],
+  PlotRange->{{0., 20.}, {0, 1846.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.691316420302875*^9, 3.691316568709208*^9, 3.691335889117112*^9, 
+   3.691335931908716*^9, 3.69133597235788*^9, 3.6913360127849083`*^9, 
+   3.6913360629672947`*^9, 3.691336115699573*^9, 3.6913361966342688`*^9, {
+   3.691336256514699*^9, 3.691336305816592*^9}, 3.6913363654553747`*^9, 
+   3.691336468619203*^9, 3.691336509152542*^9, 3.6913365776540003`*^9, 
+   3.691336622842523*^9, 3.69133667854114*^9, 3.691336779504109*^9, {
+   3.69133690764117*^9, 3.691336930992875*^9}, 3.691337092561729*^9, 
+   3.691337214824847*^9, 3.691411159894691*^9, 3.6914113118027477`*^9, 
+   3.6914115133547363`*^9, 3.6914117284791*^9, 3.691411923933628*^9, 
+   3.691412022158614*^9, 3.691412105985343*^9, 3.692598694074216*^9, 
+   3.6925989331872663`*^9, 3.692599044964424*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\nAggregated Output of Firms:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm], 
+        TagBox[
+         StyleBox["\<\"Specialist\"\>",
+          StripOnInput->False,
+          FontWeight->Bold],
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`", 
+        StyleBox["0.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "10.`", "11.`", "6.`", "12.`", "7.`", "7.`", "17.`", 
+        "8.`", "9.`", "13.`", 
+        StyleBox["46.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "32.`", "33.`", "18.`", "33.`", "30.`", "7.`", "17.`", 
+        "8.`", "9.`", "13.`", 
+        StyleBox["146.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "45.`", "48.`", "38.`", "57.`", "58.`", "7.`", "17.`", 
+        "8.`", "9.`", "13.`", 
+        StyleBox["246.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "61.`", "66.`", "58.`", "81.`", "80.`", "7.`", "17.`", 
+        "8.`", "9.`", "13.`", 
+        StyleBox["346.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "74.`", "90.`", "78.`", "105.`", "99.`", "7.`", "17.`", 
+        "8.`", "9.`", "13.`", 
+        StyleBox["446.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "89.`", "112.`", "96.`", "129.`", "120.`", "7.`", "17.`", 
+        "8.`", "9.`", "13.`", 
+        StyleBox["546.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "101.`", "132.`", "125.`", "148.`", "140.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["646.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "130.`", "148.`", "141.`", "167.`", "160.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["746.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "159.`", "158.`", "160.`", "188.`", "181.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["846.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=11\"\>",
+         HoldForm], "174.`", "179.`", "179.`", "214.`", "200.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["946.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=12\"\>",
+         HoldForm], "191.`", "204.`", "203.`", "231.`", "217.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["1046.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=13\"\>",
+         HoldForm], "213.`", "219.`", "228.`", "253.`", "233.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["1146.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=14\"\>",
+         HoldForm], "233.`", "238.`", "249.`", "277.`", "249.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["1246.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=15\"\>",
+         HoldForm], "254.`", "255.`", "263.`", "309.`", "265.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["1346.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=16\"\>",
+         HoldForm], "273.`", "272.`", "277.`", "335.`", "289.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["1446.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=17\"\>",
+         HoldForm], "290.`", "290.`", "299.`", "358.`", "309.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["1546.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=18\"\>",
+         HoldForm], "310.`", "307.`", "321.`", "381.`", "327.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["1646.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=19\"\>",
+         HoldForm], "327.`", "328.`", "341.`", "402.`", "348.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["1746.`",
+         StripOnInput->False,
+         FontWeight->Bold]},
+       {
+        TagBox["\<\"t=20\"\>",
+         HoldForm], "350.`", "346.`", "363.`", "419.`", "368.`", "7.`", 
+        "17.`", "8.`", "9.`", "13.`", 
+        StyleBox["1846.`",
+         StripOnInput->False,
+         FontWeight->Bold]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10",
+          "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", 
+         "t=19", "t=20"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10", 
+         Style["Specialist", Bold]}}]]]}],
+  SequenceForm["\nAggregated Output of Firms:\n ", 
+   TableForm[{{0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 
+      Style[0., Bold]}, {10., 11., 6., 12., 7., 7., 17., 8., 9., 13., 
+      Style[46., Bold]}, {32., 33., 18., 33., 30., 7., 17., 8., 9., 13., 
+      Style[146., Bold]}, {45., 48., 38., 57., 58., 7., 17., 8., 9., 13., 
+      Style[246., Bold]}, {61., 66., 58., 81., 80., 7., 17., 8., 9., 13., 
+      Style[346., Bold]}, {74., 90., 78., 105., 99., 7., 17., 8., 9., 13., 
+      Style[446., Bold]}, {89., 112., 96., 129., 120., 7., 17., 8., 9., 13., 
+      Style[546., Bold]}, {101., 132., 125., 148., 140., 7., 17., 8., 9., 13., 
+      Style[646., Bold]}, {130., 148., 141., 167., 160., 7., 17., 8., 9., 13., 
+      Style[746., Bold]}, {159., 158., 160., 188., 181., 7., 17., 8., 9., 13., 
+      Style[846., Bold]}, {174., 179., 179., 214., 200., 7., 17., 8., 9., 13., 
+      Style[946., Bold]}, {191., 204., 203., 231., 217., 7., 17., 8., 9., 13., 
+      Style[1046., Bold]}, {
+     213., 219., 228., 253., 233., 7., 17., 8., 9., 13., 
+      Style[1146., Bold]}, {
+     233., 238., 249., 277., 249., 7., 17., 8., 9., 13., 
+      Style[1246., Bold]}, {
+     254., 255., 263., 309., 265., 7., 17., 8., 9., 13., 
+      Style[1346., Bold]}, {
+     273., 272., 277., 335., 289., 7., 17., 8., 9., 13., 
+      Style[1446., Bold]}, {
+     290., 290., 299., 358., 309., 7., 17., 8., 9., 13., 
+      Style[1546., Bold]}, {
+     310., 307., 321., 381., 327., 7., 17., 8., 9., 13., 
+      Style[1646., Bold]}, {
+     327., 328., 341., 402., 348., 7., 17., 8., 9., 13., 
+      Style[1746., Bold]}, {
+     350., 346., 363., 419., 368., 7., 17., 8., 9., 13., 
+      Style[1846., Bold]}}, 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10", 
+       "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", "t=19",
+        "t=20"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10", 
+       Style["Specialist", Bold]}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.6925990449719477`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBgflCwUy0oryDhAuh0OOXyVDq5YWlC/g
+sOj903/G6w2gfBGH0lYJwQczjaF8CYcNU21fJcuZQfkyDt4Tf/ndibWA8hUc
+yt9s2LYwywrKV3KYyap4TiHABspXceioSfPgFLOD8tUcyg75a1w6aA/lazj8
+6tFRObLaAcrXcojYvm2rUq4jlK/j0DileYGNmhOUr+dg9p/fjOcGjG/g8PR/
+CUtcszOUb+hQcMXi0G0NFyjfyKHdY7GYyEkY39jBd98f94YUVyjfxEHobER5
+x29XBwAwwEri
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBgflCwUy0oryDhAuh0OOXyVDq5YWlC/g
+sOj903/G6w2gfBGH0lYJwQczjaF8CYcNU21fJcuZQfkyDt4Tf/ndibWA8hUc
+yt9s2LYwywrKV3KYyap4TiHABspXceioSfPgFLOD8tUcyg75a1w6aA/lazj8
+6tFRObLaAcrXcojYvm2rUq4jlK/j0DileYGNmhOUr+dg9p/fjOcGjG/g8PR/
+CUtcszOUb+hQcMXi0G0NFyjfyKHdY7GYyEkY39jBd98f94YUVyjfxEHobER5
+x29XBwAwwEri
+      "]]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBgflCwUy0oryDhAuh0OOXyVDq5YWlC/g
+sOj903/G6w2gfBGH0lYJwQczjaF8CYcNU21fJcuZQfkyDt4Tf/ndibWA8hUc
+yt9s2LYwywrKV3KYyap4TiHABspXceioSfPgFLOD8tUcyg75a1w6aA/lazj8
+6tFRObLaAcrXcojYvm2rUq4jlK/j0DileYGNmhOUr+dg9p/fjOcGjG/g8PR/
+CUtcszOUb+hQcMXi0G0NFyjfyKHdY7GYyEkY39jBd98f94YUVyjfxEHobER5
+x29XBwAwwEri
+      "]]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBgflCwUy0oryDhAuh0OOXyVDq5YWlC/g
+sOj903/G6w2gfBGH0lYJwQczjaF8CYcNU21fJcuZQfkyDt4Tf/ndibWA8hUc
+yt9s2LYwywrKV3KYyap4TiHABspXceioSfPgFLOD8tUcyg75a1w6aA/lazj8
+6tFRObLaAcrXcojYvm2rUq4jlK/j0DileYGNmhOUr+dg9p/fjOcGjG/g8PR/
+CUtcszOUb+hQcMXi0G0NFyjfyKHdY7GYyEkY39jBd98f94YUVyjfxEHobER5
+x29XBwAwwEri
+      "]]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBgflCwUy0oryDhAuh0OOXyVDq5YWlC/g
+sOj903/G6w2gfBGH0lYJwQczjaF8CYcNU21fJcuZQfkyDt4Tf/ndibWA8hUc
+yt9s2LYwywrKV3KYyap4TiHABspXceioSfPgFLOD8tUcyg75a1w6aA/lazj8
+6tFRObLaAcrXcojYvm2rUq4jlK/j0DileYGNmhOUr+dg9p/fjOcGjG/g8PR/
+CUtcszOUb+hQcMXi0G0NFyjfyKHdY7GYyEkY39jBd98f94YUVyjfxEHobER5
+x29XBwAwwEri
+      "]]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBodXPy6trNfidYBwOdD4Amh8ETS+BBpf
+Bo2vgMZXQuOroPHV0PgaaHwtNL4OGl8PjW+AxjdE4xuh8Y3R+CZwPgBH0F2b
+
+      "]]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBgf2t+vT+OtEHCBcDjS+ABpfBI0vgcaX
+QeMroPGV0PgqaHw1NL4GGl8Lja+DxtdD4xug8Q3R+EZofGM0vgmcDwByPELQ
+
+      "]]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBoez1vVp8xbwOUC4HGh8ATS+CBpfAo0v
+g8ZXQOMrofFV0PhqaHwNNL4WGl8Hja+HxjdA4xui8Y3Q+MZofBM4HwCfvk1t
+
+      "]]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBgcIJQClOdD46LQIGl8CjS+DxldA4yuh
+8VXQ+GpofA00vhYaXweNr4fGN0DjG6LxjdD4xmh8EzgfAI5+EWI=
+      "]]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBodfawwWieYIOUC4HGh8ATS+CBpfAo0v
+g8ZXQOMrofFV0PhqaHwNNL4WGl8Hja+HxjdA4xui8Y3Q+MZofBM4HwDI20oD
+
+      "]]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["Quality", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Quality", " ", "of", " ", "Products"}], HoldForm], 
+    TraditionalForm],
+  PlotRange->{{0., 20.}, {0, 43.96510211788167}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.691316420302875*^9, 3.691316568709208*^9, 3.691335889117112*^9, 
+   3.691335931908716*^9, 3.69133597235788*^9, 3.6913360127849083`*^9, 
+   3.6913360629672947`*^9, 3.691336115699573*^9, 3.6913361966342688`*^9, {
+   3.691336256514699*^9, 3.691336305816592*^9}, 3.6913363654553747`*^9, 
+   3.691336468619203*^9, 3.691336509152542*^9, 3.6913365776540003`*^9, 
+   3.691336622842523*^9, 3.69133667854114*^9, 3.691336779504109*^9, {
+   3.69133690764117*^9, 3.691336930992875*^9}, 3.691337092561729*^9, 
+   3.691337214824847*^9, 3.691411159894691*^9, 3.6914113118027477`*^9, 
+   3.6914115133547363`*^9, 3.6914117284791*^9, 3.691411923933628*^9, 
+   3.691412022158614*^9, 3.691412105985343*^9, 3.692598694074216*^9, 
+   3.6925989331872663`*^9, 3.692599044999434*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Quality of products:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "1.`", "1.`", "1.`", "1.`", "1.`", "1.`", "1.`", "1.`", 
+        "1.`", "1.`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "7.782329983125268`", "7.782329983125268`", 
+        "7.782329983125268`", "7.782329983125268`", "7.782329983125268`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "13.083045973594572`", "13.083045973594572`", 
+        "13.083045973594572`", "13.083045973594572`", "13.083045973594572`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "16.684387141358123`", "16.684387141358123`", 
+        "16.684387141358123`", "16.684387141358123`", "16.684387141358123`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "19.601075237738275`", "19.601075237738275`", 
+        "19.601075237738275`", "19.601075237738275`", "19.601075237738275`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "22.118712081942874`", "22.118712081942874`", 
+        "22.118712081942874`", "22.118712081942874`", "22.118712081942874`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "24.366642891095847`", "24.366642891095847`", 
+        "24.366642891095847`", "24.366642891095847`", "24.366642891095847`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "26.41653005427767`", "26.41653005427767`", 
+        "26.41653005427767`", "26.41653005427767`", "26.41653005427767`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "28.313000567495326`", "28.313000567495326`", 
+        "28.313000567495326`", "28.313000567495326`", "28.313000567495326`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "30.086079144497972`", "30.086079144497972`", 
+        "30.086079144497972`", "30.086079144497972`", "30.086079144497972`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=11\"\>",
+         HoldForm], "31.757112998459398`", "31.757112998459398`", 
+        "31.757112998459398`", "31.757112998459398`", "31.757112998459398`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=12\"\>",
+         HoldForm], "33.341923257592455`", "33.341923257592455`", 
+        "33.341923257592455`", "33.341923257592455`", "33.341923257592455`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=13\"\>",
+         HoldForm], "34.85262175962151`", "34.85262175962151`", 
+        "34.85262175962151`", "34.85262175962151`", "34.85262175962151`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=14\"\>",
+         HoldForm], "36.298725189445584`", "36.298725189445584`", 
+        "36.298725189445584`", "36.298725189445584`", "36.298725189445584`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=15\"\>",
+         HoldForm], "37.68787265568828`", "37.68787265568828`", 
+        "37.68787265568828`", "37.68787265568828`", "37.68787265568828`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=16\"\>",
+         HoldForm], "39.02630668366309`", "39.02630668366309`", 
+        "39.02630668366309`", "39.02630668366309`", "39.02630668366309`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=17\"\>",
+         HoldForm], "40.319206502675`", "40.319206502675`", 
+        "40.319206502675`", "40.319206502675`", "40.319206502675`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=18\"\>",
+         HoldForm], "41.570925550201586`", "41.570925550201586`", 
+        "41.570925550201586`", "41.570925550201586`", "41.570925550201586`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=19\"\>",
+         HoldForm], "42.78516483155236`", "42.78516483155236`", 
+        "42.78516483155236`", "42.78516483155236`", "42.78516483155236`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"},
+       {
+        TagBox["\<\"t=20\"\>",
+         HoldForm], "43.96510211788167`", "43.96510211788167`", 
+        "43.96510211788167`", "43.96510211788167`", "43.96510211788167`", 
+        "3.6457513110645907`", "5.123105625617661`", "3.8284271247461903`", 
+        "4.`", "4.60555127546399`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10",
+          "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", 
+         "t=19", "t=20"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Quality of products:\n ", 
+   TableForm[CompressedData["
+1:eJxTTMoPSmViYGAQAWIuBhj4YE8tWvlCgYy0orwDIfrVj0sr67V4Hdjfrk/j
+rxNxOGtdnzZvAZ8DxBwBh19rDBaJ5gg55PhVMrRqaRGkiTVv0fun/4zXGxCk
+iTWvtFVC8MFMY4I0seZtmGr7KlnOjCBNrHneE3/53Ym1IEgTa175mw3bFmZZ
+EaSJNW8mq+I5hQAbgjSx5nXUpHlwitkRpIk1r+yQv8alg/YEaWLN+9Wjo3Jk
+tQNBmljzIrZv26qU60iQJta8xinNC2zUnAjSxJpn9p/fjOeGE0GaWPOe/i9h
+iWt2JkgTa17BFYtDtzVcCNLEmtfusVhM5KQLQZpY83z3/XFvSHElSBNrntDZ
+iPKO364EaWLNAwBy7lrx
+    "], 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10", 
+       "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", "t=19",
+        "t=20"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599045005335*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUgSAHqIBDRhoQZKVC+RwOM2YCwf0oKF/A
+4QwIsCRC+SJg9c+4Y6B8CTCt4J0A5cs4pIDkNWD6FRwMjI2NuVflQ/lKDnOA
+xrNuhPFVwLRRGky/Glj9r2lJUL4G2D1h/BlQvhaY3nwf5l4dBxNj48nXv6dB
++Xog+7e9PZ4C5RuA9F/8Ph1mniGINvgN128E8s+Xv3B5Y5B/5/5Tz4TyTYD6
+JQ3+t+c6AABlVEsw
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUghAHqIBDRhoQZKVC+RwOf/4DAWM8lC/g
+kAKSV02G8kUc5swEgseZUL4EWH7Z03QoXwZMHzgDM0/B4QwQ+FQkQvlKYNrg
+diiUr+JgYmxsXPk1DcpXA9tfF5YN5WuA6Iae9AQoXwtk/81tx1OgfB2Q+93u
+T0+C8vUcDIyNF7+H8w1A7gv7vh7mfkOHC2fOvPgNlzcC2V/59zvMfmOQe1/9
+g6s3cZgxc2bYf/4MBwDNTFQ3
+      "]]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MFUg5sDVMDhwhkgiAmH8jkg9JoUKF8AQrul
+QvkiEHoyjC/hMGfmzJmRvclQvoxDSlpamticfChfwQFkvE9FIpSvBFafexhm
+vgpYfttRGF8NrL/PLgvK1wDRDfbh2VC+lkNGWpra+u9pUL4OyDzJU/PjoHw9
+hxNnzvA8hfMNQPKZX/kzoHxDkH+3/ILzjUD0jL/3Yf4xdjAwNl77Dy5vAqQb
+ev6nJzgAADzIS3c=
+      "]]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MFUQ5gDVMDBxBgIClOgfA6HlDQgOJcB5Qs4
+GIDk2zOhfBGHOTOB4DGML+Fw4QwQCGZB+TJg/du2wsxTAJt/ex+Mr+SQAZT/
+9CkNylcBy9/PyYHy1cD2/ZqWBOVrOMwAWhfGD3OPFtj+xfYw+3TA+h/WF0L5
+eiD1P5/lw8wzANn37os6zL2GIPXlv+B8IxC/8u93mHuMQfb/+jcdZr8J0DzJ
+2v9APgCKlE4e
+      "]]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MGUg5cDVMBhzkwgSE6D8jkcTpwBgg85UL6A
+wwyQfFo6lC8CVn+zLgXKl3AwMTY2nnwepl8GTB84kwrlK4DphGswvpJDRlpa
+2qdPMPUqDiDrth2FmafmYAA079e0JChfAyzfUp8I5WuB9R+C83XA9j+E8/Uc
+UtLSnr2wz4LyDUB0wrf7MPsNQepX/16fDOUbgfiVf7/D3GMMos/8g6s3Acpv
+zv1/PMUBAEhdUME=
+      "]]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MGUg5cDVMCBAQVwoPEF0PgiaHwJNL4MGl8B
+ja+ExldB46uh8TXQ+FpofB00vh4a3wCNb4jGN0LjG6PxTeB8ALenCw0=
+      "]]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUg3gHqIADAwrgQOMLoPFF0PgSaHwZNL4C
+Gl8Jja+CxldD42ug8bXQ+DpofD00vgEa3xCNb4TGN0bjm8D5AJCwC8I=
+      "]]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7CG0nwNUwIEBBXCg8QXQ+CJofAk0vgwaXwGN
+r4TGV0Hjq6HxNdD4Wmh8HTS+HhrfAI1viMY3QuMbo/FN4HwAb68K0Q==
+      "]]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUgwAHqIADAwrgQOMLoPFF0PgSaHwZNL4C
+Gl8Jja+CxldD42ug8bXQ+DpofD00vgEa3xCNb4TGN0bjm8D5AH7CC7M=
+      "]]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MFUQoQDVMCBAQVwoPEF0PgiaHwJNL4MGl8B
+ja+ExldB46uh8TXQ+FpofB00vh4a3wCNb4jGN0LjG6PxTeB8AO7DCzs=
+      "]]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["Profit", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Profits", " ", "of", " ", "Firms"}], HoldForm], TraditionalForm],
+  PlotRange->{{0., 20.}, {0, 279.99248046875005`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.691316420302875*^9, 3.691316568709208*^9, 3.691335889117112*^9, 
+   3.691335931908716*^9, 3.69133597235788*^9, 3.6913360127849083`*^9, 
+   3.6913360629672947`*^9, 3.691336115699573*^9, 3.6913361966342688`*^9, {
+   3.691336256514699*^9, 3.691336305816592*^9}, 3.6913363654553747`*^9, 
+   3.691336468619203*^9, 3.691336509152542*^9, 3.6913365776540003`*^9, 
+   3.691336622842523*^9, 3.69133667854114*^9, 3.691336779504109*^9, {
+   3.69133690764117*^9, 3.691336930992875*^9}, 3.691337092561729*^9, 
+   3.691337214824847*^9, 3.691411159894691*^9, 3.6914113118027477`*^9, 
+   3.6914115133547363`*^9, 3.6914117284791*^9, 3.691411923933628*^9, 
+   3.691412022158614*^9, 3.691412105985343*^9, 3.692598694074216*^9, 
+   3.6925989331872663`*^9, 3.6925990450331287`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Profits of firms:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "75.`", "82.5`", "45.`", "90.`", "52.5`", "52.5`", 
+        "127.5`", "60.`", "67.5`", "97.5`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "171.32500000000005`", "171.32500000000005`", 
+        "93.45000000000005`", "163.53750000000002`", "179.11250000000007`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "107.49374999999998`", "124.03124999999994`", "165.375`", 
+        "198.44999999999993`", "231.52499999999986`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "136.14999999999998`", "153.16874999999993`", "170.1875`",
+         "204.2249999999999`", "187.20624999999995`", "0.`", "0.`", "0.`", 
+        "0.`", "0.`"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "112.18593750000002`", "207.11250000000007`", 
+        "172.59375`", "207.11250000000007`", "163.96406250000007`", "0.`", 
+        "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "130.34765625`", "191.17656249999993`", 
+        "156.41718750000007`", "208.5562500000001`", "182.48671875000002`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "104.63906249999997`", "174.3984375`", 
+        "252.87773437499993`", "165.67851562499993`", "174.3984375`", "0.`", 
+        "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "253.3138671874999`", "139.75937499999998`", 
+        "139.75937499999998`", "165.96425781250002`", "174.69921875`", "0.`", 
+        "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "253.53193359375007`", "87.4248046875`", 
+        "166.10712890625007`", "183.59208984375005`", "183.59208984375005`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "131.193603515625`", "183.67104492187502`", 
+        "166.17856445312498`", "227.40224609375002`", "166.17856445312498`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=11\"\>",
+         HoldForm], "148.7180419921874`", "218.7030029296874`", 
+        "209.95488281249993`", "148.7180419921874`", "148.7180419921874`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=12\"\>",
+         HoldForm], "192.47932128906245`", "131.23590087890625`", 
+        "218.72650146484375`", "192.47932128906245`", "139.98496093749998`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=13\"\>",
+         HoldForm], "174.9906005859375`", "166.2410705566407`", 
+        "183.74013061523442`", "209.98872070312507`", "139.99248046875005`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=14\"\>",
+         HoldForm], "183.7450653076172`", "148.74600524902348`", 
+        "122.49671020507816`", "279.99248046875005`", "139.99624023437502`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=15\"\>",
+         HoldForm], "166.2477676391601`", "148.74800262451163`", 
+        "122.498355102539`", "227.49694519042964`", "209.99718017578118`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=16\"\>",
+         HoldForm], "148.7490013122558`", "157.4989425659179`", 
+        "192.49870758056647`", "201.24864883422856`", "174.9988250732422`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=17\"\>",
+         HoldForm], "174.9994125366211`", "148.74950065612802`", 
+        "192.4993537902833`", "201.24932441711428`", "157.499471282959`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=18\"\>",
+         HoldForm], "148.749750328064`", "183.7496915817261`", 
+        "174.99970626831055`", "183.7496915817261`", "183.7496915817261`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=19\"\>",
+         HoldForm], "201.24983110427854`", "157.49986782073972`", 
+        "192.4998384475707`", "148.7498751640319`", "174.99985313415527`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"},
+       {
+        TagBox["\<\"t=20\"\>",
+         HoldForm], "236.24990086555476`", "192.49991922378535`", 
+        "131.24994492530823`", "148.74993758201595`", "166.24993023872378`", 
+        "0.`", "0.`", "0.`", "0.`", "0.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10",
+          "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", 
+         "t=19", "t=20"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Profits of firms:\n ", 
+   TableForm[CompressedData["
+1:eJyVlEtoE1EUhkfRjRWKIEJ3ulC7DOra3lUWKiJFp7YUnWQeeTRh6Eq7sM1C
+6KbtJqApVCoUXPggSDVLKYpUJPjYKKWLUaShCD4orYOJmfE/504G3d0cCD/3
+cu93//NzJkfS7qC9W9O0g/jt06JaGRSsdy9KLSUj1aWKM//rp6tStfPR+oJU
+47LIOqi8Heu7Omp0SJw6iRq3xMI8ynSEplgVOu+NiD8half07kNLWMR/kxWv
+iP+zoMyj4/U9KXn/qCnvJW2RIH/TOcHvORllHvXZ6BmVfX3JyXtlO16Trk1a
+yjyqw2cN9ndvI8P3h2dNmeOBPOdYfqueH3Ea/SN8fqVuM/fQgstae2rF+6o8
+yqnnvivIzrnrqVjJ1/ozyTM+qPOov72PXT6fWL/E/RZfWDw/W1tOrKo8qhOO
+wX4mdhz2V3tp8dorFOJ1N/02b6V5/ib1Mc5t7nRedPY7qsqj+dJ7s3S+NJMx
+WAeGxkRnn/zdnEp11e+yx/O2Vlvl3I5VfYdzXBrIc37Pu+Ahp/JHn3NPerfT
+xOl7vXiF8/s8NR6pOg951b7BF3Ja+gEevtf9G+Ch398Nt0B5NjbhU5WHe+99
+cHBP96sm+cvtIDf4/b59nL8/45enPn+oRMvj/6nNFrjQJ03w0Oe1JnjQB62q
+qcyDj+02OLg30fZ5bitt8Dvrf/aVCuNwJ4AP6NcAPpDjowD+oM0A79CRoIt+
+K/N9iXC6SPnrIc9haSbEHGL/Rsi+l4vhqvr38RdjJl2G
+    "], 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10", 
+       "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", "t=19",
+        "t=20"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.6925990450373096`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqACErnCG8jkg9BoXKF8AQru5Qvki
+EHoyjC/hwAgkG3bC+DJg+sAZGF8BTCdcg/GVwLTBbRhfBUzPuAvjq4HpM/dg
+fA0wnXYfxtcC05vhfB0Q3XATztcD0QfewPkGDv///4//BucbgmiD33C+EYie
+8RfONwbRZ/7B+SYgOu0/kA8AVe41ug==
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqACErnCG8jkg9BoXKF8AQru5Qvki
+EHoyjC/hwAgkG3bC+DJg+sAZGF8BTCdcg/GVwLTBbRhfBUzPuAvjq4HpM/dg
+fA0wnXYfxtcC05vhfB0Q3XATztcD0QfewPkGDv///4//BucbgmiD33C+EYie
+8RfONwbRZ/7B+SYgOu0/kA8AVe41ug==
+      "]]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqACErnCG8jkg9BoXKF8AQru5Qvki
+EHoyjC/hwAgkG3bC+DJg+sAZGF8BTCdcg/GVwLTBbRhfBUzPuAvjq4HpM/dg
+fA0wnXYfxtcC05vhfB0Q3XATztcD0QfewPkGDv///4//BucbgmiD33C+EYie
+8RfONwbRZ/7B+SYgOu0/kA8AVe41ug==
+      "]]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqACErnCG8jkg9BoXKF8AQru5Qvki
+EHoyjC/hwAgkG3bC+DJg+sAZGF8BTCdcg/GVwLTBbRhfBUzPuAvjq4HpM/dg
+fA0wnXYfxtcC05vhfB0Q3XATztcD0QfewPkGDv///4//BucbgmiD33C+EYie
+8RfONwbRZ/7B+SYgOu0/kA8AVe41ug==
+      "]]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqACErnCG8jkg9BoXKF8AQru5Qvki
+EHoyjC/hwAgkG3bC+DJg+sAZGF8BTCdcg/GVwLTBbRhfBUzPuAvjq4HpM/dg
+fA0wnXYfxtcC05vhfB0Q3XATztcD0QfewPkGDv///4//BucbgmiD33C+EYie
+8RfONwbRZ/7B+SYgOu0/kA8AVe41ug==
+      "]]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqIADKp8DjS+AxhdB40ug8WXQ+Apo
+fCU0vgoaXw2Nr4HG10Lj66Dx9dD4Bmh8QzS+ERrfGI1vAucDAPMVI2s=
+      "]]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqIADKp8DjS+AxhdB40ug8WXQ+Apo
+fCU0vgoaXw2Nr4HG10Lj66Dx9dD4Bmh8QzS+ERrfGI1vAucDAPMVI2s=
+      "]]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqIADKp8DjS+AxhdB40ug8WXQ+Apo
+fCU0vgoaXw2Nr4HG10Lj66Dx9dD4Bmh8QzS+ERrfGI1vAucDAPMVI2s=
+      "]]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqIADKp8DjS+AxhdB40ug8WXQ+Apo
+fCU0vgoaXw2Nr4HG10Lj66Dx9dD4Bmh8QzS+ERrfGI1vAucDAPMVI2s=
+      "]]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7MHUAScHqIADKp8DjS+AxhdB40ug8WXQ+Apo
+fCU0vgoaXw2Nr4HG10Lj66Dx9dD4Bmh8QzS+ERrfGI1vAucDAPMVI2s=
+      "]]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["Prices", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 37.18750091791153},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Prices", " ", "of", " ", "Firms"}], HoldForm], TraditionalForm],
+  
+  PlotRange->{{0., 20.}, {37.5, 43.74998164176941}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.691316420302875*^9, 3.691316568709208*^9, 3.691335889117112*^9, 
+   3.691335931908716*^9, 3.69133597235788*^9, 3.6913360127849083`*^9, 
+   3.6913360629672947`*^9, 3.691336115699573*^9, 3.6913361966342688`*^9, {
+   3.691336256514699*^9, 3.691336305816592*^9}, 3.6913363654553747`*^9, 
+   3.691336468619203*^9, 3.691336509152542*^9, 3.6913365776540003`*^9, 
+   3.691336622842523*^9, 3.69133667854114*^9, 3.691336779504109*^9, {
+   3.69133690764117*^9, 3.691336930992875*^9}, 3.691337092561729*^9, 
+   3.691337214824847*^9, 3.691411159894691*^9, 3.6914113118027477`*^9, 
+   3.6914115133547363`*^9, 3.6914117284791*^9, 3.691411923933628*^9, 
+   3.691412022158614*^9, 3.691412105985343*^9, 3.692598694074216*^9, 
+   3.6925989331872663`*^9, 3.6925990450641747`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Prices of firms:\\n \"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "37.5`", "37.5`", "37.5`", "37.5`", "37.5`", "37.5`", 
+        "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "38.9375`", "38.9375`", "38.9375`", "38.9375`", 
+        "38.9375`", "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "41.34375`", "41.34375`", "41.34375`", "41.34375`", 
+        "41.34375`", "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "42.546875`", "42.546875`", "42.546875`", "42.546875`", 
+        "42.546875`", "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "43.1484375`", "43.1484375`", "43.1484375`", 
+        "43.1484375`", "43.1484375`", "37.5`", "37.5`", "37.5`", "37.5`", 
+        "37.5`"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "43.44921875000001`", "43.44921875000001`", 
+        "43.44921875000001`", "43.44921875000001`", "43.44921875000001`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "43.599609375`", "43.599609375`", "43.599609375`", 
+        "43.599609375`", "43.599609375`", "37.5`", "37.5`", "37.5`", "37.5`", 
+        "37.5`"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "43.6748046875`", "43.6748046875`", "43.6748046875`", 
+        "43.6748046875`", "43.6748046875`", "37.5`", "37.5`", "37.5`", 
+        "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "43.71240234375`", "43.71240234375`", "43.71240234375`", 
+        "43.71240234375`", "43.71240234375`", "37.5`", "37.5`", "37.5`", 
+        "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "43.731201171875`", "43.731201171875`", 
+        "43.731201171875`", "43.731201171875`", "43.731201171875`", "37.5`", 
+        "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=11\"\>",
+         HoldForm], "43.7406005859375`", "43.7406005859375`", 
+        "43.7406005859375`", "43.7406005859375`", "43.7406005859375`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=12\"\>",
+         HoldForm], "43.74530029296875`", "43.74530029296875`", 
+        "43.74530029296875`", "43.74530029296875`", "43.74530029296875`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=13\"\>",
+         HoldForm], "43.747650146484375`", "43.747650146484375`", 
+        "43.747650146484375`", "43.747650146484375`", "43.747650146484375`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=14\"\>",
+         HoldForm], "43.74882507324219`", "43.74882507324219`", 
+        "43.74882507324219`", "43.74882507324219`", "43.74882507324219`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=15\"\>",
+         HoldForm], "43.749412536621094`", "43.749412536621094`", 
+        "43.749412536621094`", "43.749412536621094`", "43.749412536621094`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=16\"\>",
+         HoldForm], "43.74970626831054`", "43.74970626831054`", 
+        "43.74970626831054`", "43.74970626831054`", "43.74970626831054`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=17\"\>",
+         HoldForm], "43.74985313415527`", "43.74985313415527`", 
+        "43.74985313415527`", "43.74985313415527`", "43.74985313415527`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=18\"\>",
+         HoldForm], "43.74992656707764`", "43.74992656707764`", 
+        "43.74992656707764`", "43.74992656707764`", "43.74992656707764`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=19\"\>",
+         HoldForm], "43.74996328353882`", "43.74996328353882`", 
+        "43.74996328353882`", "43.74996328353882`", "43.74996328353882`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"},
+       {
+        TagBox["\<\"t=20\"\>",
+         HoldForm], "43.74998164176941`", "43.74998164176941`", 
+        "43.74998164176941`", "43.74998164176941`", "43.74998164176941`", 
+        "37.5`", "37.5`", "37.5`", "37.5`", "37.5`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10",
+          "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", 
+         "t=19", "t=20"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Prices of firms:\n ", 
+   TableForm[CompressedData["
+1:eJytzrEJwkAUh/HT0toF3CAjiPocwAWUgGnTWmYHmwxhZ2V3A1wtiGgWsLYJ
+yXnw0r8v4MHxa/58vEVe7o5T59w8/Zkbnl8t/+ppzaS9y4ZJe1th0t5ZmKA3
+SVQ3MR1znw+CpL3DXZC0lz0FSXv1S5C0F96CpL2iESTtXYe9JexVD91b0p7/
+6N4S9WKM+2/aW464L2t1b0l7dad7S9oLve4taa+IurdEvR8Rc1j0
+    "], 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10", 
+       "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", "t=19",
+        "t=20"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599045068419*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIDD66kJT2fMPAnlczhA5GF8ATS+
+CBpfAo0v4zALha+AJq+ExldB46uh8TXQzNNC4+ugqddD4xugqTdE4xuhqTdG
+45vA+QCqUWbw
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIDD66kJT2fMPAnlczhA5GF8ATS+
+CBpfAo0v4zALha+AJq+ExldB46uh8TXQzNNC4+ugqddD4xugqTdE4xuhqTdG
+45vA+QCqUWbw
+      "]]}, 
+    {RGBColor[0.560181, 0.691569, 0.194885], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIDD66kJT2fMPAnlczhA5GF8ATS+
+CBpfAo0v4zALha+AJq+ExldB46uh8TXQzNNC4+ugqddD4xugqTdE4xuhqTdG
+45vA+QCqUWbw
+      "]]}, 
+    {RGBColor[0.922526, 0.385626, 0.209179], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIDD66kJT2fMPAnlczhA5GF8ATS+
+CBpfAo0v4zALha+AJq+ExldB46uh8TXQzNNC4+ugqddD4xugqTdE4xuhqTdG
+45vA+QCqUWbw
+      "]]}, 
+    {RGBColor[0.528488, 0.470624, 0.701351], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIDD66kJT2fMPAnlczhA5GF8ATS+
+CBpfAo0v4zALha+AJq+ExldB46uh8TXQzNNC4+ugqddD4xugqTdE4xuhqTdG
+45vA+QCqUWbw
+      "]]}, 
+    {RGBColor[0.772079, 0.431554, 0.102387], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIDDid1Jh3a3frCFcDkc6uXL4xZf
+m2gN4Qs47LOfmP0554slhC/i8HHrsc9h0kstIHwJh1k2M6KXlTSbQ/gyDu+2
+GNx/wtRoBuErOHz+Os2h6d5kUwhfycGmtM3m3ZMdJhC+ikPIotv7BG6+MYbw
+1RzWH1vEuuiCNpSv4bCG8anlpAUlRhC+loNQRfIHbfVjhhC+jkOQTHXWhVwF
+KF/Pgc93g0eNUYMBhG/gYPLU/PWGyU/0IXxDhxMHy/nKMgOgfCOHNPH9e/VE
+D+hB+MYOyis/n1ZmMobyTRxO827xSVy9ShcA/oRYoQ==
+      "]]}, 
+    {RGBColor[0.363898, 0.618501, 0.782349], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIDDYla/w6d4ZtlBuBwOwp23tvyQ
+t7GB8AUcqguMFaWkFlhB+CIOU88cXTZ5cYAlhC/hoDOtaOWONXoWEL6MQ8y/
+nQ4Kl7TMIXwFh1Wpe2bOD7Y3g/CVHITcpMrezk82hfBVHOJffRS6uHeaCYSv
+5tDDvv9I9NurxhC+hsP6NL1Vp50UoHwthwmFyYzbywqNIHwdB/8Hctkiz08a
+Qvh6DpNY5st0dWpC+QYOsRsigpZYTDCA8A0dIlNulZs/+KkP4Rs5LGLZczUs
+OhPKN3ZQ68n6pfvjrh6Eb+IgeH6yuR5bqB4A+SZSqw==
+      "]]}, 
+    {RGBColor[1, 0.75, 0], PointSize[0.01388888888888889], AbsoluteThickness[
+     1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIBD/96Fxaens9hBuBwOErlvmjdb
+L7OG8AUcOtU+JuiXclpB+CIOi3Qfdnf67bKA8CUcni8tFdhmP8Mcwpdx4AwM
+TD1lPNUMwldw6CydUrjs8ApTCF/JYeGdXxMY2M+bQPgqDjvz+ljsfzFC+WoO
+a5lnXy4JdTSG8DUcSm5K3Gnd2mkE4Ws5iE2LmBE157YhhK/jUM5/tO13pQmU
+r+cwscein9NgigGEb+BgerTWtGLpT30I39BBSbN9QV9JCpRv5LBg1bknzdxX
+9CB8Ywdlg8a0vxvcoXwTBz+5/6e2zDugCwCS6lS/
+      "]]}, 
+    {RGBColor[0.647624, 0.37816, 0.614037], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIDDrnfTlx5yl7CDcDkcyuuyX90y
+22UN4Qs4qKT/iVRjkbOC8EUczrP+PZHNct4CwpdwYBcM/e00fY05hC/jIB19
+KHjD/xVmEL6Cg07TrYjLRntNIXwlhw7BvJ+LvB6ZQPgqDnYtrjODjEShfDWH
+deeCJ7AVhBhD+BoOlXsesTMFzDOC8LUczpXfj2N0/2AI4es4/G1+rDZHxQPK
+13NYtGzi9Jyzyw0gfAOH9TUvGkVs+aB8Q4c1Bq19ZnIV+hC+kQPbpKjjMYue
+60H4xg5LfCYI/3kXDeWbODTZMaX1zrisCwBzrlNL
+      "]]}, 
+    {RGBColor[0.571589, 0.586483, 0.], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7GeCwU57qIDDpVdbO7vD4u0gXA6HM2sPnzz2
+isEGwhdwmB2fufphXLIVhC/i0H2ZM8uZRcQSwpdwuLq4fXV68SdzCF/G4fD1
++f++K34wg/AVHCyUzz06fZ0Jyldy+Gs0e+Wx2eqmEL6Kw8KK83MXRUebQPhq
+Dst2NdjfSZhlDOFrOGSbqn+62v/YCMLXcji1iFXSmckUytdxqOd/maCr2W8I
+4es5rNXsY162450BhG/g0GFz5cO85mAo39DBdJbd0dcK+/UhfCMHg6UilwQb
+9aB8Y4fDc7V0zrMt0oPwTRyOvdT9dMBLUg8AA5VYTA==
+      "]]}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["Probs", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{
+      "Evolution", " ", "of", " ", "Probabilities", " ", "for", " ", "each", 
+       " ", "Firm"}], HoldForm], TraditionalForm],
+  PlotRange->{{0., 20.}, {0, 0.2}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.691316420302875*^9, 3.691316568709208*^9, 3.691335889117112*^9, 
+   3.691335931908716*^9, 3.69133597235788*^9, 3.6913360127849083`*^9, 
+   3.6913360629672947`*^9, 3.691336115699573*^9, 3.6913361966342688`*^9, {
+   3.691336256514699*^9, 3.691336305816592*^9}, 3.6913363654553747`*^9, 
+   3.691336468619203*^9, 3.691336509152542*^9, 3.6913365776540003`*^9, 
+   3.691336622842523*^9, 3.69133667854114*^9, 3.691336779504109*^9, {
+   3.69133690764117*^9, 3.691336930992875*^9}, 3.691337092561729*^9, 
+   3.691337214824847*^9, 3.691411159894691*^9, 3.6914113118027477`*^9, 
+   3.6914115133547363`*^9, 3.6914117284791*^9, 3.691411923933628*^9, 
+   3.691412022158614*^9, 3.691412105985343*^9, 3.692598694074216*^9, 
+   3.6925989331872663`*^9, 3.6925990450957327`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Evolution of probabilities for each firm:\\n \"\>", 
+   "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        StyleBox["\[Null]",
+         ShowStringCharacters->False], 
+        TagBox["\<\"Firm 1\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 2\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 3\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 4\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 5\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 6\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 7\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 8\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 9\"\>",
+         HoldForm], 
+        TagBox["\<\"Firm 10\"\>",
+         HoldForm]},
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`", 
+        "0.09999999999999999`", "0.09999999999999999`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "0.19999991607725973`", "0.19999991607725973`", 
+        "0.19999991607725973`", "0.19999991607725973`", 
+        "0.19999991607725973`", "2.404325093061774`*^-10", 
+        "3.881747859189253`*^-7", "5.993336723294334`*^-10", 
+        "1.4133002740109258`*^-9", "2.9185848943769872`*^-8"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "9.443586376606984`*^-22", 
+        "1.5246532719825135`*^-18", "2.3540324556711902`*^-21", 
+        "5.5510892650162856`*^-21", "1.1463469988748854`*^-19"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "1.6112948862707237`*^-29", 
+        "2.601412135718733`*^-26", "4.0165254032452827`*^-29", 
+        "9.471445899102081`*^-29", "1.95593388307901`*^-27"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "7.939494053309616`*^-36", 
+        "1.2818197561309806`*^-32", "1.9791026351383228`*^-35", 
+        "4.666960035242746`*^-35", "9.63766816719323`*^-34"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "2.7917507861194653`*^-41", 
+        "4.507241000262986`*^-38", "6.959084924505142`*^-41", 
+        "1.6410352170672471`*^-40", "3.3888768605984865`*^-39"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "0.2`", "0.2`", "0.2`", "0.2`", "0.2`", 
+        "3.724674265988442`*^-46", "6.013432376470422`*^-43", 
+        "9.284612602961486`*^-46", "2.1894223771625625`*^-45", 
+        "4.521342841930425`*^-44"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "1.3276407434599093`*^-50", 
+        "2.1434566517521767`*^-47", "3.309451806696936`*^-50", 
+        "7.804082035056771`*^-50", "1.6116091081872546`*^-48"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "1.0152664206658868`*^-54", 
+        "1.6391328553277652`*^-51", "2.5307865148783835`*^-54", 
+        "5.967896415762789`*^-54", "1.232421209458931`*^-52"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "1.436167965265779`*^-58", 
+        "2.3186722713555227`*^-55", "3.579981023317109`*^-58", 
+        "8.442022190314881`*^-58", "1.7433491591085522`*^-56"},
+       {
+        TagBox["\<\"t=11\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "3.380722604017811`*^-62", 
+        "5.458127425666593`*^-59", "8.427233485355722`*^-62", 
+        "1.9872421563960872`*^-61", "4.1038235439285933`*^-60"},
+       {
+        TagBox["\<\"t=12\"\>",
+         HoldForm], "0.2`", "0.2`", "0.2`", "0.2`", "0.2`", 
+        "1.2241704474361368`*^-65", "1.9764053652023684`*^-62", 
+        "3.0515281479043107`*^-65", "7.195867288455397`*^-65", 
+        "1.4860076061844058`*^-63"},
+       {
+        TagBox["\<\"t=13\"\>",
+         HoldForm], "0.2`", "0.2`", "0.2`", "0.2`", "0.2`", 
+        "6.419538792962283`*^-69", "1.0364251921869143`*^-65", 
+        "1.6002186104325163`*^-68", "3.773506320463402`*^-68", 
+        "7.792610493511748`*^-67"},
+       {
+        TagBox["\<\"t=14\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "4.649231320692139`*^-72", 
+        "7.506116281051786`*^-69", "1.1589285030465926`*^-71", 
+        "2.7328916203702224`*^-71", "5.6436529079172295`*^-70"},
+       {
+        TagBox["\<\"t=15\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "4.476218444036943`*^-75", 
+        "7.22678951051376`*^-72", "1.1158010395329162`*^-74", 
+        "2.6311919181586447`*^-74", "5.433634400105736`*^-73"},
+       {
+        TagBox["\<\"t=16\"\>",
+         HoldForm], "0.2`", "0.2`", "0.2`", "0.2`", "0.2`", 
+        "5.553304216557979`*^-78", "8.965728809409691`*^-75", 
+        "1.3842895951453216`*^-77", "3.2643199513975924`*^-77", 
+        "6.741097469346971`*^-76"},
+       {
+        TagBox["\<\"t=17\"\>",
+         HoldForm], "0.2`", "0.2`", "0.2`", "0.2`", "0.2`", 
+        "8.650905308824861`*^-81", "1.3966760676201558`*^-77", 
+        "2.1564383546443242`*^-80", "5.0851388103408264`*^-80", 
+        "1.0501242793614687`*^-78"},
+       {
+        TagBox["\<\"t=18\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "1.6557370665096264`*^-83", 
+        "2.6731633886994094`*^-80", "4.127307822668395`*^-83", 
+        "9.73268405566642`*^-83", "2.0098817773520201`*^-81"},
+       {
+        TagBox["\<\"t=19\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "3.822133639142724`*^-86", 
+        "6.17077911555794`*^-83", "9.527552645404324`*^-86", 
+        "2.2467105363975005`*^-85", "4.639647748003387`*^-84"},
+       {
+        TagBox["\<\"t=20\"\>",
+         HoldForm], "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "0.19999999999999998`", 
+        "0.19999999999999998`", "1.0473827162308277`*^-88", 
+        "1.6909841469497074`*^-85", "2.6108438141932687`*^-88", 
+        "6.156681074930261`*^-88", "1.2714068422128686`*^-86"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[2.0999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10",
+          "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", 
+         "t=19", "t=20"}, {
+        "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+         "Firm 8", "Firm 9", "Firm 10"}}]]]}],
+  SequenceForm["Evolution of probabilities for each firm:\n ", 
+   TableForm[CompressedData["
+1:eJxTTMoPSmViYGAQAWIuIJ4JBjvtqUW/nprwdMbMkwTpE7uTDu1u/WC7mNXv
+8CmeWXb9excWn57OYrfr3fSlh9wl7C692trZHRZvBzH3pD0hul6+PG7xtYnW
+wp23tvyQt7GRyH3TvNl6mXV5XfarW2a7rM+sPXzy2CsGG2LN22c/MftzzhfL
+6gJjRSmpBVadah8T9Es5rVTS/0SqschZzY7PXP0wLtmKWPM+bj32OUx6qcXU
+M0eXTV4cYLlI92F3p98ui/Osf09ks5y36L7MmeXMImJJrHmzbGZELytpNteZ
+VrRyxxo9i+dLSwW22c8wZxcM/e00fY351cXtq9OLP5nPgqknQL/bYnD/CVOj
+Wcy/nQ4Kl7TMOQMDU08ZTzWTjj4UvOH/CrPD1+f/+674wYxY933+Os2h6d5k
+01Wpe2bOD7Y36yydUrjs8ApTnaZbEZeN9ppaKJ97dPo6E9Hm2ZS22bx7ssNE
+yE2q7O38ZNOFd35NYGA/b9IhmPdzkdcjk79Gs1cem61uSqx5IYtu7xO4+cY4
+/tVHoYt7p5nszOtjsf/FaGLX4jozyEjUZGHF+bmLoqNNiDVv/bFFrIsuaBv3
+sO8/Ev32qvFa5tmXS0IdjdedC57AVhBivGxXg/2dhFnGxMbHGsanlpMWlBit
+T9NbddpJwbjkpsSd1q2dRpV7HrEzBcwzyjZV/3S1/7ERseYJVSR/0FY/Zjih
+MJlxe1mhkdi0iBlRc24bniu/H8fo/sHw1CJWSWcmUyNi/RskU511IVfB0P+B
+XLbI85OG5fxH235Xmhj+bX6sNkfFw7Ce/2WCrma/IbHm8flu8KgxajCYxDJf
+pqtT03Bij0U/p8EUg0XLJk7PObvcYK1mH/OyHe8MiPWvyVPz1xsmP9GP3RAR
+tMRigoHp0VrTiqU/9dfXvGgUseUz6LC58mFeczDR5p04WM5XlhmgH5lyq9z8
+wU99Jc32BX0lKfprDFr7zOQq9E1n2R19rbBfn1j/ponv36snekBvEcueq2HR
+mfoLVp170sx9RY9tUtTxmEXP9QyWilwSbNQj2jzllZ9PKzMZ66n1ZP3S/XFX
+T9mgMe3vBne9JT4ThP+8i9Y7PFdL5zzbIj1izTvNu8UncfUqXcHzk8312EL1
+/OT+n9oy74Bukx1TWu+My7rHXup+OuAlqQcAH1lJqw==
+    "], 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10", 
+       "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", "t=19",
+        "t=20"}, {
+      "Firm 1", "Firm 2", "Firm 3", "Firm 4", "Firm 5", "Firm 6", "Firm 7", 
+       "Firm 8", "Firm 9", "Firm 10"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.69259904509978*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.019444444444444445`], 
+    AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7BlQgUOhLdf1xQV7oeIcDuvcH1aJrLsM5Qs4
+ACWBKm5C+SIObwJ3yLW+vgPlSzh804jpP1R6D8qXcagWAZpgdR/KV3CwAxk/
+F8ZXcpBvfR244xyMr+Iw4dBXjZjnML6agwfI+s8wvobDEpD1P2F8LYcgkPV/
+YHwdB02Q9f9gfD0HsPX/YXwDB7D1cL6hA9h6ON/IAWw9nG/sALYezjdxAFsP
+5AMA6WBfWQ==
+     "]]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox["Markup", HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Markup", " ", "of", " ", "Specialist"}], HoldForm], 
+    TraditionalForm],
+  PlotRange->{{0., 20.}, {0, 0.4999985313415527}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.691316420302875*^9, 3.691316568709208*^9, 3.691335889117112*^9, 
+   3.691335931908716*^9, 3.69133597235788*^9, 3.6913360127849083`*^9, 
+   3.6913360629672947`*^9, 3.691336115699573*^9, 3.6913361966342688`*^9, {
+   3.691336256514699*^9, 3.691336305816592*^9}, 3.6913363654553747`*^9, 
+   3.691336468619203*^9, 3.691336509152542*^9, 3.6913365776540003`*^9, 
+   3.691336622842523*^9, 3.69133667854114*^9, 3.691336779504109*^9, {
+   3.69133690764117*^9, 3.691336930992875*^9}, 3.691337092561729*^9, 
+   3.691337214824847*^9, 3.691411159894691*^9, 3.6914113118027477`*^9, 
+   3.6914115133547363`*^9, 3.6914117284791*^9, 3.691411923933628*^9, 
+   3.691412022158614*^9, 3.691412105985343*^9, 3.692598694074216*^9, 
+   3.6925989331872663`*^9, 3.69259904512078*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\n Markup: \\n\"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "0.`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "0.115`"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "0.3075`"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "0.40375`"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "0.451875`"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "0.4759375`"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "0.48796875`"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "0.49398437500000003`"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "0.4969921875`"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "0.49849609375000004`"},
+       {
+        TagBox["\<\"t=11\"\>",
+         HoldForm], "0.499248046875`"},
+       {
+        TagBox["\<\"t=12\"\>",
+         HoldForm], "0.4996240234375`"},
+       {
+        TagBox["\<\"t=13\"\>",
+         HoldForm], "0.49981201171875`"},
+       {
+        TagBox["\<\"t=14\"\>",
+         HoldForm], "0.499906005859375`"},
+       {
+        TagBox["\<\"t=15\"\>",
+         HoldForm], "0.4999530029296875`"},
+       {
+        TagBox["\<\"t=16\"\>",
+         HoldForm], "0.49997650146484374`"},
+       {
+        TagBox["\<\"t=17\"\>",
+         HoldForm], "0.49998825073242187`"},
+       {
+        TagBox["\<\"t=18\"\>",
+         HoldForm], "0.4999941253662109`"},
+       {
+        TagBox["\<\"t=19\"\>",
+         HoldForm], "0.49999706268310545`"},
+       {
+        TagBox["\<\"t=20\"\>",
+         HoldForm], "0.4999985313415527`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{False}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.5599999999999999]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     OutputFormsDump`HeadedColumn],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10",
+          "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", 
+         "t=19", "t=20"}}]]]}],
+  SequenceForm["\n Markup: \n", 
+   TableForm[{0., 0.115, 0.3075, 0.40375, 0.451875, 0.4759375, 0.48796875, 
+    0.49398437500000003`, 0.4969921875, 0.49849609375000004`, 0.499248046875, 
+    0.4996240234375, 0.49981201171875, 0.499906005859375, 0.4999530029296875, 
+    0.49997650146484374`, 0.49998825073242187`, 0.4999941253662109, 
+    0.49999706268310545`, 0.4999985313415527}, 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10", 
+       "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", "t=19",
+        "t=20"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599045124756*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.019444444444444445`], 
+    AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7Attua4vLrhrDxVwgIlDaA40vgAaXwSNL4HG
+l0HjK6DxldD4Kmh8NTS+BhpfC42vg8bXQ+MboPEN0fhGaHxjNL4JnA8AFuYk
+fg==
+     "]]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox[
+     TagBox["time", HoldForm], TraditionalForm], 
+    FormBox[
+     TagBox[
+      RowBox[{"Market", " ", "Share"}], HoldForm], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  Method->{},
+  PlotLabel->FormBox[
+    TagBox[
+     RowBox[{"Market", " ", "Share"}], HoldForm], TraditionalForm],
+  PlotRange->{{0., 20.}, {0, 1.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.691316420302875*^9, 3.691316568709208*^9, 3.691335889117112*^9, 
+   3.691335931908716*^9, 3.69133597235788*^9, 3.6913360127849083`*^9, 
+   3.6913360629672947`*^9, 3.691336115699573*^9, 3.6913361966342688`*^9, {
+   3.691336256514699*^9, 3.691336305816592*^9}, 3.6913363654553747`*^9, 
+   3.691336468619203*^9, 3.691336509152542*^9, 3.6913365776540003`*^9, 
+   3.691336622842523*^9, 3.69133667854114*^9, 3.691336779504109*^9, {
+   3.69133690764117*^9, 3.691336930992875*^9}, 3.691337092561729*^9, 
+   3.691337214824847*^9, 3.691411159894691*^9, 3.6914113118027477`*^9, 
+   3.6914115133547363`*^9, 3.6914117284791*^9, 3.691411923933628*^9, 
+   3.691412022158614*^9, 3.691412105985343*^9, 3.692598694074216*^9, 
+   3.6925989331872663`*^9, 3.6925990451427813`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"\\n Market Share: \\n\"\>", "\[InvisibleSpace]", 
+   TagBox[
+    TagBox[GridBox[{
+       {
+        TagBox["\<\"t=1\"\>",
+         HoldForm], "0.46`"},
+       {
+        TagBox["\<\"t=2\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=3\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=4\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=5\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=6\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=7\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=8\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=9\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=10\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=11\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=12\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=13\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=14\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=15\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=16\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=17\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=18\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=19\"\>",
+         HoldForm], "1.`"},
+       {
+        TagBox["\<\"t=20\"\>",
+         HoldForm], "1.`"}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {False, {True}, False}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {{False}}, "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.5599999999999999]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     OutputFormsDump`HeadedColumn],
+    Function[BoxForm`e$, 
+     TableForm[
+     BoxForm`e$, 
+      TableHeadings -> {{
+        "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10",
+          "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", 
+         "t=19", "t=20"}}]]]}],
+  SequenceForm["\n Market Share: \n", 
+   TableForm[{0.46, 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 
+    1., 1., 1., 1., 1.}, 
+    TableHeadings -> {{
+      "t=1", "t=2", "t=3", "t=4", "t=5", "t=6", "t=7", "t=8", "t=9", "t=10", 
+       "t=11", "t=12", "t=13", "t=14", "t=15", "t=16", "t=17", "t=18", "t=19",
+        "t=20"}}]],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6912976221425037`*^9, 3.691297722907847*^9, 3.691297845444708*^9, 
+   3.6912979640953608`*^9, 3.691298345677144*^9, 3.691298603794435*^9, 
+   3.69131619158136*^9, 3.69131642010077*^9, 3.691316568504683*^9, 
+   3.691335889026997*^9, 3.691335931839295*^9, 3.691335972295947*^9, 
+   3.691336012723928*^9, 3.691336062894421*^9, 3.691336115623665*^9, 
+   3.691336196562318*^9, {3.6913362564489727`*^9, 3.6913363057553463`*^9}, 
+   3.691336365390801*^9, 3.691336468551401*^9, 3.691336509080635*^9, 
+   3.691336577591402*^9, 3.691336622775382*^9, 3.6913366784664593`*^9, 
+   3.691336779438076*^9, {3.6913369075265503`*^9, 3.691336930881613*^9}, 
+   3.691337092445352*^9, 3.6913372147184668`*^9, 3.691411159554414*^9, 
+   3.6914113116677723`*^9, 3.691411513262595*^9, 3.691411728354473*^9, 
+   3.691411923834712*^9, 3.691412022040344*^9, 3.691412105890765*^9, 
+   3.692598693979127*^9, 3.692598933111779*^9, 3.692599045147873*^9}]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (October 9, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 32927, 773, 4992, "Input"],
+Cell[CellGroupData[{
+Cell[33532, 799, 1113, 16, 23, "Print"],
+Cell[34648, 817, 1103, 15, 62, "Print"],
+Cell[35754, 834, 1111, 16, 23, "Print"],
+Cell[36868, 852, 55742, 1527, 391, "Print"],
+Cell[92613, 2381, 1111, 16, 23, "Print"],
+Cell[93727, 2399, 1007, 14, 23, "Print"],
+Cell[94737, 2415, 1111, 16, 23, "Print"]
+}, Open  ]],
+Cell[95863, 2434, 4513, 98, 383, "Output"],
+Cell[100379, 2534, 6287, 144, 352, "Print"],
+Cell[106669, 2680, 4703, 103, 387, "Output"],
+Cell[111375, 2785, 2100, 50, 387, "Output"],
+Cell[113478, 2837, 9721, 249, 371, "Print"],
+Cell[123202, 3088, 5356, 116, 393, "Output"],
+Cell[128561, 3206, 9354, 200, 352, "Print"],
+Cell[137918, 3408, 5054, 106, 386, "Output"],
+Cell[142975, 3516, 8386, 187, 353, "Print"],
+Cell[151364, 3705, 4844, 102, 395, "Output"],
+Cell[156211, 3809, 7768, 175, 353, "Print"],
+Cell[163982, 3986, 5618, 118, 384, "Output"],
+Cell[169603, 4106, 11066, 231, 411, "Print"],
+Cell[180672, 4339, 2116, 50, 392, "Output"],
+Cell[182791, 4391, 4160, 111, 356, "Print"],
+Cell[186954, 4504, 1983, 48, 413, "Output"],
+Cell[188940, 4554, 3696, 108, 356, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
