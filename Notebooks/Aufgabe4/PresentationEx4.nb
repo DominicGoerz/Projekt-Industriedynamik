@@ -3,1161 +3,25 @@
 (*** Wolfram Notebook File ***)
 (* http://www.wolfram.com/nb *)
 
-(* CreatedBy='Mathematica 10.0' *)
+(* CreatedBy='Mathematica 10.3' *)
 
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    188853,       4315]
-NotebookOptionsPosition[    187035,       4263]
-NotebookOutlinePosition[    187414,       4279]
-CellTagsIndexPosition[    187371,       4276]
+NotebookDataLength[    140915,       3339]
+NotebookOptionsPosition[    136760,       3208]
+NotebookOutlinePosition[    138097,       3248]
+CellTagsIndexPosition[    138017,       3243]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{"--", 
-    RowBox[{"--", 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", 
-           RowBox[{"--", 
-            RowBox[{"--", 
-             RowBox[{"--", 
-              RowBox[{"--", 
-               RowBox[{"--", 
-                RowBox[{"--", 
-                 RowBox[{"--", 
-                  RowBox[{"--", 
-                   RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"-", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{
-                    "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
-]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"--", 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", 
-           RowBox[{"--", 
-            RowBox[{"--", 
-             RowBox[{"--", 
-              RowBox[{"--", 
-               RowBox[{"--", 
-                RowBox[{"--", 
-                 RowBox[{"--", 
-                  RowBox[{"--", 
-                   RowBox[{"--", " ", 
-                    RowBox[{
-                    RowBox[{
-                    RowBox[{"RESULTS", " ", "--"}], "--"}], 
-                    "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "-", 
-    RowBox[{"--", 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", 
-           RowBox[{"--", 
-            RowBox[{"--", 
-             RowBox[{"--", 
-              RowBox[{"--", 
-               RowBox[{"--", 
-                RowBox[{"--", 
-                 RowBox[{"--", 
-                  RowBox[{"--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{"--", 
-    RowBox[{"--", 
-     RowBox[{"--", 
-      RowBox[{"--", 
-       RowBox[{"--", 
-        RowBox[{"--", 
-         RowBox[{"--", 
-          RowBox[{"--", 
-           RowBox[{"--", 
-            RowBox[{"--", 
-             RowBox[{"--", 
-              RowBox[{"--", 
-               RowBox[{"--", 
-                RowBox[{"--", 
-                 RowBox[{"--", 
-                  RowBox[{"--", 
-                   RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{"--", 
-                    RowBox[{
-                    "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}]}]}]}]}]}]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-   "define", " ", "start", " ", "and", " ", "end", " ", "of", " ", "time", 
-    " ", "period", " ", "you", " ", "want", " ", "to", " ", "consider"}], 
-   "*)"}], "\[IndentingNewLine]", "\t", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"start", "=", "1"}], ";"}], "\n", "\t", 
-   RowBox[{
-    RowBox[{"lend", "=", "20"}], ";"}], " ", 
-   RowBox[{"(*", 
-    RowBox[{"length", " ", "of", " ", "table"}], "*)"}], "\n", "\t", 
-   RowBox[{
-    RowBox[{"pend", "=", "20"}], ";"}], " ", 
-   RowBox[{"(*", 
-    RowBox[{"plot", " ", "horizon"}], "*)"}], "\n", "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"tables", "\[Equal]", "True"}], "||", 
-      RowBox[{"plots", "\[Equal]", "True"}]}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Results\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"batch\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"runs\", \"Section\"]\)\!\(\*
-StyleBox[\":\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"Exercise\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"4\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"-\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"Evolving\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"Strategies\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\>\"", "]"}]}], "]"}], "\n", 
-   RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\[IndentingNewLine]", 
-    RowBox[{
-    "\"\<\\nThe firms which survive:\\n \>\"", ",", "\[IndentingNewLine]", 
-     RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Table", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"Table", "[", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"survivor", "[", 
-            RowBox[{"[", 
-             RowBox[{"r", ",", "i", ",", "1"}], "]"}], "]"}], ",", 
-           "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"i", ",", "1", ",", 
-             RowBox[{"Length", "[", 
-              RowBox[{"survivor", "[", 
-               RowBox[{"[", "r", "]"}], "]"}], "]"}]}], "}"}]}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"{", 
-          RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"TableHeadings", "\[Rule]", 
-        RowBox[{"{", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Table", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"StringJoin", "[", 
-             RowBox[{"\"\<r=\>\"", ",", 
-              RowBox[{"ToString", "[", "r", "]"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"r", ",", "start", ",", "R"}], "}"}]}], 
-           "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
-          RowBox[{"{", "\"\<Firm\>\"", "}"}]}], "\[IndentingNewLine]", 
-         "}"}]}]}], "]"}]}], "]"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Compute", " ", "averages", " ", "of", " ", "average", " ", "profit", " ",
-      "with", " ", "respect", " ", "to", " ", "batch", " ", "runs"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"avofav", " ", "=", 
-     RowBox[{"Table", "[", "\[IndentingNewLine]", "\t", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{"1", "/", "R"}], ")"}], "*", 
-        RowBox[{"Sum", "[", 
-         RowBox[{
-          RowBox[{"avgProfits", "[", 
-           RowBox[{"[", 
-            RowBox[{"r", ",", "i"}], "]"}], "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ",", 
-       "\[IndentingNewLine]", "\t", 
-       RowBox[{"{", 
-        RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\[IndentingNewLine]", 
-    RowBox[{
-    "\"\<\\nAverage overall profit (T):\\n \>\"", "\[IndentingNewLine]", 
-     RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Append", "[", 
-        RowBox[{"avgProfits", ",", 
-         RowBox[{
-          RowBox[{
-           RowBox[{"Style", "[", 
-            RowBox[{"#", ",", "Bold"}], "]"}], "&"}], "/@", "avofav"}]}], 
-        "]"}], ",", "\[IndentingNewLine]", 
-       RowBox[{"TableHeadings", "\[Rule]", 
-        RowBox[{"{", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Append", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<r=\>\"", ",", 
-                RowBox[{"ToString", "[", "r", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"r", ",", "start", ",", "R"}], "}"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Style", "[", 
-             RowBox[{"\"\<Avg.\>\"", ",", "Bold"}], "]"}]}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"Table", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"StringJoin", "[", 
-             RowBox[{"\"\<Firm \>\"", ",", 
-              RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-         "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", 
-    RowBox[{"\"\<\\n'Average of averages' = \>\"", ",", 
-     RowBox[{
-      RowBox[{"Total", "[", "avofav", "]"}], "/", "n"}], ",", "\"\<\\n\>\""}],
-     "]"}], "\n", "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Compute", " ", "averages", " ", "of", " ", "long", " ", "run", " ", 
-     "profits"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"avoflong", "=", 
-     RowBox[{"Table", "[", "\[IndentingNewLine]", "\t\t", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{"1", "/", "R"}], ")"}], "*", 
-        RowBox[{"Sum", "[", 
-         RowBox[{
-          RowBox[{"longrunProfits", "[", 
-           RowBox[{"[", 
-            RowBox[{"r", ",", "i"}], "]"}], "]"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ",", 
-       "\[IndentingNewLine]", "\t\t", 
-       RowBox[{"{", 
-        RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\[IndentingNewLine]", 
-    RowBox[{
-    "\"\<\\nLong-run profits (T-9):\\n \>\"", ",", "\[IndentingNewLine]", 
-     RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"Append", "[", 
-        RowBox[{"longrunProfits", ",", 
-         RowBox[{
-          RowBox[{
-           RowBox[{"Style", "[", 
-            RowBox[{"#", ",", "Bold"}], "]"}], "&"}], "/@", "avoflong"}]}], 
-        "]"}], ",", "\[IndentingNewLine]", 
-       RowBox[{"TableHeadings", "\[Rule]", 
-        RowBox[{"{", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Append", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<r=\>\"", ",", 
-                RowBox[{"ToString", "[", "r", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"r", ",", "start", ",", "R"}], "}"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Style", "[", 
-             RowBox[{"\"\<Avg.\>\"", ",", "Bold"}], "]"}]}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"Table", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"StringJoin", "[", 
-             RowBox[{"\"\<Firm \>\"", ",", 
-              RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-         "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", 
-    RowBox[{"\"\<\\n'Average of averages' = \>\"", ",", 
-     RowBox[{
-      RowBox[{"Total", "[", "avoflong", "]"}], "/", "n"}], ",", 
-     "\"\<\\n\>\""}], "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Results\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"of\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"last\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"batch\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"run\", \"Section\"]\)\!\(\*
-StyleBox[\":\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"Exercise\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"4\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"-\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"Evolving\", \"Section\"]\)\!\(\*
-StyleBox[\" \", \"Section\"]\)\!\(\*
-StyleBox[\"Strategies\", \"Section\"]\)\n\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Period\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"Output\", \"Subsection\"]\)\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Plot", " ", "period", " ", "output"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"Table", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Table", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"quantPeriodFirm", "[", 
-             RowBox[{"[", 
-              RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"t", ",", "start", ",", "pend"}], "}"}]}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotLabel", "\[Rule]", 
-         RowBox[{"HoldForm", "[", 
-          RowBox[{"Period", " ", "Output", " ", "of", " ", "Firms"}], "]"}]}],
-         ",", "\[IndentingNewLine]", 
-        RowBox[{"AxesLabel", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
-           RowBox[{"HoldForm", "[", 
-            RowBox[{"Period", " ", "Output"}], "]"}]}], "}"}]}]}], 
-       "\[IndentingNewLine]", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "period", " ", "output"}], "*)"}], "\n", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{
-      "\"\<\\nPeriod Output of Firms:\\n \>\"", ",", "\[IndentingNewLine]", 
-       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"quantPeriodFirm", "[", 
-          RowBox[{"[", 
-           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"TableHeadings", "\[Rule]", 
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<t=\>\"", ",", 
-                RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<Firm \>\"", ",", 
-                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Aggregated\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"Output\", \"Subsection\"]\)\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Plot", " ", "aggregated", " ", "output", " ", "Firms"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\n", 
-      RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"Table", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Table", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"quantAggFirm", "[", 
-             RowBox[{"[", 
-              RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"t", ",", "start", ",", "pend"}], "}"}]}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotLabel", "\[Rule]", 
-         RowBox[{"HoldForm", "[", 
-          RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Firms"}], 
-          "]"}]}], ",", "\[IndentingNewLine]", 
-        RowBox[{"AxesLabel", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
-           RowBox[{"HoldForm", "[", 
-            RowBox[{"Agg", ".", "Output"}], "]"}]}], "}"}]}]}], 
-       "\[IndentingNewLine]", "]"}], "]"}]}], "]"}], "\n", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Table", " ", "of", " ", "Aggregated", " ", "Output", " ", "of", " ", 
-     "Firms", " ", "and", " ", "Specialist"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{
-      "\"\<\\nAggregated Output of Firms:\\n \>\"", ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"Table", "[", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"Append", "[", "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"quantAggFirm", "[", 
-              RowBox[{"[", "t", "]"}], "]"}], ",", 
-             RowBox[{"Style", "[", 
-              RowBox[{
-               RowBox[{"quantAggSpec", "[", 
-                RowBox[{"[", "t", "]"}], "]"}], ",", "Bold"}], "]"}]}], "]"}],
-            ",", "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"TableHeadings", "\[Rule]", 
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<t=\>\"", ",", 
-                RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Append", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"Table", "[", "\[IndentingNewLine]", 
-               RowBox[{
-                RowBox[{"StringJoin", "[", 
-                 RowBox[{"\"\<Firm \>\"", ",", 
-                  RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
-                RowBox[{"{", 
-                 RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
-              RowBox[{"Style", "[", 
-               RowBox[{"\"\<Specialist\>\"", ",", "Bold"}], "]"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Plot", " ", "aggregated", " ", "output", " ", "of", " ", "Specialist"}], 
-    "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"quantAggSpec", "[", 
-         RowBox[{"[", 
-          RowBox[{"start", ";;", "pend"}], "]"}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotLabel", "\[Rule]", 
-         RowBox[{"HoldForm", "[", 
-          RowBox[{"Aggregated", " ", "Output", " ", "of", " ", "Specialist"}],
-           "]"}]}], ",", "\[IndentingNewLine]", 
-        RowBox[{"AxesLabel", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
-           RowBox[{"HoldForm", "[", 
-            RowBox[{"Agg", ".", "Output"}], "]"}]}], "}"}]}]}], 
-       "\[IndentingNewLine]", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Qualities\", \"Subsection\"]\)\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Plot", " ", "Quality"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\n", 
-      RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"Table", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Table", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"qualityList", "[", 
-             RowBox[{"[", 
-              RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"t", ",", "start", ",", "pend"}], "}"}]}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotLabel", "\[Rule]", 
-         RowBox[{"HoldForm", "[", 
-          RowBox[{"Quality", " ", "of", " ", "Products"}], "]"}]}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"AxesLabel", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
-           RowBox[{"HoldForm", "[", "Quality", "]"}]}], "}"}]}]}], 
-       "\[IndentingNewLine]", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Qualities"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"tables", "==", "True"}], ",", "\n", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{
-      "\"\<\\nQuality of products:\\n \>\"", ",", "\[IndentingNewLine]", 
-       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"qualityList", "[", 
-          RowBox[{"[", 
-           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"TableHeadings", "\[Rule]", 
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Table", "[", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<t=\>\"", ",", 
-                RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<Firm \>\"", ",", 
-                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Prices\", \"Subsection\"]\)\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Plot", " ", "Prices"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"Table", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Table", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"priceListFirm", "[", 
-             RowBox[{"[", 
-              RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"t", ",", "start", ",", "pend"}], "}"}]}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotLabel", "\[Rule]", 
-         RowBox[{"HoldForm", "[", 
-          RowBox[{"Prices", " ", "of", " ", "Firms"}], "]"}]}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"AxesLabel", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
-           RowBox[{"HoldForm", "[", "Prices", "]"}]}], "}"}]}]}], 
-       "\[IndentingNewLine]", "]"}], "]"}]}], "]"}], "\n", 
-   RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Prices"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"\"\<\\nPrices of firms:\\n \>\"", ",", "\[IndentingNewLine]", 
-       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"priceListFirm", "[", 
-          RowBox[{"[", 
-           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"TableHeadings", "\[Rule]", 
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<t=\>\"", ",", 
-                RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<Firm \>\"", ",", 
-                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Chosen\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"strategies\", \"Subsection\"]\)\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Strategies"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"\"\<\\nStrategy List:\\n \>\"", ",", "\[IndentingNewLine]", 
-       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"sList", "[", 
-          RowBox[{"[", 
-           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"TableHeadings", "\[Rule]", 
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<t=\>\"", ",", 
-                RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<Firm \>\"", ",", 
-                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Profits\", \"Subsection\"]\)\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Plot", " ", "Profits"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"Table", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Table", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"profitListFirm", "[", 
-             RowBox[{"[", 
-              RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"t", ",", "start", ",", "pend"}], "}"}]}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotLabel", "\[Rule]", 
-         RowBox[{"HoldForm", "[", 
-          RowBox[{"Profits", " ", "of", " ", "Firms"}], "]"}]}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"AxesLabel", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
-           RowBox[{"HoldForm", "[", "Profit", "]"}]}], "}"}]}]}], 
-       "\[IndentingNewLine]", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Profits"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"\"\<\\nProfits of firms:\\n \>\"", ",", "\[IndentingNewLine]", 
-       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"profitListFirm", "[", 
-          RowBox[{"[", 
-           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"TableHeadings", "\[Rule]", 
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<t=\>\"", ",", 
-                RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<Firm \>\"", ",", 
-                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Propobilities\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"that\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"firm\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"gets\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"chosen\", \"Subsection\"]\)\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Plot", " ", "Probabilities"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"Table", "[", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"Table", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"probList", "[", 
-             RowBox[{"[", 
-              RowBox[{"t", ",", "j"}], "]"}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"t", ",", "start", ",", "pend"}], "}"}]}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotLabel", "\[Rule]", 
-         RowBox[{"HoldForm", "[", 
-          RowBox[{
-          "Evolution", " ", "of", " ", "Probabilities", " ", "for", " ", 
-           "each", " ", "Firm"}], "]"}]}], ",", "\[IndentingNewLine]", 
-        RowBox[{"AxesLabel", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
-           RowBox[{"HoldForm", "[", "Probs", "]"}]}], "}"}]}]}], 
-       "\[IndentingNewLine]", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Probabilities"}], "*)"}], "\n", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{
-      "\"\<\\nEvolution of probabilities for each firm:\\n \>\"", ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"probList", "[", 
-          RowBox[{"[", 
-           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"TableHeadings", "\[Rule]", 
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<t=\>\"", ",", 
-                RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Table", "[", "\[IndentingNewLine]", 
-             RowBox[{
-              RowBox[{"StringJoin", "[", 
-               RowBox[{"\"\<Firm \>\"", ",", 
-                RowBox[{"ToString", "[", "i", "]"}]}], "]"}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{"{", 
-               RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Markup\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"of\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"the\", \"Subsection\"]\)\!\(\*
-StyleBox[\" \", \"Subsection\"]\)\!\(\*
-StyleBox[\"specialist\", \"Subsection\"]\)\>\"", "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Plot", " ", "Markup", " ", "of", " ", "Specialist"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"\[Eta]Spec", "[", 
-         RowBox[{"[", 
-          RowBox[{"start", ";;", "pend"}], "]"}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotLabel", "\[Rule]", 
-         RowBox[{"HoldForm", "[", 
-          RowBox[{"Markup", " ", "of", " ", "Specialist"}], "]"}]}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"AxesLabel", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
-           RowBox[{"HoldForm", "[", "Markup", "]"}]}], "}"}]}]}], 
-       "\[IndentingNewLine]", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Table", " ", "of", " ", "Markups", " ", "of", " ", "Specialist"}], 
-    "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"\"\<\\n Markup: \\n\>\"", "\[IndentingNewLine]", 
-       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"\[Eta]Spec", "[", 
-          RowBox[{"[", 
-           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"TableHeadings", "\[Rule]", 
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{"Table", "[", "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"StringJoin", "[", 
-              RowBox[{"\"\<t=\>\"", ",", 
-               RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
-             "\[IndentingNewLine]", 
-             RowBox[{"{", 
-              RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"Print", "[", "\"\<\!\(\*
-StyleBox[\"Matketshare\", \"Subsection\"]\)\>\"", "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{"Plot", " ", "Market", " ", "Share"}], "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", 
-      RowBox[{"ListPlot", "[", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"msSpec", "[", 
-         RowBox[{"[", 
-          RowBox[{"start", ";;", "pend"}], "]"}], "]"}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", "\[IndentingNewLine]", 
-        RowBox[{"PlotLabel", "\[Rule]", 
-         RowBox[{"HoldForm", "[", 
-          RowBox[{"Market", " ", "Share"}], "]"}]}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"AxesLabel", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
-           RowBox[{"HoldForm", "[", 
-            RowBox[{"Market", " ", "Share"}], "]"}]}], "}"}]}]}], 
-       "\[IndentingNewLine]", "]"}], "]"}]}], "]"}], "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Table", " ", "of", " ", "Market", " ", "Shares", " ", "of", " ", 
-     "Specialist"}], "*)"}], "\[IndentingNewLine]", 
-   RowBox[{"If", "[", 
-    RowBox[{
-     RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"Print", "[", "\[IndentingNewLine]", 
-      RowBox[{"\"\<\\n Market Share: \\n\>\"", "\[IndentingNewLine]", 
-       RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"msSpec", "[", 
-          RowBox[{"[", 
-           RowBox[{"start", ";;", "lend"}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"TableHeadings", "\[Rule]", 
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{"Table", "[", "\[IndentingNewLine]", 
-            RowBox[{
-             RowBox[{"StringJoin", "[", 
-              RowBox[{"\"\<t=\>\"", ",", 
-               RowBox[{"ToString", "[", "t", "]"}]}], "]"}], ",", 
-             "\[IndentingNewLine]", 
-             RowBox[{"{", 
-              RowBox[{"t", ",", "start", ",", "lend"}], "}"}]}], "]"}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]"}]}]], "Input",
- CellChangeTimes->{{3.6905340117121477`*^9, 3.690534011714965*^9}, 
-   3.691152655702436*^9, 3.691152703261239*^9, {3.691152792300922*^9, 
-   3.691152801119731*^9}, {3.691152842126123*^9, 3.691153177610655*^9}, {
-   3.691153446126889*^9, 3.691153498666724*^9}, {3.691155819345996*^9, 
-   3.691155953357862*^9}, {3.6911561736162786`*^9, 3.6911562182895727`*^9}, {
-   3.691156833081129*^9, 3.6911568924591007`*^9}, {3.691158776165201*^9, 
-   3.6911587941868553`*^9}, {3.691159084317161*^9, 3.691159204982926*^9}, {
-   3.691159306782155*^9, 3.691159399522303*^9}, {3.69116139753234*^9, 
-   3.691161398623118*^9}, {3.6911618047175407`*^9, 3.691161828191485*^9}, {
-   3.691161873564061*^9, 3.691161996008286*^9}, {3.691162104667585*^9, 
-   3.691162206632258*^9}, {3.6911623316343727`*^9, 3.691162375764669*^9}, {
-   3.691162467384049*^9, 3.6911625214800787`*^9}, {3.6911626283049383`*^9, 
-   3.691162641339444*^9}, {3.691162746088711*^9, 3.691162782776245*^9}, {
-   3.6911628299081717`*^9, 3.691162831450438*^9}, {3.691162990367509*^9, 
-   3.6911630212771273`*^9}, {3.691163052550004*^9, 3.6911630558761806`*^9}, {
-   3.691163143320681*^9, 3.691163155962112*^9}, {3.6911632457911263`*^9, 
-   3.691163261898673*^9}, {3.6911632992874928`*^9, 3.691163301823473*^9}, {
-   3.691163557527728*^9, 3.6911635593937597`*^9}, {3.6911636212475986`*^9, 
-   3.691163622319002*^9}, {3.691163814013913*^9, 3.691163827896142*^9}, {
-   3.691163923056183*^9, 3.691163942668799*^9}, {3.69116401315987*^9, 
-   3.69116413430219*^9}, {3.691164192358783*^9, 3.691164257497692*^9}, {
-   3.691164387443564*^9, 3.691164389479909*^9}, {3.6911644579627657`*^9, 
-   3.691164458506639*^9}, {3.691164572175983*^9, 3.691164580670456*^9}, {
-   3.691164667530984*^9, 3.691164671607038*^9}, {3.6911647610369797`*^9, 
-   3.691164762869825*^9}, {3.691164818237453*^9, 3.691164820005221*^9}, {
-   3.691164939649519*^9, 3.691164951326467*^9}, {3.691164992926834*^9, 
-   3.691165000808436*^9}, {3.6911650315969467`*^9, 3.691165067867983*^9}, {
-   3.691165121007337*^9, 3.691165136531397*^9}, {3.691165310232751*^9, 
-   3.6911653392763233`*^9}, {3.691165482780225*^9, 3.691165573894887*^9}, {
-   3.691165675319604*^9, 3.6911656801769743`*^9}, {3.6911657399060802`*^9, 
-   3.691165748980977*^9}, {3.691165803858996*^9, 3.691165841910913*^9}, {
-   3.691165881116107*^9, 3.691165920547312*^9}, {3.69116596777251*^9, 
-   3.691166020701392*^9}, {3.69116605855258*^9, 3.6911660591957073`*^9}, {
-   3.691166130873345*^9, 3.69116613226934*^9}, {3.6911662282875137`*^9, 
-   3.691166264370905*^9}, {3.691219803792756*^9, 3.6912198076231613`*^9}, {
-   3.691219909792088*^9, 3.691220264903329*^9}, {3.691220332109088*^9, 
-   3.6912204723543386`*^9}, {3.691220507315254*^9, 3.691220515629869*^9}, {
-   3.691220570405488*^9, 3.691220634134698*^9}, {3.691220719812347*^9, 
-   3.691220834043551*^9}, {3.691220925404861*^9, 3.6912211622847967`*^9}, {
-   3.691221228213419*^9, 3.6912213612383947`*^9}, {3.691221401979751*^9, 
-   3.691221499620976*^9}, {3.6912215350328217`*^9, 3.691221744102786*^9}, {
-   3.691221813206411*^9, 3.691221920269355*^9}, {3.691221982294406*^9, 
-   3.6912219836460247`*^9}, {3.6912220250315638`*^9, 3.6912221248712263`*^9}, 
-   3.691222155625347*^9, {3.691222202187498*^9, 3.691222237981846*^9}, {
-   3.691222271825583*^9, 3.691222304780511*^9}, {3.6912223963076*^9, 
-   3.691222543089732*^9}, {3.691222599036716*^9, 3.6912226364408207`*^9}, 
-   3.69122272615345*^9, {3.691222772366169*^9, 3.6912230491599503`*^9}, {
-   3.691223083286891*^9, 3.691223147331297*^9}, {3.691223191723702*^9, 
-   3.691223226094795*^9}, {3.691223258863942*^9, 3.691223333549562*^9}, {
-   3.691223378667026*^9, 3.69122359970303*^9}, {3.691223658562496*^9, 
-   3.691223685508253*^9}, {3.6912237390478354`*^9, 3.691223760150983*^9}, 
-   3.691223944241907*^9, {3.691224048202066*^9, 3.691224056817453*^9}, {
-   3.6912240906583138`*^9, 3.691224434548358*^9}, {3.6912244680521708`*^9, 
-   3.691224470556491*^9}, {3.691224512049182*^9, 3.691224621869507*^9}, {
-   3.691224767759118*^9, 3.691224768273031*^9}, {3.691224803778141*^9, 
-   3.69122485398743*^9}, {3.691225107692048*^9, 3.69122519367804*^9}, {
-   3.6912252840712433`*^9, 3.6912253655015783`*^9}, {3.6912254252207003`*^9, 
-   3.691225434446369*^9}, {3.691225491861395*^9, 3.691225723970595*^9}, {
-   3.691225789182558*^9, 3.6912258092531967`*^9}, {3.691225853306286*^9, 
-   3.691225965583027*^9}, {3.691226007955875*^9, 3.69122601675299*^9}, 
-   3.69122610569477*^9, {3.691226185944454*^9, 3.6912261970565042`*^9}, {
-   3.69122638146251*^9, 3.691226423749992*^9}, {3.691226613286542*^9, 
-   3.69122662806172*^9}, {3.6912267388251762`*^9, 3.691226759832468*^9}, 
-   3.691226814511013*^9, {3.6912275277627573`*^9, 3.691227528396041*^9}, {
-   3.6912276335679083`*^9, 3.691227638456141*^9}, {3.6912277082907753`*^9, 
-   3.6912277552568808`*^9}, {3.6912278196903276`*^9, 3.691227845983691*^9}, {
-   3.69122809173348*^9, 3.691228111185349*^9}, {3.691229463222459*^9, 
-   3.691229583156948*^9}, {3.691229673216012*^9, 3.6912296964733047`*^9}, {
-   3.691229745142127*^9, 3.691229794437316*^9}, {3.6912298307117*^9, 
-   3.6912298791431303`*^9}, {3.691230054261407*^9, 3.691230076536232*^9}, {
-   3.6912301321897497`*^9, 3.6912301701830797`*^9}, {3.691230303723607*^9, 
-   3.6912304374080753`*^9}, {3.691230484194655*^9, 3.691230487545896*^9}, {
-   3.691230558429328*^9, 3.691230564929716*^9}, {3.691230668429215*^9, 
-   3.691230779430464*^9}, {3.6912308211356277`*^9, 3.6912309154970837`*^9}, {
-   3.6912312963552*^9, 3.69123129921527*^9}, {3.691231345108734*^9, 
-   3.69123134519026*^9}, {3.691231539244452*^9, 3.6912315405668907`*^9}, {
-   3.691232378835052*^9, 3.691232380017565*^9}, {3.6912325444142847`*^9, 
-   3.691232544782392*^9}, {3.691232763595089*^9, 3.691232879211287*^9}, {
-   3.69123296662119*^9, 3.691232992298106*^9}, {3.691233223808399*^9, 
-   3.691233347277568*^9}, {3.6912334502393208`*^9, 3.69123348786753*^9}, {
-   3.691233582894943*^9, 3.691233599547885*^9}, {3.6912336823159857`*^9, 
-   3.691233682717819*^9}, {3.69123378380639*^9, 3.6912337849554663`*^9}, {
-   3.691233833640967*^9, 3.691234007651339*^9}, {3.691234039113361*^9, 
-   3.69123412658218*^9}, {3.691234218281362*^9, 3.691234277544729*^9}, {
-   3.691234308334468*^9, 3.691234349638385*^9}, {3.691236411128478*^9, 
-   3.6912364268271437`*^9}, {3.6912364587766953`*^9, 
-   3.6912366296559277`*^9}, {3.691236686234231*^9, 3.691236754202643*^9}, {
-   3.691236800053314*^9, 3.691236913912903*^9}, {3.691236977424707*^9, 
-   3.691237089105105*^9}, {3.691237294006701*^9, 3.69123734007657*^9}, {
-   3.691237410753804*^9, 3.6912374476772223`*^9}, {3.691237517426219*^9, 
-   3.6912375424824553`*^9}, {3.6912376008350687`*^9, 3.691237757686172*^9}, {
-   3.691237935874853*^9, 3.691238008631175*^9}, {3.691238442349393*^9, 
-   3.6912384687634706`*^9}, {3.691238514755261*^9, 3.691238687266382*^9}, {
-   3.691238762992363*^9, 3.691238817523265*^9}, {3.691238854490905*^9, 
-   3.691238927326181*^9}, {3.6912389613875847`*^9, 3.691238963994102*^9}, {
-   3.69123903733537*^9, 3.691239429940261*^9}, {3.691239477086488*^9, 
-   3.691239604600803*^9}, {3.691239667468617*^9, 3.691239674796411*^9}, {
-   3.6912397270520782`*^9, 3.691239760594293*^9}, {3.6912398445931587`*^9, 
-   3.6912398588358707`*^9}, {3.691240280240806*^9, 3.6912402814219112`*^9}, {
-   3.691240330479371*^9, 3.691240409140255*^9}, {3.691240463235202*^9, 
-   3.691240494830819*^9}, {3.6912441976862907`*^9, 3.6912442140878887`*^9}, {
-   3.691245840902974*^9, 3.691245841652377*^9}, {3.6912471885017967`*^9, 
-   3.691247189051959*^9}, 3.691408925213245*^9, {3.691410120139228*^9, 
-   3.6914101227013407`*^9}, {3.691410177376237*^9, 3.6914102034513397`*^9}, {
-   3.691410236798194*^9, 3.691410317044866*^9}, {3.691410348637789*^9, 
-   3.691410390069047*^9}, {3.691410422568248*^9, 3.6914104469118013`*^9}, {
-   3.6926283320034523`*^9, 3.692628345979663*^9}, {3.694434539168287*^9, 
-   3.6944345588553376`*^9}, 3.694434590454486*^9, {3.694434662003978*^9, 
-   3.69443469398991*^9}, {3.6944348827510595`*^9, 3.694434883698021*^9}, {
-   3.6944349450296993`*^9, 3.6944349472390614`*^9}, {3.6944350385229683`*^9, 
-   3.6944351027627854`*^9}, {3.6944352060961514`*^9, 3.694435320189454*^9}, {
-   3.6944354042332582`*^9, 3.6944354087748613`*^9}, {3.694436532214289*^9, 
-   3.6944365332933865`*^9}, {3.694436568754318*^9, 3.69443659073425*^9}, {
-   3.694446520340472*^9, 3.69444652471847*^9}, {3.6944466219265776`*^9, 
-   3.6944466243742027`*^9}, {3.69444669833435*^9, 3.6944466987761064`*^9}, {
-   3.6944469503902063`*^9, 3.694447026579564*^9}, {3.694447095109242*^9, 
-   3.6944470971411824`*^9}, {3.694447159937334*^9, 3.6944472478797245`*^9}, {
-   3.6944473109023457`*^9, 3.6944473687005906`*^9}, {3.6944474100101213`*^9, 
-   3.6944474150797124`*^9}, {3.694448564160692*^9, 3.6944486699962387`*^9}, {
-   3.694448745345087*^9, 3.694448746044362*^9}, {3.694449746836554*^9, 
-   3.6944497859731207`*^9}, {3.6944498906354017`*^9, 
-   3.6944499218205905`*^9}, {3.694449990187975*^9, 3.694450129042248*^9}, {
-   3.694451147790481*^9, 3.6944512684386044`*^9}, {3.694452146676976*^9, 
-   3.6944521650637827`*^9}, {3.6944522163293066`*^9, 3.6944524044658833`*^9}}],
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
 
 Cell[CellGroupData[{
 
@@ -1802,7 +666,16 @@ Cell[BoxData[
    3.6944497899091315`*^9, 3.694450133884425*^9, 3.6944511272512503`*^9, 
    3.6944512127847958`*^9, {3.694451247907282*^9, 3.694451270974653*^9}, 
    3.694451500225003*^9, 3.6944515567423825`*^9, 3.694451608721736*^9, 
-   3.6944517006861324`*^9, 3.6944524600909243`*^9}],
+   3.6944517006861324`*^9, 3.6944524600909243`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"\\!\\(\\*\\nStyleBox[\\\"Results\\\", \
 \\\"Section\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\", \
@@ -2084,7 +957,16 @@ Cell[BoxData[
    3.6944497899091315`*^9, 3.694450133884425*^9, 3.6944511272512503`*^9, 
    3.6944512127847958`*^9, {3.694451247907282*^9, 3.694451270974653*^9}, 
    3.694451500225003*^9, 3.6944515567423825`*^9, 3.694451608721736*^9, 
-   3.6944517006861324`*^9, 3.6944524601599274`*^9}],
+   3.6944517006861324`*^9, 3.6944524601599274`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"\\!\\(\\*\\nStyleBox[\\\"Aggregated\\\", \
 \\\"Subsection\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\", \
@@ -2499,7 +1381,16 @@ p8yG8k0g9Jc5DgAGDSGY
    3.6944497899091315`*^9, 3.694450133884425*^9, 3.6944511272512503`*^9, 
    3.6944512127847958`*^9, {3.694451247907282*^9, 3.694451270974653*^9}, 
    3.694451500225003*^9, 3.6944515567423825`*^9, 3.694451608721736*^9, 
-   3.6944517006861324`*^9, 3.694452460307074*^9}],
+   3.6944517006861324`*^9, 3.694452460307074*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"\\!\\(\\*\\nStyleBox[\\\"Qualities\\\", \\\"Subsection\\\"]\
 \\)\"\>"], "Print",
@@ -2830,7 +1721,16 @@ mHmE1Mlm/PggfYUwDTOPkLpQ4Te2ZvmuVKOd97C5fmZ1oxoNAPSPnVY=
    3.6944497899091315`*^9, 3.694450133884425*^9, 3.6944511272512503`*^9, 
    3.6944512127847958`*^9, {3.694451247907282*^9, 3.694451270974653*^9}, 
    3.694451500225003*^9, 3.6944515567423825`*^9, 3.694451608721736*^9, 
-   3.6944517006861324`*^9, 3.694452460406949*^9}],
+   3.6944517006861324`*^9, 3.694452460406949*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"\\!\\(\\*\\nStyleBox[\\\"Prices\\\", \\\"Subsection\\\"]\\)\
 \"\>"], "Print",
@@ -3133,7 +2033,16 @@ w04=
    3.6944497899091315`*^9, 3.694450133884425*^9, 3.6944511272512503`*^9, 
    3.6944512127847958`*^9, {3.694451247907282*^9, 3.694451270974653*^9}, 
    3.694451500225003*^9, 3.6944515567423825`*^9, 3.694451608721736*^9, 
-   3.6944517006861324`*^9, 3.694452460460335*^9}],
+   3.6944517006861324`*^9, 3.694452460460335*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"\\!\\(\\*\\nStyleBox[\\\"Chosen\\\", \\\"Subsection\\\"]\\)\
 \\!\\(\\*\\nStyleBox[\\\" \\\", \\\"Subsection\\\"]\\)\\!\\(\\*\\nStyleBox[\\\
@@ -3283,7 +2192,16 @@ Cell[BoxData[
    3.6944497899091315`*^9, 3.694450133884425*^9, 3.6944511272512503`*^9, 
    3.6944512127847958`*^9, {3.694451247907282*^9, 3.694451270974653*^9}, 
    3.694451500225003*^9, 3.6944515567423825`*^9, 3.694451608721736*^9, 
-   3.6944517006861324`*^9, 3.6944524604759665`*^9}],
+   3.6944517006861324`*^9, 3.6944524604759665`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"\\!\\(\\*\\nStyleBox[\\\"Profits\\\", \
 \\\"Subsection\\\"]\\)\"\>"], "Print",
@@ -3612,7 +2530,16 @@ aCoufdBrCOtJnOv4xF+3oDAq
    3.6944497899091315`*^9, 3.694450133884425*^9, 3.6944511272512503`*^9, 
    3.6944512127847958`*^9, {3.694451247907282*^9, 3.694451270974653*^9}, 
    3.694451500225003*^9, 3.6944515567423825`*^9, 3.694451608721736*^9, 
-   3.6944517006861324`*^9, 3.6944524605606136`*^9}],
+   3.6944517006861324`*^9, 3.6944524605606136`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"\\!\\(\\*\\nStyleBox[\\\"Propobilities\\\", \
 \\\"Subsection\\\"]\\)\\!\\(\\*\\nStyleBox[\\\" \\\", \
@@ -3945,7 +2872,16 @@ e+jF5A==
    3.6944497899091315`*^9, 3.694450133884425*^9, 3.6944511272512503`*^9, 
    3.6944512127847958`*^9, {3.694451247907282*^9, 3.694451270974653*^9}, 
    3.694451500225003*^9, 3.6944515567423825`*^9, 3.694451608721736*^9, 
-   3.6944517006861324`*^9, 3.6944524606603937`*^9}],
+   3.6944517006861324`*^9, 3.6944524606603937`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"\\!\\(\\*\\nStyleBox[\\\"Markup\\\", \\\"Subsection\\\"]\\)\
 \\!\\(\\*\\nStyleBox[\\\" \\\", \\\"Subsection\\\"]\\)\\!\\(\\*\\nStyleBox[\\\
@@ -4104,7 +3040,16 @@ Cell[BoxData[
    3.6944497899091315`*^9, 3.694450133884425*^9, 3.6944511272512503`*^9, 
    3.6944512127847958`*^9, {3.694451247907282*^9, 3.694451270974653*^9}, 
    3.694451500225003*^9, 3.6944515567423825`*^9, 3.694451608721736*^9, 
-   3.6944517006861324`*^9, 3.694452460807927*^9}],
+   3.6944517006861324`*^9, 3.694452460807927*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData["\<\"\\!\\(\\*\\nStyleBox[\\\"Matketshare\\\", \
 \\\"Subsection\\\"]\\)\"\>"], "Print",
@@ -4261,8 +3206,8 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{819, 941},
-WindowMargins->{{-1032, Automatic}, {252, Automatic}},
+WindowSize->{803, 941},
+WindowMargins->{{-1032, Automatic}, {244, Automatic}},
 Magnification:>0.85 Inherited,
 FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (October 9, 2015)",
 StyleDefinitions->"Default.nb"
@@ -4271,50 +3216,129 @@ StyleDefinitions->"Default.nb"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "SlideShowHeader"->{
+  Cell[580, 22, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"],
+  Cell[28630, 674, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"],
+  Cell[41358, 965, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"],
+  Cell[58207, 1389, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"],
+  Cell[74101, 1729, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"],
+  Cell[88050, 2041, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"],
+  Cell[94542, 2200, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"],
+  Cell[109977, 2538, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"],
+  Cell[125557, 2880, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"],
+  Cell[131527, 3048, 64, 1, 75, "SlideShowNavigationBar",
+   CellTags->"SlideShowHeader"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"SlideShowHeader", 137096, 3219}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 51554, 1137, 5905, "Input"],
+Cell[580, 22, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
 Cell[CellGroupData[{
-Cell[52159, 1163, 1476, 23, 31, "Print"],
-Cell[53638, 1188, 6343, 151, 297, "Print"],
-Cell[59984, 1341, 9380, 215, 309, "Print"],
-Cell[69367, 1558, 779, 13, 49, "Print"],
-Cell[70149, 1573, 9166, 216, 309, "Print"],
-Cell[79318, 1791, 753, 13, 49, "Print"],
-Cell[80074, 1806, 1645, 27, 48, "Print"],
-Cell[81722, 1835, 721, 10, 24, "Print"],
-Cell[82446, 1847, 4307, 99, 317, "Print"],
-Cell[86756, 1948, 5908, 138, 297, "Print"],
-Cell[92667, 2088, 727, 11, 24, "Print"],
-Cell[93397, 2101, 4676, 103, 319, "Print"],
-Cell[98076, 2206, 9453, 247, 312, "Print"],
-Cell[107532, 2455, 1846, 46, 319, "Print"],
-Cell[109381, 2503, 609, 9, 22, "Print"],
-Cell[109993, 2514, 5866, 123, 325, "Print"],
-Cell[115862, 2639, 9275, 193, 297, "Print"],
-Cell[125140, 2834, 604, 9, 22, "Print"],
-Cell[125747, 2845, 4918, 106, 335, "Print"],
-Cell[130668, 2953, 8283, 182, 297, "Print"],
-Cell[138954, 3137, 723, 10, 24, "Print"],
-Cell[139680, 3149, 5628, 136, 297, "Print"],
-Cell[145311, 3287, 607, 9, 22, "Print"],
-Cell[145921, 3298, 5389, 114, 323, "Print"],
-Cell[151313, 3414, 9295, 200, 297, "Print"],
-Cell[160611, 3616, 1073, 17, 24, "Print"],
-Cell[161687, 3635, 4921, 105, 321, "Print"],
-Cell[166611, 3742, 9442, 205, 363, "Print"],
-Cell[176056, 3949, 952, 14, 24, "Print"],
-Cell[177011, 3965, 1856, 46, 329, "Print"],
-Cell[178870, 4013, 3018, 93, 284, "Print"],
-Cell[181891, 4108, 609, 9, 22, "Print"],
-Cell[182503, 4119, 1740, 44, 326, "Print"],
-Cell[184246, 4165, 2761, 94, 294, "Print"]
+Cell[669, 27, 1476, 23, 31, "Print"],
+Cell[2148, 52, 6343, 151, 297, "Print"],
+Cell[8494, 205, 9380, 215, 309, "Print"],
+Cell[17877, 422, 779, 13, 49, "Print"],
+Cell[18659, 437, 9166, 216, 309, "Print"],
+Cell[27828, 655, 753, 13, 49, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28630, 674, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[28719, 679, 1645, 27, 48, "Print"],
+Cell[30367, 708, 721, 10, 24, "Print"],
+Cell[31091, 720, 4307, 99, 317, "Print"],
+Cell[35401, 821, 5908, 138, 297, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41358, 965, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[41447, 970, 727, 11, 24, "Print"],
+Cell[42177, 983, 4676, 103, 319, "Print"],
+Cell[46856, 1088, 9453, 247, 312, "Print"],
+Cell[56312, 1337, 1846, 46, 319, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[58207, 1389, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[58296, 1394, 609, 9, 22, "Print"],
+Cell[58908, 1405, 5866, 123, 325, "Print"],
+Cell[64777, 1530, 9275, 193, 297, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74101, 1729, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[74190, 1734, 604, 9, 22, "Print"],
+Cell[74797, 1745, 4918, 106, 335, "Print"],
+Cell[79718, 1853, 8283, 182, 297, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88050, 2041, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[88139, 2046, 723, 10, 24, "Print"],
+Cell[88865, 2058, 5628, 136, 297, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[94542, 2200, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[94631, 2205, 607, 9, 22, "Print"],
+Cell[95241, 2216, 5389, 114, 323, "Print"],
+Cell[100633, 2332, 9295, 200, 297, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[109977, 2538, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[110066, 2543, 1073, 17, 24, "Print"],
+Cell[111142, 2562, 4921, 105, 321, "Print"],
+Cell[116066, 2669, 9442, 205, 363, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[125557, 2880, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[125646, 2885, 952, 14, 24, "Print"],
+Cell[126601, 2901, 1856, 46, 329, "Print"],
+Cell[128460, 2949, 3018, 93, 284, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[131527, 3048, 64, 1, 75, "SlideShowNavigationBar",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[131616, 3053, 609, 9, 22, "Print"],
+Cell[132228, 3064, 1740, 44, 326, "Print"],
+Cell[133971, 3110, 2761, 94, 294, "Print"]
 }, Open  ]]
 }, Open  ]]
 }

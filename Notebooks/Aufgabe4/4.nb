@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     60020,       1491]
-NotebookOptionsPosition[     59700,       1475]
-NotebookOutlinePosition[     60044,       1490]
-CellTagsIndexPosition[     60001,       1487]
+NotebookDataLength[     64281,       1569]
+NotebookOptionsPosition[     63960,       1553]
+NotebookOutlinePosition[     64304,       1568]
+CellTagsIndexPosition[     64261,       1565]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,8 +25,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"SetDirectory", "[", 
-    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
-  "\[IndentingNewLine]", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], 
+  "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", 
    RowBox[{"LOAD", " ", "FUNCTIONS"}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
@@ -211,7 +211,7 @@ Cell[BoxData[{
                     RowBox[{
                     "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
 ]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
-]}]}]}]}]}]}]}]}]}], "*)"}], "\[IndentingNewLine]", "\n", 
+]}]}]}]}]}]}]}]}]}], "*)"}], "\n", "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{"INIITIALIZE", " ", "PARAMETERS"}], 
    "*)"}]}], "\[IndentingNewLine]", 
@@ -244,18 +244,13 @@ Cell[BoxData[{
    RowBox[{"cp", " ", "=", " ", "20.0"}], ";"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"cs", " ", "=", " ", "10.0"}], ";"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
+   RowBox[{"cs", " ", "=", " ", "10.0"}], ";"}], "\n", "\[IndentingNewLine]", 
   RowBox[{"(*", 
-   RowBox[{"Number", " ", "of", " ", "firms"}], "*)"}]}], "\n", 
+   RowBox[{"Number", " ", "of", " ", "firms"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"n", "=", "10"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"d", "=", 
-    RowBox[{"Round", "[", 
-     RowBox[{"n", "/", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"n", "=", "10"}], ";"}], "\[IndentingNewLine]", 
   "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
@@ -270,7 +265,7 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{
       RowBox[{"...", ".."}], "n"}], "-", 
-     RowBox[{"nth", " ", "firm"}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+     RowBox[{"nth", " ", "firm"}]}]}], "*)"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
    RowBox[{"Id", "=", 
@@ -278,13 +273,12 @@ Cell[BoxData[{
      RowBox[{"i", ",", 
       RowBox[{"{", 
        RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\n", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", 
-   RowBox[{"Number", " ", "of", " ", "consumers"}], 
-   "*)"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Number", " ", "of", " ", "consumers"}], "*)"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"m", "=", "100"}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"m", "=", "100"}], ";"}], "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", 
    RowBox[{"Number", " ", "of", " ", "bartch", " ", "runs"}], 
    "*)"}]}], "\[IndentingNewLine]", 
@@ -297,7 +291,7 @@ Cell[BoxData[{
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"T", "=", "100"}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"T", "=", "100"}], ";"}], "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", 
    RowBox[{"Wanna", " ", "have", " ", 
     RowBox[{"plots", "?"}]}], "*)"}]}], "\[IndentingNewLine]", 
@@ -314,27 +308,24 @@ Cell[BoxData[{
   "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
-   "define", " ", "start", " ", "and", " ", "end", " ", "of", " ", "time", 
-    " ", "period", " ", "you", " ", "want", " ", "to", " ", "consider"}], 
-   "*)"}]}], "\n", 
+   "firms", " ", "making", " ", "positive", " ", "profits", " ", "at", " ", 
+    "T", " ", "for", " ", "each", " ", "batch", " ", "run"}], "*)"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"start", "=", "1"}], ";"}]}], "\n", 
- RowBox[{"\t", 
-  RowBox[{
-   RowBox[{"lend", "=", "20"}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"length", " ", "of", " ", "table"}], "*)"}], "\n", "\t", 
-   RowBox[{"pend", "=", "20"}], ";", " ", 
-   RowBox[{"(*", 
-    RowBox[{"plot", " ", "horizon"}], "*)"}], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", 
-    RowBox[{
-    "firms", " ", "making", " ", "positive", " ", "profits", " ", "at", " ", 
-     "T", " ", "for", " ", "each", " ", "batch", " ", "run"}], "*)"}], 
-   "\[IndentingNewLine]", "\t", 
    RowBox[{"survivor", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{"0.0", ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+   "how", " ", "many", " ", "firms", " ", "make", " ", "positive", " ", 
+    "profits", " ", "at", " ", 
+    RowBox[{"T", "?"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"numFirmsSurvive", "=", 
     RowBox[{"Table", "[", 
      RowBox[{"0.0", ",", 
       RowBox[{"{", 
@@ -342,14 +333,32 @@ Cell[BoxData[{
   "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
-   "how", " ", "many", " ", "firms", " ", "make", " ", "positive", " ", 
-    "profits", " ", "at", " ", 
-    RowBox[{"T", "?"}]}], "*)"}]}], "\n", 
+   "average", " ", "profits", " ", "for", " ", "each", " ", "batch", " ", 
+    "run"}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"numFirmsSurvive", "=", 
+   RowBox[{"avgProfits", " ", "=", 
     RowBox[{"Table", "[", 
-     RowBox[{"0.0", ",", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{"0.0", ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"long", " ", "run", " ", "profits"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"longrunProfits", " ", "=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{"0.0", ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
       RowBox[{"{", 
        RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}]}], ";"}], 
   "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -479,6 +488,9 @@ Cell[BoxData[{
                     RowBox[{
                     "--", "-"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}\
 ]}]}]}]}]}]}]}]}]}]}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"NotebookEvaluate", "[", 
+  RowBox[{"FindFile", "[", "\"\<stats.nb\>\"", "]"}], 
+  "]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Timing", "[", "\n", 
    RowBox[{"(*", 
@@ -551,7 +563,21 @@ Cell[BoxData[{
                     RowBox[{"--", 
                     RowBox[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
-}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
+}], "*)"}], "\[IndentingNewLine]", "\t", 
+     RowBox[{"(*", 
+      RowBox[{"!!", 
+       RowBox[{"!", 
+        RowBox[{
+        "Store", " ", "Results", " ", "in", " ", "Lists", " ", "such", " ", 
+         "that", " ", "\[IndentingNewLine]", "\t\t", 
+         RowBox[{"e", ".", "g", ".", 
+          RowBox[{"priceList", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", "2"}], "]"}], "]"}]}], " ", "gives", " ", "the",
+          " ", "price", " ", "of", " ", "\[IndentingNewLine]", "\t\t", "the", 
+         " ", "second", " ", "firm", " ", "in", " ", "the", " ", "first", " ", 
+         RowBox[{"period", "!!"}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\t", 
      RowBox[{"(*", "prices", "*)"}], "\[IndentingNewLine]", "\t\t", 
      RowBox[{
       RowBox[{
@@ -649,9 +675,8 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{
           RowBox[{"--", 
-           RowBox[{"-", "Evolving"}]}], " ", 
-          RowBox[{"Strategies", "--"}]}], "-"}], "*)"}], 
-       "\[IndentingNewLine]", "\t", 
+           RowBox[{"-", "Evolving"}]}], " ", "Strategies", " ", 
+          RowBox[{"Ex4", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", "\t", 
        RowBox[{"(*", "Strategy", "*)"}], "\[IndentingNewLine]", "\t\t", 
        RowBox[{"sList", "=", 
         RowBox[{"ConstantArray", "[", 
@@ -667,11 +692,7 @@ Cell[BoxData[{
          RowBox[{"0.0", ",", 
           RowBox[{"{", 
            RowBox[{"T", ",", "n"}], "}"}]}], "]"}]}], ";", 
-       "\[IndentingNewLine]", "\t", 
-       RowBox[{"(*", 
-        RowBox[{"Buyer", " ", "at", " ", "Spec"}], "*)"}], 
-       "\[IndentingNewLine]", 
-       RowBox[{"specBuyer", "=", "0"}], ";", "\[IndentingNewLine]", "\t", 
+       "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
        RowBox[{"(*", 
         RowBox[{"--", 
          RowBox[{"--", 
@@ -752,7 +773,11 @@ Cell[BoxData[{
 }], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
        RowBox[{"Do", "[", "\[IndentingNewLine]", 
         RowBox[{"(*", 
-         RowBox[{"Strategy", " ", "choice"}], "*)"}], "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"--", 
+            RowBox[{"-", "Strategy"}]}], " ", "choice", " ", 
+           RowBox[{"Ex4", "--"}]}], "-"}], "*)"}], "\[IndentingNewLine]", 
         "\t\t", 
         RowBox[{
          RowBox[{
@@ -800,6 +825,10 @@ Cell[BoxData[{
                  RowBox[{"t", "-", "1"}]}], ";"}], ",", 
                RowBox[{"lthelp", "=", "lt"}]}], "]"}], ";", 
              "\[IndentingNewLine]", "\t\t", 
+             RowBox[{"(*", 
+              RowBox[{"If", " ", "strategy", " ", "is", " ", 
+               RowBox[{"checked", ":"}]}], "*)"}], "\[IndentingNewLine]", 
+             "\t\t", 
              RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
               RowBox[{
                RowBox[{
@@ -821,10 +850,12 @@ Cell[BoxData[{
                    "\[IndentingNewLine]", "\t\t", 
                    RowBox[{"randFirms", "=", " ", 
                     RowBox[{"RandomSample", "[", 
+                    RowBox[{"Id", ",", "ln"}], "]"}]}], ";", 
+                   "\[IndentingNewLine]", "\[IndentingNewLine]", "\t\t", 
+                   RowBox[{"(*", 
                     RowBox[{
-                    RowBox[{"Range", "[", "n", "]"}], ",", "ln"}], "]"}]}], 
-                   ";", "\[IndentingNewLine]", "\t\t", "\[IndentingNewLine]", 
-                   "\t\t", 
+                    "profits", " ", "of", " ", "random", " ", "firms"}], 
+                    "*)"}], "\[IndentingNewLine]", "\t\t", 
                    RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
                     RowBox[{
                     RowBox[{
@@ -873,6 +904,49 @@ Cell[BoxData[{
                     RowBox[{"{", 
                     RowBox[{"z", ",", "1", ",", "ln"}], "}"}]}], "]"}], ";", 
                    "\[IndentingNewLine]", "\[IndentingNewLine]", "\t\t", 
+                   RowBox[{"(*", 
+                    RowBox[{
+                    "profits", " ", "of", " ", "firm", " ", "itself"}], 
+                    "*)"}], "\[IndentingNewLine]", "\t\t", 
+                   RowBox[{"Do", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"sList", "[", 
+                    RowBox[{"[", 
+                    RowBox[{
+                    RowBox[{"t", "-", "y"}], ",", "firm"}], "]"}], "]"}], 
+                    "\[Equal]", "0"}], ",", "\[IndentingNewLine]", "\t\t", 
+                    RowBox[{
+                    RowBox[{"obsProfSelf", "=", 
+                    RowBox[{"obsProfSelf", "+", 
+                    RowBox[{"profitListFirm", "[", 
+                    RowBox[{"[", 
+                    RowBox[{
+                    RowBox[{"t", "-", "y"}], ",", "firm"}], "]"}], "]"}]}]}], 
+                    ";", "\[IndentingNewLine]", "\t\t", 
+                    RowBox[{"obsCountSelf", "=", 
+                    RowBox[{"obsCountSelf", "+", "1"}]}], ";"}], ",", 
+                    "\[IndentingNewLine]", "\t\t", 
+                    RowBox[{
+                    RowBox[{"obsProfSpec", "=", 
+                    RowBox[{"obsProfSpec", "+", 
+                    RowBox[{"profitListFirm", "[", 
+                    RowBox[{"[", 
+                    RowBox[{
+                    RowBox[{"t", "-", "y"}], ",", "firm"}], "]"}], "]"}]}]}], 
+                    ";", "\[IndentingNewLine]", "\t\t", 
+                    RowBox[{"obsCountSpec", "=", 
+                    RowBox[{"obsCountSpec", "+", "1"}]}], ";"}]}], "]"}], 
+                    ";"}], "\[IndentingNewLine]", "\t\t", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"y", ",", "1", ",", "lthelp"}], "}"}]}], "]"}], 
+                   ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t\t", 
+                   RowBox[{"(*", 
+                    RowBox[{"avarage", " ", "strategy", " ", "profit"}], 
+                    "*)"}], "\[IndentingNewLine]", "\t\t", 
                    RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{"obsCountSelf", "\[NotEqual]", "0"}], ",", 
@@ -892,7 +966,14 @@ Cell[BoxData[{
                     ",", 
                     RowBox[{
                     RowBox[{"obsProfSpec", "=", "0"}], ";"}]}], "]"}], ";", 
-                   "\[IndentingNewLine]", "\[IndentingNewLine]", "\t\t", 
+                   "\[IndentingNewLine]", "\t\t", "\[IndentingNewLine]", 
+                   "\t\t", 
+                   RowBox[{"(*", 
+                    RowBox[{
+                    "change", " ", "strategy", " ", "if", " ", "other", " ", 
+                    "strategy", " ", "seems", " ", "to", " ", "be", " ", 
+                    "more", " ", "profitable"}], "*)"}], 
+                   "\[IndentingNewLine]", "\t\t", 
                    RowBox[{"If", " ", "[", 
                     RowBox[{
                     RowBox[{
@@ -1137,8 +1218,7 @@ Cell[BoxData[{
              RowBox[{
               RowBox[{"probList", "[", 
                RowBox[{"[", "t", "]"}], "]"}], "\[Rule]", "Id"}], ",", "m"}], 
-            "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-          "\[IndentingNewLine]", "\t", 
+            "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
           RowBox[{"(*", 
            RowBox[{"compute", " ", "period", " ", "output"}], "*)"}], 
           "\[IndentingNewLine]", "\t\t", 
@@ -1153,7 +1233,11 @@ Cell[BoxData[{
                 RowBox[{"[", "t", "]"}], "]"}], ",", "firm"}], "]"}], ",", 
              RowBox[{"{", 
               RowBox[{"firm", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";", 
-          "\[IndentingNewLine]", "\t\t", 
+          "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
+          RowBox[{"(*", 
+           RowBox[{
+           "compute", " ", "period", " ", "output", " ", "of", " ", 
+            "specialist"}], "*)"}], "\[IndentingNewLine]", "\t\t", 
           RowBox[{"s", "=", "0"}], ";", "\[IndentingNewLine]", "\t\t", 
           RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
            RowBox[{
@@ -1172,7 +1256,7 @@ Cell[BoxData[{
                    RowBox[{"[", 
                     RowBox[{"t", ",", "firm"}], "]"}], "]"}]}]}], ";"}], ",", 
                RowBox[{"{", "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
-            "\t", ",", 
+            "\t\t", ",", 
             RowBox[{"{", 
              RowBox[{"firm", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
           "\[IndentingNewLine]", "\t\t", 
@@ -1191,7 +1275,6 @@ Cell[BoxData[{
              RowBox[{"quantPeriodSpec", "[", 
               RowBox[{"[", "t", "]"}], "]"}], ",", "quantPeriodFirm"}], 
             "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", "\t", 
-          "\[IndentingNewLine]", "\t", 
           RowBox[{"(*", 
            RowBox[{"compute", " ", "profits"}], "*)"}], "\[IndentingNewLine]",
            "\t\t", 
@@ -1232,39 +1315,15 @@ Cell[BoxData[{
                    "cs", ",", "\[Eta]"}], "]"}]}], ";"}]}], "]"}], ";"}], ",",
              "\[IndentingNewLine]", "\t\t", 
             RowBox[{"{", 
-             RowBox[{"firm", ",", "1", ",", "n"}], "}"}]}], "]"}], ";", 
-          "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
-          RowBox[{"(*", 
-           RowBox[{"compute", " ", "statistic"}], "*)"}], 
-          "\[IndentingNewLine]", "\t\t", 
-          RowBox[{"If", "[", 
-           RowBox[{
-            RowBox[{"t", "\[Equal]", "T"}], ",", "\[IndentingNewLine]", 
-            "\t\t", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"numFirmsSurvive", "[", 
-               RowBox[{"[", "r", "]"}], "]"}], "=", 
-              RowBox[{"Count", "[", 
-               RowBox[{
-                RowBox[{"profitListFirm", "[", 
-                 RowBox[{"[", "t", "]"}], "]"}], ",", 
-                RowBox[{"u_", "/;", 
-                 RowBox[{"u", ">", "0"}]}]}], "]"}]}], ";", 
-             "\[IndentingNewLine]", "\t\t", 
-             RowBox[{
-              RowBox[{"survivor", "[", 
-               RowBox[{"[", "r", "]"}], "]"}], "=", 
-              RowBox[{"Position", "[", 
-               RowBox[{
-                RowBox[{"profitListFirm", "[", 
-                 RowBox[{"[", "t", "]"}], "]"}], ",", 
-                RowBox[{"u_", "/;", 
-                 RowBox[{"u", ">", "0"}]}]}], "]"}]}]}]}], "]"}], ";"}], ",", 
-         "\[IndentingNewLine]", "\[IndentingNewLine]", 
+             RowBox[{"firm", ",", "1", ",", "n"}], "}"}]}], "]"}], ";"}], 
+         "\[IndentingNewLine]", "\[IndentingNewLine]", ",", 
          RowBox[{"{", 
-          RowBox[{"t", ",", "1", ",", "T"}], "}"}]}], "]"}]}], ",", 
-      "\[IndentingNewLine]", 
+          RowBox[{"t", ",", "1", ",", "T"}], "}"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{"compute", " ", "statistic"}], "*)"}], "\[IndentingNewLine]", 
+       "\t\t", 
+       RowBox[{"Stats", "[", "r", "]"}]}], "\[IndentingNewLine]", ",", 
       RowBox[{"{", 
        RowBox[{"r", ",", "1", ",", "R"}], "}"}]}], "]"}], ";"}], 
    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -1347,15 +1406,14 @@ Cell[BoxData[{
                     "--", "--"}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]}]\
 }], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"results4", "=", 
-     RowBox[{"NotebookOpen", "[", 
-      RowBox[{"FindFile", "[", "\"\<results4.nb\>\"", "]"}], "]"}]}], ";", 
-    "\n", 
-    RowBox[{"SelectionMove", "[", 
-     RowBox[{"results4", ",", "All", ",", "Notebook"}], "]"}], ";", 
-    RowBox[{"SelectionEvaluate", "[", "results4", "]"}]}], "*)"}]}]}], "Input",
+  RowBox[{"results4", "=", 
+   RowBox[{"NotebookOpen", "[", 
+    RowBox[{"FindFile", "[", "\"\<results4.nb\>\"", "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"SelectionMove", "[", 
+   RowBox[{"results4", ",", "All", ",", "Notebook"}], "]"}], ";", 
+  RowBox[{"SelectionEvaluate", "[", "results4", "]"}]}]}], "Input",
  CellChangeTimes->{{3.690534047656938*^9, 3.690534047661303*^9}, 
    3.690699983118863*^9, {3.690700017760223*^9, 3.690700069943945*^9}, {
    3.690700338860899*^9, 3.6907003614554157`*^9}, {3.690700476560109*^9, 
@@ -1465,15 +1523,35 @@ Cell[BoxData[{
    3.694202033485853*^9, 3.6942020728582354`*^9}, {3.6942784925638685`*^9, 
    3.694278526488445*^9}, {3.694278613506234*^9, 3.694278614523666*^9}, {
    3.6942788106731625`*^9, 3.6942788396300898`*^9}, {3.6942798255126295`*^9, 
-   3.694279843754217*^9}, 3.69427994812583*^9, 3.6942800610214605`*^9}],
+   3.694279843754217*^9}, 3.69427994812583*^9, 3.6942800610214605`*^9, {
+   3.694328837613182*^9, 3.69432884021618*^9}, 3.6943292284648566`*^9, {
+   3.69436215254086*^9, 3.694362177433552*^9}, {3.6943624060386295`*^9, 
+   3.6943624069855747`*^9}, {3.694362450451358*^9, 3.69436249136885*^9}, {
+   3.6943627049361105`*^9, 3.694362712494023*^9}, {3.6943629069697437`*^9, 
+   3.6943629143288574`*^9}, {3.694363433188156*^9, 3.694363467084563*^9}, {
+   3.6943635123523912`*^9, 3.694363546121558*^9}, {3.69436367000356*^9, 
+   3.694363822238044*^9}, {3.6943638648861785`*^9, 3.694363936033492*^9}, {
+   3.6943639741723256`*^9, 3.694363995753497*^9}, {3.6943640478268623`*^9, 
+   3.6943640729031343`*^9}, {3.6943642192612815`*^9, 3.694364219392131*^9}, {
+   3.6944318555877795`*^9, 3.694432044793875*^9}, {3.694446602301454*^9, 
+   3.694446602904955*^9}, 3.694446657205227*^9, {3.694451494668972*^9, 
+   3.694451495438094*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"3.15625`", ",", "Null"}], "}"}]], "Output",
- CellChangeTimes->{3.694279953304513*^9, 3.6942800669785957`*^9}]
+  RowBox[{"2.375`", ",", "Null"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.694279953304513*^9, 3.6942800669785957`*^9, 3.6943287431778126`*^9, 
+   3.694328810206874*^9, 3.694328844488964*^9, 3.6943588236255364`*^9, 
+   3.6943638547785316`*^9, {3.694364060717306*^9, 3.694364074388754*^9}, 
+   3.6943641764106426`*^9, {3.694364225553467*^9, 3.694364254911027*^9}, 
+   3.6943652886717167`*^9, 3.694431770364519*^9, 3.6944320684813285`*^9, 
+   3.6944323533547297`*^9, 3.6944428612359085`*^9, 3.694446608756576*^9, 
+   3.694446640658145*^9, 3.694451126803237*^9, 3.6944514999086604`*^9, 
+   3.694451556457547*^9, 3.694451608417582*^9}]
 }, Open  ]]
 },
-WindowSize->{1345, 685},
+WindowSize->{1350, 685},
 WindowMargins->{{-8, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (October 9, 2015)",
 StyleDefinitions->"Default.nb"
@@ -1490,8 +1568,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 58952, 1445, 4412, "Input"],
-Cell[59535, 1469, 149, 3, 31, "Output"]
+Cell[580, 22, 62699, 1515, 4652, "Input"],
+Cell[63282, 1539, 662, 11, 31, "Output"]
 }, Open  ]]
 }
 ]
