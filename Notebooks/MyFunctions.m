@@ -18,11 +18,19 @@ BeginPackage[ "MyFunctions`"]
 
   MarginalCostSpec::usage = "MarginalCostSpec[cp_,cs_, etaSpec_]:= cp + PriceSpec[cs, etaSpec], computes the marginal costs if firm buys the smart component from specialist."
 
+  MarginalCostSelfQuad::usage = "MarginalCostSelf[cp_, cs_]:=cp + cs, computes the marginal costs if firm produces the smart component itself."
+
+  MarginalCostSpecQuad::usage = "MarginalCostSpec[cp_,cs_, etaSpec_]:= cp + PriceSpec[cs, etaSpec], computes the marginal costs if firm buys the smart component from specialist."
+
   PriceSpec::usage = "PriceSpec[cs_, etaSpec_] := (1 + etaSpec) * cs, computes the price of the specialist." 
 
   PriceFirmSelf::usage = "PriceFirmSelf[cp_, cs_, \[Eta]_] := (1 + \[Eta]) * MarginalCostSelf[cp, cs], computes price of firm if it produces the smart component itself."
 
   PriceFirmSpec::usage = "PriceFirmSpec[cp_, cs_, \[Eta]_, etaSpec_] := (1 + \[Eta]) * MarginalCostSpec[cp, cs, etaSpec], computes the price of the firm if it buys the smart component."
+
+  PriceFirmSelfQuad::usage = "PriceFirmSelf[cp_, cs_, \[Eta]_] := (1 + \[Eta]) * MarginalCostSelf[cp, cs], computes price of firm if it produces the smart component itself."
+
+  PriceFirmSpecQuad::usage = "PriceFirmSpec[cp_, cs_, \[Eta]_, etaSpec_] := (1 + \[Eta]) * MarginalCostSpec[cp, cs, etaSpec], computes the price of the firm if it buys the smart component."
 
   Prob::usage= "Prob[firm_, priceList_, qualityList_, \[Kappa]_, \[Chi]_], computes the probability that an arbitrary consumer buys from a specific firm."
   
@@ -43,6 +51,10 @@ BeginPackage[ "MyFunctions`"]
   RevenueFirmSelf::usage = "RevenueFirmSelf[q_, cp_, cs_, eta_]:= q * PriceFirmSelf[cp, cs, eta], computes the revenue of a firm that produces the smart part."
 
   RevenueFirmSpec::usage = "RevenueFirmSelf[q_, cp_, cs_, eta_, etaSpec_]:= q * PriceFirmSpec[cp, cs, eta, etaSpec], computes the revenue of a firm the buy the smart part form the specialist."
+
+  RevenueFirmSelfQuad::usage = "RevenueFirmSelf[q_, cp_, cs_, eta_]:= q * PriceFirmSelf[cp, cs, eta], computes the revenue of a firm that produces the smart part."
+
+  RevenueFirmSpecQuad::usage = "RevenueFirmSelf[q_, cp_, cs_, eta_, etaSpec_]:= q * PriceFirmSpec[cp, cs, eta, etaSpec], computes the revenue of a firm the buy the smart part form the specialist."
   
 Begin["Private`"]
 
@@ -50,13 +62,17 @@ Begin["Private`"]
 
   CostFirmSpec[q_, cp_, cs_, etaSpec_]:= q * MarginalCostSpec[cp, cs, etaSpec];
 
-  CostFirmSelfQuad[percent_ ,q_, cp_, cs_]:= q * MarginalCostSelf[cp, cs] + q^2 * MarginalCostSelf[cp, cs] * percent;
+  CostFirmSelfQuad[percent_, q_, qAgg_, cp_, cs_]:= q * MarginalCostSelf[cp, cs] + qAgg * MarginalCostSelf[cp, cs] * percent;
 
-  CostFirmSpecQuad[percent_, q_, cp_, cs_, etaSpec_]:= q * MarginalCostSpec[cp, cs, etaSpec] + q^2 * MarginalCostSpec[cp, cs, etaSpec] * percent; 
+  CostFirmSpecQuad[percent_, q_, qAgg_, cp_, cs_, etaSpec_]:= q * MarginalCostSpec[cp, cs, etaSpec] + qAgg * MarginalCostSpec[cp, cs, etaSpec] * percent; 
 
   MarginalCostSelf[cp_, cs_]:= cp + cs;
 
   MarginalCostSpec[cp_, cs_, etaSpec_]:= cp + PriceSpec[cs, etaSpec];
+  
+  MarginalCostSelfQuad[cp_, cs_, qAgg_]:= 0.01*qAgg*(cp + cs);
+
+  MarginalCostSpecQuad[cp_, cs_, etaSpec_, qAgg_]:= 0.15*qAgg*(cp + PriceSpec[cs, etaSpec]);
 
   PriceSpec[cs_, etaSpec_] := (1 + etaSpec) * cs;
 
@@ -64,13 +80,17 @@ Begin["Private`"]
 
   PriceFirmSpec[cp_, cs_, \[Eta]_, etaSpec_] := (1 + \[Eta]) * MarginalCostSpec[cp, cs, etaSpec];
 
+  PriceFirmSelfQuad[cp_, cs_, \[Eta]_, qAgg_] := (1 + \[Eta]) * MarginalCostSelfQuad[cp, cs, qAgg];
+
+  PriceFirmSpecQuad[cp_, cs_, \[Eta]_, etaSpec_, qAgg_] := (1 + \[Eta]) * MarginalCostSpecQuad[cp, cs, etaSpec, qAgg];
+
   ProfitFirmSelf[q_, cp_, cs_, \[Eta]_]:= RevenueFirmSelf[q, cp, cs, \[Eta]] - CostFirmSelf[q, cp, cs];
 
   ProfitFirmSpec[q_, cp_, cs_, \[Eta]_, etaSpec_]:= RevenueFirmSpec[q, cp, cs, \[Eta], etaSpec] - CostFirmSpec[q, cp, cs, etaSpec];
 
-  ProfitFirmSelfQuad[percent_, q_, cp_, cs_, \[Eta]_]:= RevenueFirmSelf[q, cp, cs, \[Eta]] - CostFirmSelfQuad[percent, q, cp, cs];
+  ProfitFirmSelfQuad[percent_, q_, cp_, cs_, \[Eta]_, qAgg_]:= RevenueFirmSelfQuad[q, cp, cs, \[Eta], qAgg] - CostFirmSelfQuad[percent, q, qAgg, cp, cs];
  
-  ProfitFirmSpecQuad[percent_, q_, cp_, cs_, \[Eta]_, etaSpec_]:= RevenueFirmSpec[q, cp, cs, \[Eta], etaSpec] - CostFirmSpecQuad[percent, q, cp, cs, etaSpec];
+  ProfitFirmSpecQuad[percent_, q_, cp_, cs_, \[Eta]_, etaSpec_, qAgg_]:= RevenueFirmSpecQuad[q, cp, cs, \[Eta], etaSpec, qAgg] - CostFirmSpecQuad[percent, q, qAgg, cp, cs, etaSpec];
  
   QualityFirmSelf[uBar_, \[Alpha]_, \[Beta]_, qFirmAgg_ ] := uBar * (1 + \[Beta]*qFirmAgg^\[Alpha]);
 
@@ -79,6 +99,10 @@ Begin["Private`"]
   RevenueFirmSelf[q_, cp_, cs_, \[Eta]_]:= q * PriceFirmSelf[cp, cs, \[Eta]];
 
   RevenueFirmSpec[q_, cp_, cs_, \[Eta]_, etaSpec_]:= q * PriceFirmSpec[cp, cs, \[Eta], etaSpec];
+
+  RevenueFirmSelfQuad[q_, cp_, cs_, \[Eta]_, qAgg_]:= q * PriceFirmSelfQuad[cp, cs, \[Eta], qAgg];
+
+  RevenueFirmSpecQuad[q_, cp_, cs_, \[Eta]_, etaSpec_, qAgg_]:= q * PriceFirmSpecQuad[cp, cs, \[Eta], etaSpec, qAgg];
 
 End[]
 
@@ -94,6 +118,21 @@ End[]
   MarkupSpec[\[Delta]_, etaSpecLag_, msSpec_, etaBar_] := (1 - \[Delta]) * etaSpecLag + \[Delta] * msSpec * etaBar;
 
 EndPackage[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    189658,       3962]
-NotebookOptionsPosition[    188164,       3918]
-NotebookOutlinePosition[    188498,       3933]
-CellTagsIndexPosition[    188455,       3930]
+NotebookDataLength[    190688,       3992]
+NotebookOptionsPosition[    189194,       3948]
+NotebookOutlinePosition[    189528,       3963]
+CellTagsIndexPosition[    189485,       3960]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -172,9 +172,8 @@ Cell[BoxData[
    RowBox[{
    "Print", "[", 
     "\"\<---------------------------------------------------------------------\
----------------------------------------------------------\>\"", "]"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{"(*", "*)"}], "\n", 
+---------------------------------------------------------\>\"", "]"}], "\n", 
+   RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
    RowBox[{"Print", "[", "\[IndentingNewLine]", 
     RowBox[{
     "\"\<\\nThe firms which survive:\\n \>\"", ",", "\[IndentingNewLine]", 
@@ -234,6 +233,26 @@ Cell[BoxData[
        RowBox[{"{", 
         RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], ";"}], 
    "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "create", " ", "list", " ", "of", " ", "all", " ", "average", " ", 
+     "profits", " ", "of", " ", "the", " ", "first", " ", "firm"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"avprof1", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"avgProfits", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "1"}], "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "1", ",", 
+         RowBox[{"Length", "[", "avgProfits", "]"}]}], "}"}]}], "]"}]}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"stdev", "=", 
+     RowBox[{"StandardDeviation", "[", "avprof1", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", "*)"}], "\[IndentingNewLine]", 
    RowBox[{"Print", "[", "\[IndentingNewLine]", 
     RowBox[{
@@ -272,7 +291,15 @@ Cell[BoxData[
             "\[IndentingNewLine]", 
             RowBox[{"{", 
              RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-         "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}], "\n", 
+         "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"Standard", " ", "Deviation"}], "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<\\n The standard deviaton of avg. profits of firm 1 is given by: \>\
+\"", ",", "stdev"}], "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
     "Compute", " ", "averages", " ", "of", " ", "long", " ", "run", " ", 
@@ -333,8 +360,8 @@ Cell[BoxData[
             "\[IndentingNewLine]", 
             RowBox[{"{", 
              RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-         "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}], 
-   "\[IndentingNewLine]", "\n", 
+         "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}], "\n", 
+   "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{
@@ -390,10 +417,10 @@ Cell[BoxData[
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", 
            RowBox[{"Period", " ", "Output"}], "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
    RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "period", " ", "output"}], "*)"}], "\n", 
-   
+    RowBox[{"Table", " ", "of", " ", "period", " ", "output"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
@@ -464,11 +491,11 @@ Cell[BoxData[
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", 
            RowBox[{"Agg", ".", "Output"}], "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{
     "Plot", " ", "aggregated", " ", "output", " ", "of", " ", "Specialist"}], 
-    "*)"}], "\[IndentingNewLine]", 
+    "*)"}], "\n", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
@@ -652,9 +679,10 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", "Profit", "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
    RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Profits"}], "*)"}], "\n", 
+    RowBox[{"Table", " ", "of", " ", "Profits"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
@@ -722,9 +750,10 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", "Prices", "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
    RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Prices"}], "*)"}], "\n", 
+    RowBox[{"Table", " ", "of", " ", "Prices"}], "*)"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
@@ -756,9 +785,10 @@ Cell[BoxData[
               "\[IndentingNewLine]", 
               RowBox[{"{", 
                RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], 
-           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], "\n", 
+           "\[IndentingNewLine]", "}"}]}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{"Plot", " ", "Probabilities"}], "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Plot", " ", "Probabilities"}], "*)"}], "\n", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"plots", "\[Equal]", "True"}], ",", "\[IndentingNewLine]", 
@@ -792,10 +822,9 @@ Cell[BoxData[
          RowBox[{
           RowBox[{"HoldForm", "[", "time", "]"}], ",", 
           RowBox[{"HoldForm", "[", "Probs", "]"}]}], "}"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], "]"}], "\n", 
+      "\[IndentingNewLine]", "]"}]}], "]"}], "\[IndentingNewLine]", 
    RowBox[{"(*", 
-    RowBox[{"Table", " ", "of", " ", "Probabilities"}], "*)"}], 
-   "\[IndentingNewLine]", 
+    RowBox[{"Table", " ", "of", " ", "Probabilities"}], "*)"}], "\n", 
    RowBox[{"If", "[", 
     RowBox[{
      RowBox[{"tables", "==", "True"}], ",", "\[IndentingNewLine]", 
@@ -1042,7 +1071,8 @@ Cell[BoxData[
    3.6914101227013407`*^9}, {3.691410177376237*^9, 3.6914102034513397`*^9}, {
    3.691410236798194*^9, 3.691410317044866*^9}, {3.691410348637789*^9, 
    3.691410390069047*^9}, {3.691410422568248*^9, 3.6914104469118013`*^9}, {
-   3.6926283320034523`*^9, 3.692628345979663*^9}}],
+   3.6926283320034523`*^9, 3.692628345979663*^9}, {3.694445400980482*^9, 
+   3.6944454325658503`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -3916,8 +3946,8 @@ Cell[BoxData[
    3.692628349387032*^9, 3.692633643615736*^9, 3.692633692233676*^9}]
 }, Open  ]]
 },
-WindowSize->{1920, 1052},
-WindowMargins->{{Automatic, 0}, {0, Automatic}},
+WindowSize->{1920, 1024},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
 StyleDefinitions->"Default.nb"
 ]
@@ -3933,36 +3963,36 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 45320, 1022, 6413, "Input"],
+Cell[580, 22, 46350, 1052, 6523, "Input"],
 Cell[CellGroupData[{
-Cell[45925, 1048, 3325, 47, 23, "Print"],
-Cell[49253, 1097, 3328, 47, 81, "Print"],
-Cell[52584, 1146, 3254, 46, 23, "Print"],
-Cell[55841, 1194, 3325, 47, 23, "Print"],
-Cell[59169, 1243, 7373, 163, 372, "Print"],
-Cell[66545, 1408, 11717, 250, 388, "Print"],
-Cell[78265, 1660, 12953, 271, 388, "Print"],
-Cell[91221, 1933, 3325, 47, 23, "Print"],
-Cell[94549, 1982, 3221, 45, 23, "Print"],
-Cell[97773, 2029, 3327, 47, 23, "Print"]
+Cell[46955, 1078, 3325, 47, 23, "Print"],
+Cell[50283, 1127, 3328, 47, 81, "Print"],
+Cell[53614, 1176, 3254, 46, 23, "Print"],
+Cell[56871, 1224, 3325, 47, 23, "Print"],
+Cell[60199, 1273, 7373, 163, 372, "Print"],
+Cell[67575, 1438, 11717, 250, 388, "Print"],
+Cell[79295, 1690, 12953, 271, 388, "Print"],
+Cell[92251, 1963, 3325, 47, 23, "Print"],
+Cell[95579, 2012, 3221, 45, 23, "Print"],
+Cell[98803, 2059, 3327, 47, 23, "Print"]
 }, Open  ]],
-Cell[101115, 2079, 3429, 72, 383, "Output"],
-Cell[104547, 2153, 6775, 138, 222, "Print"],
-Cell[111325, 2293, 3483, 72, 386, "Output"],
-Cell[114811, 2367, 1325, 37, 386, "Output"],
-Cell[116139, 2406, 8583, 194, 222, "Print"],
-Cell[124725, 2602, 4926, 97, 393, "Output"],
-Cell[129654, 2701, 8376, 166, 222, "Print"],
-Cell[138033, 2869, 4223, 84, 386, "Output"],
-Cell[142259, 2955, 7993, 163, 222, "Print"],
-Cell[150255, 3120, 3959, 76, 395, "Output"],
-Cell[154217, 3198, 7379, 154, 222, "Print"],
-Cell[161599, 3354, 5336, 97, 384, "Output"],
-Cell[166938, 3453, 9140, 182, 250, "Print"],
-Cell[176081, 3637, 1347, 37, 392, "Output"],
-Cell[177431, 3676, 4751, 99, 206, "Print"],
-Cell[182185, 3777, 1268, 36, 380, "Output"],
-Cell[183456, 3815, 4692, 100, 218, "Print"]
+Cell[102145, 2109, 3429, 72, 383, "Output"],
+Cell[105577, 2183, 6775, 138, 222, "Print"],
+Cell[112355, 2323, 3483, 72, 386, "Output"],
+Cell[115841, 2397, 1325, 37, 386, "Output"],
+Cell[117169, 2436, 8583, 194, 222, "Print"],
+Cell[125755, 2632, 4926, 97, 393, "Output"],
+Cell[130684, 2731, 8376, 166, 222, "Print"],
+Cell[139063, 2899, 4223, 84, 386, "Output"],
+Cell[143289, 2985, 7993, 163, 222, "Print"],
+Cell[151285, 3150, 3959, 76, 395, "Output"],
+Cell[155247, 3228, 7379, 154, 222, "Print"],
+Cell[162629, 3384, 5336, 97, 384, "Output"],
+Cell[167968, 3483, 9140, 182, 250, "Print"],
+Cell[177111, 3667, 1347, 37, 392, "Output"],
+Cell[178461, 3706, 4751, 99, 206, "Print"],
+Cell[183215, 3807, 1268, 36, 380, "Output"],
+Cell[184486, 3845, 4692, 100, 218, "Print"]
 }, Open  ]]
 }
 ]
