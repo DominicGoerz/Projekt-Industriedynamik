@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     72635,       1784]
-NotebookOptionsPosition[     72323,       1768]
-NotebookOutlinePosition[     72657,       1783]
-CellTagsIndexPosition[     72614,       1780]
+NotebookDataLength[     73247,       1798]
+NotebookOptionsPosition[     72936,       1782]
+NotebookOutlinePosition[     73269,       1797]
+CellTagsIndexPosition[     73226,       1794]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -24,9 +24,10 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"SetDirectory", "[", 
-    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", "\n", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], 
+  "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", 
-   RowBox[{"LOAD", " ", "FUNCTIONS"}], "*)"}]}], "\[IndentingNewLine]", 
+   RowBox[{"LOAD", " ", "FUNCTIONS"}], "*)"}]}], "\n", 
  RowBox[{
   RowBox[{"Get", "[", 
    RowBox[{"FindFile", "[", "\"\<../MyFunctions.m\>\"", "]"}], "]"}], 
@@ -124,29 +125,28 @@ Cell[BoxData[{
    RowBox[{"Choice", " ", "of", " ", "firm", " ", "1"}], 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
-  RowBox[{
-   StyleBox[
-    RowBox[{"fromSelf", " ", "=", " ", "False"}],
-    Background->RGBColor[1, 0.9, 1]], 
-   StyleBox[";",
-    Background->RGBColor[1, 0.9, 1]], 
-   StyleBox[" ",
-    Background->RGBColor[1, 0.9, 1]], 
-   StyleBox[
-    RowBox[{"(*", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"produce", " ", "smart", " ", "component", " ", "itself"}], 
-       "=", 
-       RowBox[{">", "True"}]}], ",", " ", 
-      RowBox[{
-       RowBox[{"buy", " ", "it"}], "=", 
-       RowBox[{">", "False"}]}]}], "*)"}],
-    Background->RGBColor[1, 0.9, 1]], "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+  StyleBox[
+   RowBox[{
+    RowBox[{"fromSelf", " ", "=", " ", "True"}], ";"}],
+   Background->RGBColor[1, 0.9, 1]], 
+  StyleBox[" ",
+   Background->RGBColor[1, 0.9, 1]], 
+  StyleBox[
    RowBox[{"(*", 
-    RowBox[{"INIITIALIZE", " ", "PARAMETERS"}], "*)"}], "\[IndentingNewLine]",
-    "\t", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"produce", " ", "smart", " ", "component", " ", "itself"}], "=", 
+      RowBox[{">", "True"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{"buy", " ", "it"}], "=", 
+      RowBox[{">", "False"}]}]}], "*)"}],
+   Background->RGBColor[1, 0.9, 1]], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"INIITIALIZE", " ", "PARAMETERS"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
    RowBox[{"\[Alpha]", "=", "0.5"}], ";"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
@@ -174,10 +174,28 @@ Cell[BoxData[{
    RowBox[{"cp", "=", "20.0"}], ";"}]}], "\n", 
  RowBox[{"\t", 
   RowBox[{
-   RowBox[{"cs", "=", "10.0"}], ";"}], "\[IndentingNewLine]", 
-  "\[IndentingNewLine]", 
+   RowBox[{"cs", "=", "10.0"}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"cparSelf", " ", "=", " ", "0"}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"cparSpec", " ", "=", " ", "0.1"}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"\[Rho]Self", " ", "=", " ", "1"}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"\[Rho]Spec", " ", "=", " ", "1"}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"expSelf", " ", "=", " ", "2"}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{"\t", 
+  RowBox[{
+   RowBox[{"expSpec", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
-   RowBox[{"Number", " ", "of", " ", "firms"}], "*)"}]}], "\n", 
+   RowBox[{"Number", " ", "of", " ", "firms"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"\t", 
   RowBox[{
    RowBox[{"n", "=", "10"}], ";"}]}], "\[IndentingNewLine]", 
@@ -256,7 +274,7 @@ Cell[BoxData[{
    RowBox[{"(*", 
     RowBox[{"time", " ", "horizon", " ", "of", " ", "table"}], "*)"}], "\n", 
    "\t", 
-   RowBox[{"pend", "=", "10"}], ";", " ", 
+   RowBox[{"pend", "=", "100"}], ";", " ", 
    RowBox[{"(*", 
     RowBox[{"time", " ", "horizon", " ", "of", " ", "plots"}], "*)"}], 
    "\[IndentingNewLine]", 
@@ -743,47 +761,36 @@ Cell[BoxData[{
          RowBox[{"[", "t", "]"}], "]"}], "=", "0.0"}], ";", 
        "\[IndentingNewLine]", "\t", "\[IndentingNewLine]", "\t", 
        RowBox[{"(*", 
-        RowBox[{"compute", " ", "price", " ", "of", " ", "specialist"}], 
-        "*)"}], "\[IndentingNewLine]", "\t\t", 
-       RowBox[{
-        RowBox[{"priceSpec", "[", 
-         RowBox[{"[", "t", "]"}], "]"}], "=", 
-        RowBox[{"PriceSpec", "[", 
-         RowBox[{"cs", ",", 
-          RowBox[{"\[Eta]Spec", "[", 
-           RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}], ";", 
-       "\[IndentingNewLine]", "\t", 
-       RowBox[{"(*", 
         RowBox[{"compute", " ", "prices", " ", "of", " ", "firms"}], "*)"}], 
        "\[IndentingNewLine]", "\t\t", 
-       RowBox[{"If", "[", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"If", "[", 
         RowBox[{
          RowBox[{"fromSelf", "\[Equal]", "True"}], ",", "\[IndentingNewLine]",
-          "\t\t", 
+          "\t\t\t", 
          RowBox[{
           RowBox[{"priceListFirm", "[", 
            RowBox[{"[", 
             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
           RowBox[{"Max", "[", 
            RowBox[{
-            RowBox[{"PriceFirmSelfQuad", "[", 
-             RowBox[{"cp", ",", "cs", ",", "\[Eta]", ",", 
-              RowBox[{"quantAggFirm", "[", 
-               RowBox[{"[", 
-                RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}], ",", "0"}], 
-           "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"PriceFirmSelfInc", "[", 
+             RowBox[{
+             "cp", ",", "cs", ",", "\[Rho]Self", ",", " ", "expSelf", ",", 
+              " ", "\[Eta]"}], "]"}], ",", "0"}], "]"}]}], ",", 
+         "\[IndentingNewLine]", "\t\t\t", 
          RowBox[{
           RowBox[{"priceListFirm", "[", 
            RowBox[{"[", 
             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
           RowBox[{"Max", "[", 
            RowBox[{
-            RowBox[{"PriceFirmSpecQuad", "[", 
-             RowBox[{"cp", ",", "cs", ",", "\[Eta]", ",", 
+            RowBox[{"PriceFirmSpecInc", "[", 
+             RowBox[{
+             "cp", ",", "cs", ",", "\[Rho]Spec", ",", " ", "expSpec", ",", 
+              "\[Eta]", ",", 
               RowBox[{"\[Eta]Spec", "[", 
-               RowBox[{"[", "t", "]"}], "]"}], ",", "quantAggSpec"}], "]"}], 
-            ",", "0"}], "]"}]}]}], "\[IndentingNewLine]", "\t\t", "]"}], ";", 
-       "\[IndentingNewLine]", "\t\t", 
+               RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "0"}], "]"}]}]}],
+         "]"}], ";", "\[IndentingNewLine]", "\t\t", 
        RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
         RowBox[{
          RowBox[{
@@ -792,11 +799,13 @@ Cell[BoxData[{
             RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
           RowBox[{"Max", "[", 
            RowBox[{
-            RowBox[{"PriceFirmSpecQuad", "[", 
-             RowBox[{"cp", ",", "cs", ",", "\[Eta]", ",", 
+            RowBox[{"PriceFirmSpecInc", "[", 
+             RowBox[{
+             "cp", ",", "cs", ",", "\[Rho]Spec", ",", " ", "expSpec", ",", 
+              "\[Eta]", ",", 
               RowBox[{"\[Eta]Spec", "[", 
-               RowBox[{"[", "t", "]"}], "]"}], ",", "quantAggSpec"}], "]"}], 
-            ",", "0"}], "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+               RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "0"}], "]"}]}], 
+         ",", "\[IndentingNewLine]", "\t\t", 
          RowBox[{"{", 
           RowBox[{"i", ",", "2", ",", "d"}], "}"}]}], "]"}], ";", 
        "\[IndentingNewLine]", "\t\t", 
@@ -808,12 +817,11 @@ Cell[BoxData[{
             RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
           RowBox[{"Max", "[", 
            RowBox[{
-            RowBox[{"PriceFirmSelfQuad", "[", 
-             RowBox[{"cp", ",", "cs", ",", "\[Eta]", ",", 
-              RowBox[{"quantAggFirm", "[", 
-               RowBox[{"[", 
-                RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}], ",", "0"}], 
-           "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+            RowBox[{"PriceFirmSelfInc", "[", 
+             RowBox[{
+             "cp", ",", "cs", ",", "\[Rho]Self", ",", " ", "expSelf", ",", 
+              "\[Eta]"}], "]"}], ",", "0"}], "]"}]}], ",", 
+         "\[IndentingNewLine]", "\t\t", 
          RowBox[{"{", 
           RowBox[{"i", ",", 
            RowBox[{"d", "+", "1"}], ",", "n"}], "}"}]}], "]"}], ";", 
@@ -966,63 +974,59 @@ Cell[BoxData[{
        RowBox[{"(*", 
         RowBox[{"compute", " ", "profits"}], "*)"}], "\[IndentingNewLine]", 
        "\t\t", 
-       RowBox[{"If", "[", "\[IndentingNewLine]", "\t\t", 
+       RowBox[{"If", "[", 
         RowBox[{
          RowBox[{"fromSelf", "\[Equal]", "True"}], ",", "\[IndentingNewLine]",
-          "\t\t", 
+          "\t\t\t", 
          RowBox[{
           RowBox[{"profitListFirm", "[", 
            RowBox[{"[", 
             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
-          RowBox[{"Max", "[", 
+          RowBox[{"ProfitFirmSelfInc", "[", 
            RowBox[{
-            RowBox[{"ProfitFirmSelfQuad", "[", 
-             RowBox[{"0.001", ",", 
-              RowBox[{"quantPeriodFirm", "[", 
-               RowBox[{"[", 
-                RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "cp", ",", "cs", 
-              ",", "\[Eta]", ",", 
-              RowBox[{"quantAggFirm", "[", 
-               RowBox[{"[", 
-                RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}], ",", "0"}], 
-           "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+           "cp", ",", "cs", ",", "cparSelf", ",", "\[Rho]Self", ",", 
+            "expSelf", ",", 
+            RowBox[{"quantPeriodFirm", "[", 
+             RowBox[{"[", 
+              RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "\[Eta]", ",", 
+            RowBox[{"quantAggFirm", "[", 
+             RowBox[{"[", 
+              RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}]}], ",", 
+         "\[IndentingNewLine]", "\t\t\t", 
          RowBox[{
           RowBox[{"profitListFirm", "[", 
            RowBox[{"[", 
             RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
-          RowBox[{"Max", "[", 
+          RowBox[{"ProfitFirmSpecInc", "[", 
            RowBox[{
-            RowBox[{"ProfitFirmSpecQuad", "[", 
-             RowBox[{"0.001", ",", 
-              RowBox[{"quantPeriodFirm", "[", 
-               RowBox[{"[", 
-                RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "cp", ",", "cs", 
-              ",", "\[Eta]", ",", 
-              RowBox[{"\[Eta]Spec", "[", 
-               RowBox[{"[", "t", "]"}], "]"}], ",", 
-              RowBox[{"quantAggSpec", "[", 
-               RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "0"}], "]"}]}]}],
-         "\[IndentingNewLine]", "\t\t", "]"}], ";", "\[IndentingNewLine]", 
-       "\t\t", 
+           "cp", ",", "cs", ",", "cparSpec", ",", "\[Rho]Spec", ",", " ", 
+            "expSpec", ",", 
+            RowBox[{"quantPeriodFirm", "[", 
+             RowBox[{"[", 
+              RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "\[Eta]", ",", 
+            RowBox[{"\[Eta]Spec", "[", 
+             RowBox[{"[", "t", "]"}], "]"}], ",", 
+            RowBox[{"quantAggSpec", "[", 
+             RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "\t\t", 
        RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
         RowBox[{
          RowBox[{
           RowBox[{"profitListFirm", "[", 
            RowBox[{"[", 
             RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
-          RowBox[{"Max", "[", 
+          RowBox[{"ProfitFirmSpecInc", "[", 
            RowBox[{
-            RowBox[{"ProfitFirmSpecQuad", "[", 
-             RowBox[{"0.001", ",", 
-              RowBox[{"quantPeriodFirm", "[", 
-               RowBox[{"[", 
-                RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", "cp", ",", "cs", 
-              ",", "\[Eta]", ",", 
-              RowBox[{"\[Eta]Spec", "[", 
-               RowBox[{"[", "t", "]"}], "]"}], ",", 
-              RowBox[{"quantAggSpec", "[", 
-               RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "0"}], "]"}]}], 
-         ",", "\[IndentingNewLine]", "\t\t", 
+           "cp", ",", "cs", ",", "cparSpec", ",", "\[Rho]Spec", ",", " ", 
+            "expSpec", ",", 
+            RowBox[{"quantPeriodFirm", "[", 
+             RowBox[{"[", 
+              RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", "\[Eta]", ",", 
+            RowBox[{"\[Eta]Spec", "[", 
+             RowBox[{"[", "t", "]"}], "]"}], ",", 
+            RowBox[{"quantAggSpec", "[", 
+             RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}], ",", 
+         "\[IndentingNewLine]", "\t\t", 
          RowBox[{"{", 
           RowBox[{"i", ",", "2", ",", "d"}], "}"}]}], "]"}], ";", 
        "\[IndentingNewLine]", "\t\t", 
@@ -1032,18 +1036,17 @@ Cell[BoxData[{
           RowBox[{"profitListFirm", "[", 
            RowBox[{"[", 
             RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
-          RowBox[{"Max", "[", 
+          RowBox[{"ProfitFirmSelfInc", "[", 
            RowBox[{
-            RowBox[{"ProfitFirmSelfQuad", "[", 
-             RowBox[{"0.001", ",", 
-              RowBox[{"quantPeriodFirm", "[", 
-               RowBox[{"[", 
-                RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", "cp", ",", "cs", 
-              ",", "\[Eta]", ",", 
-              RowBox[{"quantAggFirm", "[", 
-               RowBox[{"[", 
-                RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}], ",", "0"}], 
-           "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+           "cp", ",", "cs", ",", "cparSelf", ",", "\[Rho]Self", ",", 
+            "expSelf", ",", 
+            RowBox[{"quantPeriodFirm", "[", 
+             RowBox[{"[", 
+              RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "\[Eta]", ",", 
+            RowBox[{"quantAggFirm", "[", 
+             RowBox[{"[", 
+              RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}]}], ",", 
+         "\[IndentingNewLine]", "\t\t", 
          RowBox[{"{", 
           RowBox[{"i", ",", 
            RowBox[{"d", "+", "1"}], ",", "n"}], "}"}]}], "]"}], ";", 
@@ -1199,32 +1202,34 @@ Cell[BoxData[{
           RowBox[{"(*", 
            RowBox[{"compute", " ", "prices", " ", "of", " ", "firms"}], 
            "*)"}], "\[IndentingNewLine]", "\t\t", 
-          RowBox[{"If", "[", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"If", "[", 
            RowBox[{
             RowBox[{"fromSelf", "\[Equal]", "True"}], ",", 
-            "\[IndentingNewLine]", "\t\t", 
+            "\[IndentingNewLine]", "\t\t\t", 
             RowBox[{
              RowBox[{"priceListFirm", "[", 
               RowBox[{"[", 
                RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
-             RowBox[{"PriceFirmSelfQuad", "[", 
-              RowBox[{"cp", ",", "cs", ",", "\[Eta]", ",", " ", 
-               RowBox[{"quantAggFirm", "[", 
-                RowBox[{"[", 
-                 RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}]}], ",", 
-            "\[IndentingNewLine]", "\t\t", 
+             RowBox[{"Max", "[", 
+              RowBox[{
+               RowBox[{"PriceFirmSelfInc", "[", 
+                RowBox[{
+                "cp", ",", "cs", ",", "\[Rho]Self", ",", " ", "expSelf", ",", 
+                 " ", "\[Eta]"}], "]"}], ",", "0"}], "]"}]}], ",", 
+            "\[IndentingNewLine]", "\t\t\t", 
             RowBox[{
              RowBox[{"priceListFirm", "[", 
               RowBox[{"[", 
                RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
-             RowBox[{"PriceFirmSpecQuad", "[", 
-              RowBox[{"cp", ",", "cs", ",", "\[Eta]", ",", 
-               RowBox[{"\[Eta]Spec", "[", 
-                RowBox[{"[", "t", "]"}], "]"}], ",", 
-               RowBox[{"quantAggSpec", "[", 
-                RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}]}], 
-           "\[IndentingNewLine]", "\t\t", "]"}], ";", "\[IndentingNewLine]", 
-          "\t\t", 
+             RowBox[{"Max", "[", 
+              RowBox[{
+               RowBox[{"PriceFirmSpecInc", "[", 
+                RowBox[{
+                "cp", ",", "cs", ",", "\[Rho]Spec", ",", " ", "expSpec", ",", 
+                 "\[Eta]", ",", 
+                 RowBox[{"\[Eta]Spec", "[", 
+                  RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "0"}], 
+              "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", "\t\t", 
           RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
            RowBox[{
             RowBox[{
@@ -1233,11 +1238,11 @@ Cell[BoxData[{
                RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
              RowBox[{"Max", "[", 
               RowBox[{
-               RowBox[{"PriceFirmSpecQuad", "[", 
-                RowBox[{"cp", ",", "cs", ",", "\[Eta]", ",", 
+               RowBox[{"PriceFirmSpecInc", "[", 
+                RowBox[{
+                "cp", ",", "cs", ",", "\[Rho]Spec", ",", " ", "expSpec", ",", 
+                 "\[Eta]", ",", 
                  RowBox[{"\[Eta]Spec", "[", 
-                  RowBox[{"[", "t", "]"}], "]"}], ",", 
-                 RowBox[{"quantAggSpec", "[", 
                   RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "0"}], 
               "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
             RowBox[{"{", 
@@ -1251,12 +1256,11 @@ Cell[BoxData[{
                RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
              RowBox[{"Max", "[", 
               RowBox[{
-               RowBox[{"PriceFirmSelfQuad", "[", 
-                RowBox[{"cp", ",", "cs", ",", "\[Eta]", ",", " ", 
-                 RowBox[{"quantAggFirm", "[", 
-                  RowBox[{"[", 
-                   RowBox[{"t", ",", "i"}], "]"}], "]"}]}], "]"}], ",", "0"}],
-               "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+               RowBox[{"PriceFirmSelfInc", "[", 
+                RowBox[{
+                "cp", ",", "cs", ",", "\[Rho]Self", ",", " ", "expSelf", ",", 
+                 "\[Eta]"}], "]"}], ",", "0"}], "]"}]}], ",", 
+            "\[IndentingNewLine]", "\t\t", 
             RowBox[{"{", 
              RowBox[{"i", ",", 
               RowBox[{"d", "+", "1"}], ",", "n"}], "}"}]}], "]"}], ";", 
@@ -1409,43 +1413,40 @@ Cell[BoxData[{
           RowBox[{"(*", 
            RowBox[{"compute", " ", "profits"}], "*)"}], "\[IndentingNewLine]",
            "\t\t", 
-          RowBox[{"If", "[", "\[IndentingNewLine]", "\t\t", 
+          RowBox[{"If", "[", 
            RowBox[{
             RowBox[{"fromSelf", "\[Equal]", "True"}], ",", 
-            "\[IndentingNewLine]", "\t\t", 
+            "\[IndentingNewLine]", "\t\t\t", 
             RowBox[{
              RowBox[{"profitListFirm", "[", 
               RowBox[{"[", 
                RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
-             RowBox[{"Max", "[", 
+             RowBox[{"ProfitFirmSelfInc", "[", 
               RowBox[{
-               RowBox[{"ProfitFirmSelfQuad", "[", 
-                RowBox[{"0.001", ",", 
-                 RowBox[{"quantPeriodFirm", "[", 
-                  RowBox[{"[", 
-                   RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "cp", ",", 
-                 "cs", ",", "\[Eta]", ",", 
-                 RowBox[{"quantAggFirm", "[", 
-                  RowBox[{"[", 
-                   RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}], ",", "0"}],
-               "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+              "cp", ",", "cs", ",", "cparSelf", ",", "\[Rho]Self", ",", 
+               "expSelf", ",", 
+               RowBox[{"quantPeriodFirm", "[", 
+                RowBox[{"[", 
+                 RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "\[Eta]", ",", 
+               RowBox[{"quantAggFirm", "[", 
+                RowBox[{"[", 
+                 RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}]}], ",", 
+            "\[IndentingNewLine]", "\t\t\t", 
             RowBox[{
              RowBox[{"profitListFirm", "[", 
               RowBox[{"[", 
                RowBox[{"t", ",", "1"}], "]"}], "]"}], "=", 
-             RowBox[{"Max", "[", 
+             RowBox[{"ProfitFirmSpecInc", "[", 
               RowBox[{
-               RowBox[{"ProfitFirmSpecQuad", "[", 
-                RowBox[{"0.01", ",", 
-                 RowBox[{"quantPeriodFirm", "[", 
-                  RowBox[{"[", 
-                   RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "cp", ",", 
-                 "cs", ",", "\[Eta]", ",", 
-                 RowBox[{"\[Eta]Spec", "[", 
-                  RowBox[{"[", "t", "]"}], "]"}], ",", 
-                 RowBox[{"quantAggSpec", "[", 
-                  RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "0"}], 
-              "]"}]}]}], "\[IndentingNewLine]", "\t\t", "]"}], ";", 
+              "cp", ",", "cs", ",", "cparSpec", ",", "\[Rho]Spec", ",", " ", 
+               "expSpec", ",", 
+               RowBox[{"quantPeriodFirm", "[", 
+                RowBox[{"[", 
+                 RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "\[Eta]", ",", 
+               RowBox[{"\[Eta]Spec", "[", 
+                RowBox[{"[", "t", "]"}], "]"}], ",", 
+               RowBox[{"quantAggSpec", "[", 
+                RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}]}], "]"}], ";", 
           "\[IndentingNewLine]", "\t\t", 
           RowBox[{"Do", "[", "\[IndentingNewLine]", "\t\t", 
            RowBox[{
@@ -1453,19 +1454,18 @@ Cell[BoxData[{
              RowBox[{"profitListFirm", "[", 
               RowBox[{"[", 
                RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
-             RowBox[{"Max", "[", 
+             RowBox[{"ProfitFirmSpecInc", "[", 
               RowBox[{
-               RowBox[{"ProfitFirmSpecQuad", "[", 
-                RowBox[{"0.01", ",", 
-                 RowBox[{"quantPeriodFirm", "[", 
-                  RowBox[{"[", 
-                   RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", "cp", ",", 
-                 "cs", ",", "\[Eta]", ",", 
-                 RowBox[{"\[Eta]Spec", "[", 
-                  RowBox[{"[", "t", "]"}], "]"}], ",", 
-                 RowBox[{"quantAggSpec", "[", 
-                  RowBox[{"[", "t", "]"}], "]"}]}], "]"}], ",", "0"}], 
-              "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+              "cp", ",", "cs", ",", "cparSpec", ",", "\[Rho]Spec", ",", " ", 
+               "expSpec", ",", 
+               RowBox[{"quantPeriodFirm", "[", 
+                RowBox[{"[", 
+                 RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", "\[Eta]", ",", 
+               RowBox[{"\[Eta]Spec", "[", 
+                RowBox[{"[", "t", "]"}], "]"}], ",", 
+               RowBox[{"quantAggSpec", "[", 
+                RowBox[{"[", "t", "]"}], "]"}]}], "]"}]}], ",", 
+            "\[IndentingNewLine]", "\t\t", 
             RowBox[{"{", 
              RowBox[{"i", ",", "2", ",", "d"}], "}"}]}], "]"}], ";", 
           "\[IndentingNewLine]", "\t\t", 
@@ -1475,18 +1475,17 @@ Cell[BoxData[{
              RowBox[{"profitListFirm", "[", 
               RowBox[{"[", 
                RowBox[{"t", ",", "i"}], "]"}], "]"}], "=", 
-             RowBox[{"Max", "[", 
+             RowBox[{"ProfitFirmSelfInc", "[", 
               RowBox[{
-               RowBox[{"ProfitFirmSelfQuad", "[", 
-                RowBox[{"0.001", ",", 
-                 RowBox[{"quantPeriodFirm", "[", 
-                  RowBox[{"[", 
-                   RowBox[{"t", ",", "i"}], "]"}], "]"}], ",", "cp", ",", 
-                 "cs", ",", "\[Eta]", ",", " ", 
-                 RowBox[{"quantAggFirm", "[", 
-                  RowBox[{"[", 
-                   RowBox[{"t", ",", "i"}], "]"}], "]"}]}], "]"}], ",", "0"}],
-               "]"}]}], ",", "\[IndentingNewLine]", "\t\t", 
+              "cp", ",", "cs", ",", "cparSelf", ",", "\[Rho]Self", ",", 
+               "expSelf", ",", 
+               RowBox[{"quantPeriodFirm", "[", 
+                RowBox[{"[", 
+                 RowBox[{"t", ",", "1"}], "]"}], "]"}], ",", "\[Eta]", ",", 
+               RowBox[{"quantAggFirm", "[", 
+                RowBox[{"[", 
+                 RowBox[{"t", ",", "1"}], "]"}], "]"}]}], "]"}]}], ",", 
+            "\[IndentingNewLine]", "\t\t", 
             RowBox[{"{", 
              RowBox[{"i", ",", 
               RowBox[{"d", "+", "1"}], ",", "n"}], "}"}]}], "]"}]}], ",", 
@@ -1741,12 +1740,23 @@ Cell[BoxData[{
    3.694451583370822*^9, 3.694451584119671*^9}, {3.694451625940693*^9, 
    3.694451626280876*^9}, {3.694451657996542*^9, 3.694451671098013*^9}, {
    3.694451804689253*^9, 3.694451807412773*^9}, {3.694451839274973*^9, 
-   3.69445184085159*^9}, {3.694451896413857*^9, 3.6944518985827703`*^9}}],
+   3.69445184085159*^9}, {3.694451896413857*^9, 3.6944518985827703`*^9}, {
+   3.694457673263608*^9, 3.694457723970821*^9}, {3.694457796993052*^9, 
+   3.694457797569859*^9}, {3.694457891319376*^9, 3.6944579886352777`*^9}, {
+   3.694458070669002*^9, 3.694458073536627*^9}, {3.694589320708724*^9, 
+   3.6945893704316473`*^9}, {3.6945894044227333`*^9, 3.694589463982225*^9}, {
+   3.694589518208455*^9, 3.694589520989904*^9}, {3.694589551092585*^9, 
+   3.6945895677082453`*^9}, {3.694589601344927*^9, 3.694589682319726*^9}, {
+   3.694589720424554*^9, 3.694589752465866*^9}, {3.694589873286647*^9, 
+   3.694589880524541*^9}, {3.6945900890254793`*^9, 3.694590092522374*^9}, {
+   3.6945901246344633`*^9, 3.6945901563848143`*^9}, {3.6945912984270144`*^9, 
+   3.6945914411539097`*^9}, {3.6945914722054663`*^9, 3.694591569875641*^9}, {
+   3.694591608300544*^9, 3.6945916382807083`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-  "5.38400000000000034106051316484808921814`6.751704964495545", ",", "Null"}],
+  "5.24000000000000021316282072803005576134`6.739931200263351", ",", "Null"}],
    "}"}]], "Output",
  CellChangeTimes->{{3.6926144067823257`*^9, 3.692614421040167*^9}, 
    3.692614637489758*^9, 3.6926147958355293`*^9, 3.692615427432848*^9, 
@@ -1763,10 +1773,14 @@ Cell[BoxData[
    3.694445821646802*^9, 3.694445839970042*^9}, 3.694445967424532*^9, 
    3.694446000061273*^9, 3.694446101586388*^9, 3.694451561331665*^9, 
    3.694451681157372*^9, 3.694451814324018*^9, 3.694451850094762*^9, 
-   3.694451905092866*^9}]
+   3.694451905092866*^9, 3.694458003859865*^9, 3.694458079896159*^9, 
+   3.694589762551819*^9, 3.694589829073881*^9, 3.694589888151966*^9, 
+   3.694590099581015*^9, 3.6945901309855537`*^9, 3.694590162986102*^9, {
+   3.6945913092986183`*^9, 3.6945914474752502`*^9}, {3.6945914832457857`*^9, 
+   3.6945915770097637`*^9}, {3.694591615066443*^9, 3.694591644619439*^9}}]
 }, Open  ]]
 },
-WindowSize->{1920, 1024},
+WindowSize->{1600, 844},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
 StyleDefinitions->"Default.nb"
@@ -1783,8 +1797,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 70482, 1721, 5159, "Input"],
-Cell[71065, 1745, 1242, 20, 32, "Output"]
+Cell[580, 22, 70755, 1731, 5049, "Input"],
+Cell[71338, 1755, 1582, 24, 32, "Output"]
 }, Open  ]]
 }
 ]
